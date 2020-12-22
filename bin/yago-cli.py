@@ -12,7 +12,7 @@ import numpy as np
 import torch
 from torch import nn, optim
 
-from kbcr.training.yago import Data
+from kbcr.training.data import Data
 from kbcr.training.batcher import Batcher
 
 from kbcr.kernels import GaussianKernel
