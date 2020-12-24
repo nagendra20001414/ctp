@@ -4,14 +4,18 @@ import numpy as np
 
 from typing import Optional, List, Tuple, Dict
 
+import pandas as pd
+
 
 def read_triples(path: str) -> List[Tuple[str, str, str]]:
-    triples = []
-    with open(path, 'rt') as f:
-        for line in f.readlines():
-            s, p, o = line.split()
-            triples += [(s.strip(), p.strip(), o.strip())]
-    return triples
+    # triples = []
+    df = pd.read_csv(path, sep='\t', names=['s', 'p', 'o'])
+    # with open(path, 'rt') as f:
+    #     for line in f.readlines():
+    #         s, p, o = line.split()
+    #         triples += [(s.strip(), p.strip(), o.strip())]
+    # return triples
+    return df.values.tolist()
 
 
 def triples_to_vectors(triples: List[Tuple[str, str, str]],
