@@ -51,12 +51,12 @@ class Data:
         # Loading the dataset
         self.train_triples = read_triples(self.train_path) if self.train_path else []
         self.original_predicate_names = {p for (_, p, _) in self.train_triples}
-
+        print("triples reading and predicates.. Done!")
         self.reciprocal_train_triples = None
         if self.input_type in {'reciprocal'}:
             self.reciprocal_train_triples = [(o, f'inverse_{p}', s) for (s, p, o) in self.train_triples]
             self.train_triples += self.reciprocal_train_triples
-
+        print("reciprocals.. Done!")
         self.dev_triples = read_triples(self.dev_path) if self.dev_path else []
         self.test_triples = read_triples(self.test_path) if self.test_path else []
 
@@ -64,7 +64,7 @@ class Data:
         self.test_ii_triples = read_triples(self.test_ii_path) if self.test_ii_path else []
 
         self.all_triples = self.train_triples + self.dev_triples + self.test_triples
-
+        print("Read all test, train, dev triples..!")
         self.entity_set = {s for (s, _, _) in self.all_triples} | {o for (_, _, o) in self.all_triples}
         self.predicate_set = {p for (_, p, _) in self.all_triples}
 
@@ -73,7 +73,7 @@ class Data:
         self.entity_to_idx = {entity: idx for idx, entity in enumerate(sorted(self.entity_set))}
         self.nb_entities = max(self.entity_to_idx.values()) + 1
         self.idx_to_entity = {v: k for k, v in self.entity_to_idx.items()}
-
+        print("entity indexes are set!")
         self.predicate_to_idx = {predicate: idx for idx, predicate in enumerate(sorted(self.predicate_set))}
         self.nb_predicates = max(self.predicate_to_idx.values()) + 1
         self.idx_to_predicate = {v: k for k, v in self.predicate_to_idx.items()}
@@ -92,7 +92,7 @@ class Data:
             if key_po not in self.po_to_s_lst:
                 self.po_to_s_lst[key_po] = []
             self.po_to_s_lst[key_po] += [s_idx]
-
+        print("for loop is done..!")
         self.inverse_of_idx = {}
         if self.input_type in {'reciprocal'}:
             for p in self.original_predicate_names:
