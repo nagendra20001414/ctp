@@ -15,6 +15,7 @@ def read_triples(path: str) -> List[Tuple[str, str, str]]:
     #         s, p, o = line.split()
     #         triples += [(s.strip(), p.strip(), o.strip())]
     # return triples
+    df = df.astype(str)
     return df.values.tolist()
 
 
