@@ -9,13 +9,13 @@ import pandas as pd
 
 def read_triples(path: str) -> List[Tuple[str, str, str]]:
     # triples = []
-    df = pd.read_csv(path, sep='\t', names=['s', 'p', 'o'])
+    df = pd.read_csv(path, sep='\t', names=['s', 'p', 'o'], dtype={'s':str, 'p':str, 'o':str})
     # with open(path, 'rt') as f:
     #     for line in f.readlines():
     #         s, p, o = line.split()
     #         triples += [(s.strip(), p.strip(), o.strip())]
     # return triples
-    df = df.astype(str)
+    # df = df.astype(str)
     return df.values.tolist()
 
 
