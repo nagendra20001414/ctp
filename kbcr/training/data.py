@@ -66,8 +66,8 @@ class Data:
 
         self.all_triples = self.train_triples + self.dev_triples + self.test_triples
         print("Read all test, train, dev triples..!")
-        self.entity_set = {s for (s, _, _) in self.all_triples} | {o for (_, _, o) in self.all_triples}
-        self.predicate_set = {p for (_, p, _) in self.all_triples}
+        self.entity_set = {str(s) for (s, _, _) in self.all_triples} | {str(o) for (_, _, o) in self.all_triples}
+        self.predicate_set = {str(p) for (_, p, _) in self.all_triples}
 
         self.nb_examples = len(self.train_triples)
 
