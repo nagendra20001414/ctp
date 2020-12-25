@@ -297,7 +297,7 @@ def main(argv):
     for epoch_no in range(1, nb_epochs + 1):
         batcher = Batcher(data, batch_size, 1, random_state)
         nb_batches = len(batcher.batches)
-
+        print("Batcher Done!")
         if freeze_entities is not None and epoch_no > freeze_entities:
             entity_embeddings.weight.requires_grad = True
 
@@ -315,7 +315,7 @@ def main(argv):
 
             xt_exp_np = np.zeros_like(xp_exp_np)
             xt_exp_np[0::nb_neg * 3 + 1] = 1
-
+            print("start of for loop!")
             for i in range(t):
                 a_ = rs.permutation(data.nb_entities)
                 b_ = rs.permutation(data.nb_entities)
