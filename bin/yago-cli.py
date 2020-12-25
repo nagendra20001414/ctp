@@ -340,13 +340,13 @@ def main(argv):
 
                 xs_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = c
                 xo_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = d
-
+            print("end of for loop")
             xp_batch = torch.from_numpy(xp_exp_np.astype('int64')).to(device)
             xs_batch = torch.from_numpy(xs_exp_np.astype('int64')).to(device)
             xo_batch = torch.from_numpy(xo_exp_np.astype('int64')).to(device)
             xi_batch = torch.from_numpy(xi_exp_np.astype('int64')).to(device)
             xt_batch = torch.from_numpy(xt_exp_np.astype('int64')).float().to(device)
-
+            print("end of torch")
             # Disable masking
             # xi_batch = None
 
