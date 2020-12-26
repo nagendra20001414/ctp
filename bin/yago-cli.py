@@ -295,6 +295,8 @@ def main(argv):
     N3_reg = N3() if N3_weight is not None else None
 
     for epoch_no in range(1, nb_epochs + 1):
+        print('Entering epoch: ', epoch_no, ', enter an int:')
+        temp_int = int(input())
         batcher = Batcher(data, batch_size, 1, random_state)
         nb_batches = len(batcher.batches)
         print("Batcher Done!")
@@ -303,6 +305,9 @@ def main(argv):
 
         epoch_loss_values = []
         for batch_no, (batch_start, batch_end) in enumerate(batcher.batches, 1):
+            print('Entering batch: ', batch_no, ', enter an int:')
+            temp_int = int(input())
+
             xp_batch_np, xs_batch_np, xo_batch_np, xi_batch_np = batcher.get_batch(batch_start, batch_end)
             t = xp_batch_np.shape[0]
 
@@ -346,7 +351,8 @@ def main(argv):
             xo_batch = torch.from_numpy(xo_exp_np.astype('int64')).to(device)
             xi_batch = torch.from_numpy(xi_exp_np.astype('int64')).to(device)
             xt_batch = torch.from_numpy(xt_exp_np.astype('int64')).float().to(device)
-            print("end of torch")
+            print("end of torch, enter an int")
+            temp_int = int(input())
             # Disable masking
             # xi_batch = None
 
@@ -354,9 +360,15 @@ def main(argv):
             xs_batch_emb = entity_embeddings(xs_batch)
             xo_batch_emb = entity_embeddings(xo_batch)
 
+            print("end of emb, enter an int")
+            temp_int = int(input())
             factors = [model.factor(e) for e in [xp_batch_emb, xs_batch_emb, xo_batch_emb]]
+            print("end of fact, enter an int")
+            temp_int = int(input())
 
             scores = model.score(xp_batch_emb, xs_batch_emb, xo_batch_emb, mask_indices=xi_batch)
+            print("end of score, enter an int")
+            temp_int = int(input())
             # scores = base_model.score(xp_batch_emb, xs_batch_emb, xo_batch_emb, mask_indices=xi_batch)
 
             # print(scores)
