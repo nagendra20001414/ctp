@@ -297,7 +297,7 @@ def main(argv):
     for epoch_no in range(1, nb_epochs + 1):
         batcher = Batcher(data, batch_size, 1, random_state)
         nb_batches = len(batcher.batches)
-
+        print("Batcher Done!")
         if freeze_entities is not None and epoch_no > freeze_entities:
             entity_embeddings.weight.requires_grad = True
 
@@ -315,7 +315,7 @@ def main(argv):
 
             xt_exp_np = np.zeros_like(xp_exp_np)
             xt_exp_np[0::nb_neg * 3 + 1] = 1
-
+            print("start of for loop!")
             for i in range(t):
                 a_ = rs.permutation(data.nb_entities)
                 b_ = rs.permutation(data.nb_entities)
@@ -340,13 +340,13 @@ def main(argv):
 
                 xs_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = c
                 xo_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = d
-
+            print("end of for loop")
             xp_batch = torch.from_numpy(xp_exp_np.astype('int64')).to(device)
             xs_batch = torch.from_numpy(xs_exp_np.astype('int64')).to(device)
             xo_batch = torch.from_numpy(xo_exp_np.astype('int64')).to(device)
             xi_batch = torch.from_numpy(xi_exp_np.astype('int64')).to(device)
             xt_batch = torch.from_numpy(xt_exp_np.astype('int64')).float().to(device)
-
+            print("end of torch")
             # Disable masking
             # xi_batch = None
 
