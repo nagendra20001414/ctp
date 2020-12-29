@@ -61,7 +61,7 @@ class Data:
         self.train_triples = read_triples(self.train_path, fraction=fraction, maxTrain=maxTrain, isTrain=True) if self.train_path else []
         self.original_predicate_names = {p for (_, p, _) in self.train_triples}
         print("triples reading and predicates.. Done!")
-        print("size of training triples is ", len(self.train_path))
+        print("size of training triples is ", len(self.train_triples))
         self.reciprocal_train_triples = None
         if self.input_type in {'reciprocal'}:
             self.reciprocal_train_triples = [(o, f'inverse_{p}', s) for (s, p, o) in self.train_triples]
