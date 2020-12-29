@@ -21,8 +21,8 @@ def read_triples(path: str, fraction: float, maxTrain: Optional[int]=None, isTra
             limit = min(fraction*len(df), 0.25*maxTrain)
         else:
             limit = min(fraction*len(df), maxTrain)
-        return df.values.tolist()[:limit]
-    return df.values.tolist()[:fraction*len(df)]
+        return df.values.tolist()[:int(limit)]
+    return df.values.tolist()[:int(fraction*len(df))]
 
 
 def triples_to_vectors(triples: List[Tuple[str, str, str]],
