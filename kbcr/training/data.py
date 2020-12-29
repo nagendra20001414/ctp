@@ -16,7 +16,7 @@ def read_triples(path: str, fraction: float, maxTrain: Optional[int]=None, isTra
     #         triples += [(s.strip(), p.strip(), o.strip())]
     # return triples
     # df = df.astype(str)
-    if not maxTrain:
+    if not maxTrain is None:
         if not isTrain:
             limit = min(fraction*len(df), 0.25*maxTrain)
         else:
