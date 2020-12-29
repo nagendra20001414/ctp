@@ -41,7 +41,7 @@ class Data:
                  test_path: Optional[str] = None,
                  test_i_path: Optional[str] = None,
                  test_ii_path: Optional[str] = None,
-                 input_type: str = 'standard'
+                 input_type: str = 'standard',
                  fraction: Optional[float] = 1.0,
                  maxTrain: Optional[int] = None) -> None:
 
