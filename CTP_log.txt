@@ -1,57 +1,15 @@
-nohup: ignoring input
-Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
-For maximum performance, you can install NMSLIB from sources 
-pip install --no-binary :all: nmslib
-./bin/yago-cli.py --train /data/yago_files/train.tsv --dev /data/yago_files/dev.tsv --test /data/yago_files/test.tsv -V 128 -b 8 --hops 2 2 2 2 -e 5 -o adagrad -l 0.1 --init random --ref-init random -i 1.0 -r memory -k 20 -R 256 --seed 1
-{'GNTP_R': None,
- 'N2': None,
- 'N3': None,
- 'batch_size': 8,
- 'dev': '/data/yago_files/dev.tsv',
- 'embedding_size': 20,
- 'epochs': 5,
- 'eval_batch_size': None,
- 'freeze_entities': None,
- 'hops': ['2', '2', '2', '2'],
- 'index_type': 'faiss',
- 'init': 'random',
- 'init_size': 1.0,
- 'input_type': 'standard',
- 'k_max': 3,
- 'learning_rate': 0.1,
- 'load': None,
- 'lower_bound': -1.0,
- 'nb_negatives': 1,
- 'nb_rules': 256,
- 'optimizer': 'adagrad',
- 'quiet': False,
- 'ref_init': 'random',
- 'reformulator': 'memory',
- 'refresh_interval': None,
- 'save': None,
- 'seed': 1,
- 'slow_eval': False,
- 'test': '/data/yago_files/test.tsv',
- 'test_i': None,
- 'test_ii': None,
- 'train': '/data/yago_files/train.tsv',
- 'upper_bound': 1.0,
- 'validate_every': 128}
-INFO:yago-cli.py:Device: cpu
-triples reading and predicates.. Done!
-reciprocals.. Done!
-Read all test, train, dev triples..!
-entity indexes are set!
-for loop is done..!
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
-INFO:yago-cli.py:	torch.Size([131, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256])	cpu
-INFO:yago-cli.py:	torch.Size([256])	cpu
-INFO:yago-cli.py:	torch.Size([256])	cpu
-INFO:yago-cli.py:	torch.Size([8550307, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256])	cpu
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
-INFO:yago-cli.py:	torch.Size([256, 20])	cpu
+Traceback (most recent call last):
+  File "./bin/yago-cli.py", line 15, in <module>
+    from kbcr.training.data import Data
+  File "<frozen importlib._bootstrap>", line 971, in _find_and_load
+  File "<frozen importlib._bootstrap>", line 951, in _find_and_load_unlocked
+  File "<frozen importlib._bootstrap>", line 894, in _find_spec
+  File "<frozen importlib._bootstrap_external>", line 1157, in find_spec
+  File "<frozen importlib._bootstrap_external>", line 1131, in _get_spec
+  File "<frozen importlib._bootstrap_external>", line 1112, in _legacy_get_spec
+  File "<frozen importlib._bootstrap>", line 441, in spec_from_loader
+  File "<frozen importlib._bootstrap_external>", line 544, in spec_from_file_location
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/training/data.py", line 45
+    fraction: Optional[float] = 1.0,
+           ^
+SyntaxError: invalid syntax

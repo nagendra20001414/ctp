@@ -7,7 +7,7 @@ from typing import Optional, List, Tuple, Dict
 import pandas as pd
 
 
-def read_triples(path: str) -> List[Tuple[str, str, str]]:
+def read_triples(path: str, fraction: float, maxTrain: Optional[int]=None, isTrain: Optional[bool] = False) -> List[Tuple[str, str, str]]:
     # triples = []
     df = pd.read_csv(path, sep='\t', names=['s', 'p', 'o'], dtype={'s':str, 'p':str, 'o':str})
     # with open(path, 'rt') as f:
@@ -16,7 +16,13 @@ def read_triples(path: str) -> List[Tuple[str, str, str]]:
     #         triples += [(s.strip(), p.strip(), o.strip())]
     # return triples
     # df = df.astype(str)
-    return df.values.tolist()
+    if not maxTrain:
+        if not isTrain:
+            limit = min(fraction*len(df), 0.25*maxTrain)
+        else:
+            limit = min(fraction*len(df), maxTrain)
+        return df.values.tolist()[:limit]
+    return df.values.tolist()[:fraction*len(df)]
 
 
 def triples_to_vectors(triples: List[Tuple[str, str, str]],
@@ -35,7 +41,9 @@ class Data:
                  test_path: Optional[str] = None,
                  test_i_path: Optional[str] = None,
                  test_ii_path: Optional[str] = None,
-                 input_type: str = 'standard') -> None:
+                 input_type: str = 'standard'
+                 fraction: Optional[float] = 1.0,
+                 maxTrain: Optional[int] = None) -> None:
 
         self.train_path = train_path
         self.dev_path = dev_path
@@ -50,7 +58,7 @@ class Data:
         self.Xi = self.Xs = self.Xp = self.Xo = None
 
         # Loading the dataset
-        self.train_triples = read_triples(self.train_path) if self.train_path else []
+        self.train_triples = read_triples(self.train_path, fraction=fraction, maxTrain=maxTrain, isTrain=True) if self.train_path else []
         self.original_predicate_names = {p for (_, p, _) in self.train_triples}
         print("triples reading and predicates.. Done!")
         self.reciprocal_train_triples = None
@@ -58,11 +66,11 @@ class Data:
             self.reciprocal_train_triples = [(o, f'inverse_{p}', s) for (s, p, o) in self.train_triples]
             self.train_triples += self.reciprocal_train_triples
         print("reciprocals.. Done!")
-        self.dev_triples = read_triples(self.dev_path) if self.dev_path else []
-        self.test_triples = read_triples(self.test_path) if self.test_path else []
+        self.dev_triples = read_triples(self.dev_path, fraction=fraction, maxTrain=maxTrain) if self.dev_path else []
+        self.test_triples = read_triples(self.test_path, fraction=fraction, maxTrain=maxTrain) if self.test_path else []
 
-        self.test_i_triples = read_triples(self.test_i_path) if self.test_i_path else []
-        self.test_ii_triples = read_triples(self.test_ii_path) if self.test_ii_path else []
+        self.test_i_triples = read_triples(self.test_i_path, fraction=fraction, maxTrain=maxTrain) if self.test_i_path else []
+        self.test_ii_triples = read_triples(self.test_ii_path, fraction=fraction, maxTrain=maxTrain) if self.test_ii_path else []
 
         self.all_triples = self.train_triples + self.dev_triples + self.test_triples
         print("Read all test, train, dev triples..!")
