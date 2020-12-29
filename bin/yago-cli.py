@@ -3,7 +3,7 @@
 
 import os
 import sys
-
+import datetime as dt
 import argparse
 
 import multiprocessing
@@ -299,9 +299,10 @@ def main(argv):
     for epoch_no in range(1, nb_epochs + 1):
 #        print('Entering epoch: ', epoch_no, ', enter an int:')
 #        temp_int = int(input())
+        epoch_start_time = dt.datetime.now()
         batcher = Batcher(data, batch_size, 1, random_state)
         nb_batches = len(batcher.batches)
-        print("Batcher Done!")
+        # print("Batcher Done!")
         if freeze_entities is not None and epoch_no > freeze_entities:
             entity_embeddings.weight.requires_grad = True
 
@@ -309,7 +310,7 @@ def main(argv):
         for batch_no, (batch_start, batch_end) in enumerate(batcher.batches, 1):
 #            print('Entering batch: ', batch_no, ', enter an int:')
 #            temp_int = int(input())
-
+            batch_start_time = dt.datetime.now()
             xp_batch_np, xs_batch_np, xo_batch_np, xi_batch_np = batcher.get_batch(batch_start, batch_end)
             t = xp_batch_np.shape[0]
 
@@ -322,7 +323,7 @@ def main(argv):
 
             xt_exp_np = np.zeros_like(xp_exp_np)
             xt_exp_np[0::nb_neg * 3 + 1] = 1
-            print("start of for loop!")
+            # print("start of for loop!")
             for i in range(t):
                 a_ = rs.permutation(data.nb_entities)
                 b_ = rs.permutation(data.nb_entities)
@@ -347,7 +348,7 @@ def main(argv):
 
                 xs_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = c
                 xo_exp_np[(i * nb_neg * 3) + nb_neg * 2 + i + 1:(i * nb_neg * 3) + nb_neg * 3 + i + 1] = d
-            print("end of for loop")
+            # print("end of for loop")
             xp_batch = torch.from_numpy(xp_exp_np.astype('int64')).to(device)
             xs_batch = torch.from_numpy(xs_exp_np.astype('int64')).to(device)
             xo_batch = torch.from_numpy(xo_exp_np.astype('int64')).to(device)
@@ -388,10 +389,11 @@ def main(argv):
 
             if not is_quiet:
                 logger.info(f'Epoch {epoch_no}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
+                logger.info("Time taken for this batch: "+str(dt.datetime.now()-batch_start_time))
 
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
-
+        logger.info("Time taken for this epoch: "+str(dt.datetime.now()-epoch_start_time))
         if validate_every is not None and epoch_no % validate_every == 0:
             if 'countries' in train_path:
                 dev_auc = evaluate_on_countries('dev', data.entity_to_idx, data.predicate_to_idx, scoring_function)
