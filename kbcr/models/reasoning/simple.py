@@ -7,6 +7,7 @@ from kbcr.models import BaseLatentFeatureModel
 from kbcr.reformulators import BaseReformulator
 
 from typing import Tuple, Optional, List
+from profilehooks import profile
 
 import logging
 
@@ -27,7 +28,7 @@ class SimpleHoppy(BaseLatentFeatureModel):
         self.hops = hops
         self.is_reversed = is_reversed
         self.k = k
-
+    # @profile(immediate=True)
     def hop(self,
             rel: Tensor,
             arg1: Optional[Tensor],
@@ -49,7 +50,7 @@ class SimpleHoppy(BaseLatentFeatureModel):
         assert z_emb.shape[0] == batch_size
         assert z_emb.shape[2] == embedding_size
         return z_scores, z_emb
-
+    @profile(immediate=True)
     def score(self,
               rel: Tensor,
               arg1: Tensor,
@@ -111,7 +112,8 @@ class SimpleHoppy(BaseLatentFeatureModel):
             res = self.model.score(rel, arg1, arg2)
 
         return res
-
+    
+    @profile(immediate=True)
     def forward(self,
                 rel: Tensor,
                 arg1: Optional[Tensor],

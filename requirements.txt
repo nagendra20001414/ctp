@@ -22,3 +22,6 @@ torch-geometric
 pytest
 pytest-xdist
 pytest-forked
+pandas
+numpy
+hooksprofiler
