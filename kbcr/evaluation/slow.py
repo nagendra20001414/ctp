@@ -10,6 +10,7 @@ from kbcr.util import make_batches
 from kbcr.models import BaseLatentFeatureModel
 
 from typing import Tuple, Dict
+import time
 
 
 def evaluate_slow(entity_embeddings: nn.Embedding,
@@ -25,7 +26,7 @@ def evaluate_slow(entity_embeddings: nn.Embedding,
     xs = np.array([entity_to_index.get(s) for (s, _, _) in test_triples])
     xp = np.array([predicate_to_index.get(p) for (_, p, _) in test_triples])
     xo = np.array([entity_to_index.get(o) for (_, _, o) in test_triples])
-
+    print("New evaluation is on!")
     sp_to_o, po_to_s = {}, {}
     for s, p, o in all_triples:
         s_idx, p_idx, o_idx = entity_to_index.get(s), predicate_to_index.get(p), entity_to_index.get(o)
@@ -59,7 +60,10 @@ def evaluate_slow(entity_embeddings: nn.Embedding,
     mrr = 0.0
 
     ranks_l, ranks_r = [], []
+    all_batches_start = time.time()
+    count = 0
     for start, end in batches:
+        this_batch_start = time.time()
         batch_xs = xs[start:end]
         batch_xp = xp[start:end]
         batch_xo = xo[start:end]
@@ -116,20 +120,39 @@ def evaluate_slow(entity_embeddings: nn.Embedding,
                     scores_po[elem_idx, tmp_s_idx] = - np.infty
             # End of code for the filtered setting
 
-            rank_l = 1 + np.argsort(np.argsort(- scores_po[elem_idx, :]))[s_idx]
-            rank_r = 1 + np.argsort(np.argsort(- scores_sp[elem_idx, :]))[o_idx]
+            # rank_l = 1 + np.argsort(np.argsort(- scores_po[elem_idx, :]))[s_idx]
+            # rank_r = 1 + np.argsort(np.argsort(- scores_sp[elem_idx, :]))[o_idx]
 
-            ranks_l += [rank_l]
-            ranks_r += [rank_r]
+            # ranks_l += [rank_l]
+            # ranks_r += [rank_r]
 
-            mrr += 1.0 / rank_l
-            mrr += 1.0 / rank_r
+            # mrr += 1.0 / rank_l
+            # mrr += 1.0 / rank_r
 
+            # for n in hits_at:
+            #     hits_at_n(n, rank_l)
+
+            # for n in hits_at:
+            #     hits_at_n(n, rank_r)
+        ranks_l_batch = np.argsort(np.argsort(- scores_po, axis=1))
+        ranks_l_batch = 1 + ranks_l_batch[np.arange(len(ranks_l_batch)), batch_xs]
+        ranks_r_batch = np.argsort(np.argsort(- scores_sp, axis=1))
+        ranks_r_batch = 1 + ranks_r_batch[np.arange(len(ranks_r_batch)), batch_xo]
+        ranks_l += list(ranks_l_batch)
+        ranks_r += list(ranks_r_batch)
+        mrr += np.sum(1.0/ranks_l_batch)
+        mrr += np.sum(1.0/ranks_r_batch)
+        hit_start = time.time()
+        for rank_l, rank_r in zip(ranks_l_batch, ranks_r_batch):
             for n in hits_at:
                 hits_at_n(n, rank_l)
-
             for n in hits_at:
                 hits_at_n(n, rank_r)
+        print("time taken for hit update of this batch is:", time.time()-hit_start)
+        print("time taken for batch {} while evaluating: {}".format(count, time.time()-this_batch_start))
+        count += 1
+    print("Time taken for evaluating all batches (count: {}): {}".format(count, time.time()-all_batches_start))
+            
 
     counter = float(counter)
 

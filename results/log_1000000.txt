@@ -1,0 +1,77 @@
+nohup: ignoring input
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+./bin/yago-cli.py --train /data/yago_files/train.tsv --dev /data/yago_files/dev.tsv --test /data/yago_files/test.tsv -V 128 -b 32 --hops 2 2 2 2 -e 5 -o adagrad -l 0.1 --init random --ref-init random -i 1.0 -r linear -k 20 -R 0 --seed 1 --max-train 1000000
+{'GNTP_R': None,
+ 'N2': None,
+ 'N3': None,
+ 'batch_size': 32,
+ 'dev': '/data/yago_files/dev.tsv',
+ 'embedding_size': 20,
+ 'epochs': 5,
+ 'eval_batch_size': None,
+ 'fraction': 1.0,
+ 'freeze_entities': None,
+ 'hops': ['2', '2', '2', '2'],
+ 'index_type': 'faiss',
+ 'init': 'random',
+ 'init_size': 1.0,
+ 'input_type': 'standard',
+ 'k_max': 3,
+ 'learning_rate': 0.1,
+ 'load': None,
+ 'lower_bound': -1.0,
+ 'max_train': 1000000,
+ 'nb_negatives': 1,
+ 'nb_rules': 0,
+ 'optimizer': 'adagrad',
+ 'quiet': False,
+ 'ref_init': 'random',
+ 'reformulator': 'linear',
+ 'refresh_interval': None,
+ 'save': None,
+ 'seed': 1,
+ 'slow_eval': False,
+ 'test': '/data/yago_files/test.tsv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/data/yago_files/train.tsv',
+ 'upper_bound': 1.0,
+ 'validate_every': 128}
+INFO:yago-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  1000000
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  1500000
+entity indexes are set!
+for loop is done..!
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([127, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([1723934, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:Epoch 1/5	Batch 1/31250	Loss 0.896023
+INFO:yago-cli.py:Time taken for this batch: 0:35:57.373787
+INFO:yago-cli.py:Epoch 1/5	Batch 2/31250	Loss 0.856494
+INFO:yago-cli.py:Time taken for this batch: 0:36:45.089268
+INFO:yago-cli.py:Epoch 1/5	Batch 3/31250	Loss 0.812331
+INFO:yago-cli.py:Time taken for this batch: 0:37:36.597401
+INFO:yago-cli.py:Epoch 1/5	Batch 4/31250	Loss 0.798207
+INFO:yago-cli.py:Time taken for this batch: 0:36:40.507558
+INFO:yago-cli.py:Epoch 1/5	Batch 5/31250	Loss 0.746507
+INFO:yago-cli.py:Time taken for this batch: 0:36:45.476018

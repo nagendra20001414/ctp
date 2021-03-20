@@ -1,0 +1,249 @@
+nohup: ignoring input
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+./bin/yago-cli.py --train /data/yago_files/train.tsv --dev /data/yago_files/dev.tsv --test /data/yago_files/test.tsv -V 128 -b 32 --hops 2 2 2 2 -e 5 -o adagrad -l 0.1 --init random --ref-init random -i 1.0 -r linear -k 20 -R 0 --seed 1 --max-train 10000
+{'GNTP_R': None,
+ 'N2': None,
+ 'N3': None,
+ 'batch_size': 32,
+ 'dev': '/data/yago_files/dev.tsv',
+ 'embedding_size': 20,
+ 'epochs': 5,
+ 'eval_batch_size': None,
+ 'fraction': 1.0,
+ 'freeze_entities': None,
+ 'hops': ['2', '2', '2', '2'],
+ 'index_type': 'faiss',
+ 'init': 'random',
+ 'init_size': 1.0,
+ 'input_type': 'standard',
+ 'k_max': 3,
+ 'learning_rate': 0.1,
+ 'load': None,
+ 'lower_bound': -1.0,
+ 'max_train': 10000,
+ 'nb_negatives': 1,
+ 'nb_rules': 0,
+ 'optimizer': 'adagrad',
+ 'quiet': False,
+ 'ref_init': 'random',
+ 'reformulator': 'linear',
+ 'refresh_interval': None,
+ 'save': None,
+ 'seed': 1,
+ 'slow_eval': False,
+ 'test': '/data/yago_files/test.tsv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/data/yago_files/train.tsv',
+ 'upper_bound': 1.0,
+ 'validate_every': 128}
+INFO:yago-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  10000
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  15000
+entity indexes are set!
+for loop is done..!
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([95, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([25252, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:Epoch 1/5	Batch 1/313	Loss 0.962267
+INFO:yago-cli.py:Time taken for this batch: 0:00:08.151405
+INFO:yago-cli.py:Epoch 1/5	Batch 2/313	Loss 0.963720
+INFO:yago-cli.py:Time taken for this batch: 0:00:08.813836
+INFO:yago-cli.py:Epoch 1/5	Batch 3/313	Loss 0.925439
+INFO:yago-cli.py:Time taken for this batch: 0:00:09.156370
+INFO:yago-cli.py:Epoch 1/5	Batch 4/313	Loss 0.937243
+INFO:yago-cli.py:Time taken for this batch: 0:00:09.415923
+INFO:yago-cli.py:Epoch 1/5	Batch 5/313	Loss 0.897540
+INFO:yago-cli.py:Time taken for this batch: 0:00:09.942445
+INFO:yago-cli.py:Epoch 1/5	Batch 6/313	Loss 0.906151
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.077754
+INFO:yago-cli.py:Epoch 1/5	Batch 7/313	Loss 0.891249
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.385328
+INFO:yago-cli.py:Epoch 1/5	Batch 8/313	Loss 0.845916
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.463637
+INFO:yago-cli.py:Epoch 1/5	Batch 9/313	Loss 0.882421
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.517598
+INFO:yago-cli.py:Epoch 1/5	Batch 10/313	Loss 0.863199
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.594034
+INFO:yago-cli.py:Epoch 1/5	Batch 11/313	Loss 0.853171
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.680847
+INFO:yago-cli.py:Epoch 1/5	Batch 12/313	Loss 0.846893
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.688500
+INFO:yago-cli.py:Epoch 1/5	Batch 13/313	Loss 0.857475
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.044007
+INFO:yago-cli.py:Epoch 1/5	Batch 14/313	Loss 0.856098
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.988233
+INFO:yago-cli.py:Epoch 1/5	Batch 15/313	Loss 0.855463
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.790739
+INFO:yago-cli.py:Epoch 1/5	Batch 16/313	Loss 0.850382
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.653133
+INFO:yago-cli.py:Epoch 1/5	Batch 17/313	Loss 0.863572
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.874019
+INFO:yago-cli.py:Epoch 1/5	Batch 18/313	Loss 0.844448
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.788720
+INFO:yago-cli.py:Epoch 1/5	Batch 19/313	Loss 0.815067
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.948770
+INFO:yago-cli.py:Epoch 1/5	Batch 20/313	Loss 0.865412
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.027751
+INFO:yago-cli.py:Epoch 1/5	Batch 21/313	Loss 0.857045
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.075207
+INFO:yago-cli.py:Epoch 1/5	Batch 22/313	Loss 0.862048
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.097865
+INFO:yago-cli.py:Epoch 1/5	Batch 23/313	Loss 0.842048
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.198485
+INFO:yago-cli.py:Epoch 1/5	Batch 24/313	Loss 0.827068
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.911294
+INFO:yago-cli.py:Epoch 1/5	Batch 25/313	Loss 0.849731
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.271718
+INFO:yago-cli.py:Epoch 1/5	Batch 26/313	Loss 0.825786
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.276206
+INFO:yago-cli.py:Epoch 1/5	Batch 27/313	Loss 0.866571
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.332407
+INFO:yago-cli.py:Epoch 1/5	Batch 28/313	Loss 0.849701
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.194476
+INFO:yago-cli.py:Epoch 1/5	Batch 29/313	Loss 0.866562
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.111206
+INFO:yago-cli.py:Epoch 1/5	Batch 30/313	Loss 0.862075
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.283672
+INFO:yago-cli.py:Epoch 1/5	Batch 31/313	Loss 0.862685
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.227897
+INFO:yago-cli.py:Epoch 1/5	Batch 32/313	Loss 0.854779
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.048020
+INFO:yago-cli.py:Epoch 1/5	Batch 33/313	Loss 0.883985
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.337533
+INFO:yago-cli.py:Epoch 1/5	Batch 34/313	Loss 0.835473
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.268644
+INFO:yago-cli.py:Epoch 1/5	Batch 35/313	Loss 0.816421
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.980689
+INFO:yago-cli.py:Epoch 1/5	Batch 36/313	Loss 0.844557
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.260373
+INFO:yago-cli.py:Epoch 1/5	Batch 37/313	Loss 0.834065
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.256378
+INFO:yago-cli.py:Epoch 1/5	Batch 38/313	Loss 0.828466
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.039178
+INFO:yago-cli.py:Epoch 1/5	Batch 39/313	Loss 0.851546
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.196896
+INFO:yago-cli.py:Epoch 1/5	Batch 40/313	Loss 0.822979
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.146452
+INFO:yago-cli.py:Epoch 1/5	Batch 41/313	Loss 0.846152
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.397299
+INFO:yago-cli.py:Epoch 1/5	Batch 42/313	Loss 0.881115
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.274577
+INFO:yago-cli.py:Epoch 1/5	Batch 43/313	Loss 0.856119
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.400157
+INFO:yago-cli.py:Epoch 1/5	Batch 44/313	Loss 0.838196
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.075967
+INFO:yago-cli.py:Epoch 1/5	Batch 45/313	Loss 0.842226
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.429526
+INFO:yago-cli.py:Epoch 1/5	Batch 46/313	Loss 0.843371
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.315987
+INFO:yago-cli.py:Epoch 1/5	Batch 47/313	Loss 0.828928
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.478094
+INFO:yago-cli.py:Epoch 1/5	Batch 48/313	Loss 0.861744
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.371447
+INFO:yago-cli.py:Epoch 1/5	Batch 49/313	Loss 0.877741
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.477147
+INFO:yago-cli.py:Epoch 1/5	Batch 50/313	Loss 0.823991
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.393540
+INFO:yago-cli.py:Epoch 1/5	Batch 51/313	Loss 0.813435
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.095331
+INFO:yago-cli.py:Epoch 1/5	Batch 52/313	Loss 0.844832
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.198461
+INFO:yago-cli.py:Epoch 1/5	Batch 53/313	Loss 0.845326
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.343888
+INFO:yago-cli.py:Epoch 1/5	Batch 54/313	Loss 0.875263
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.182030
+INFO:yago-cli.py:Epoch 1/5	Batch 55/313	Loss 0.825170
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.178609
+INFO:yago-cli.py:Epoch 1/5	Batch 56/313	Loss 0.824395
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.914613
+INFO:yago-cli.py:Epoch 1/5	Batch 57/313	Loss 0.843363
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.262712
+INFO:yago-cli.py:Epoch 1/5	Batch 58/313	Loss 0.845111
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.915664
+INFO:yago-cli.py:Epoch 1/5	Batch 59/313	Loss 0.809246
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.270924
+INFO:yago-cli.py:Epoch 1/5	Batch 60/313	Loss 0.845937
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.090076
+INFO:yago-cli.py:Epoch 1/5	Batch 61/313	Loss 0.824471
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.344055
+INFO:yago-cli.py:Epoch 1/5	Batch 62/313	Loss 0.813955
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.501169
+INFO:yago-cli.py:Epoch 1/5	Batch 63/313	Loss 0.841560
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.499242
+INFO:yago-cli.py:Epoch 1/5	Batch 64/313	Loss 0.835800
+INFO:yago-cli.py:Time taken for this batch: 0:00:10.943583
+INFO:yago-cli.py:Epoch 1/5	Batch 65/313	Loss 0.831653
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.264389
+INFO:yago-cli.py:Epoch 1/5	Batch 66/313	Loss 0.836890
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.098788
+INFO:yago-cli.py:Epoch 1/5	Batch 67/313	Loss 0.817960
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.328638
+INFO:yago-cli.py:Epoch 1/5	Batch 68/313	Loss 0.848595
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.367291
+INFO:yago-cli.py:Epoch 1/5	Batch 69/313	Loss 0.855773
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.325445
+INFO:yago-cli.py:Epoch 1/5	Batch 70/313	Loss 0.856980
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.393660
+INFO:yago-cli.py:Epoch 1/5	Batch 71/313	Loss 0.833581
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.201553
+INFO:yago-cli.py:Epoch 1/5	Batch 72/313	Loss 0.813520
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.423631
+INFO:yago-cli.py:Epoch 1/5	Batch 73/313	Loss 0.797762
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.453153
+INFO:yago-cli.py:Epoch 1/5	Batch 74/313	Loss 0.820144
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.248089
+INFO:yago-cli.py:Epoch 1/5	Batch 75/313	Loss 0.825145
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.609802
+INFO:yago-cli.py:Epoch 1/5	Batch 76/313	Loss 0.845826
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.023278
+INFO:yago-cli.py:Epoch 1/5	Batch 77/313	Loss 0.830205
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.298622
+INFO:yago-cli.py:Epoch 1/5	Batch 78/313	Loss 0.822241
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.483687
+INFO:yago-cli.py:Epoch 1/5	Batch 79/313	Loss 0.844250
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.358036
+INFO:yago-cli.py:Epoch 1/5	Batch 80/313	Loss 0.869289
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.278248
+INFO:yago-cli.py:Epoch 1/5	Batch 81/313	Loss 0.821670
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.339658
+INFO:yago-cli.py:Epoch 1/5	Batch 82/313	Loss 0.834883
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.373794
+INFO:yago-cli.py:Epoch 1/5	Batch 83/313	Loss 0.801337
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.448072
+INFO:yago-cli.py:Epoch 1/5	Batch 84/313	Loss 0.831493
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.268111
+INFO:yago-cli.py:Epoch 1/5	Batch 85/313	Loss 0.836390
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.289792
+INFO:yago-cli.py:Epoch 1/5	Batch 86/313	Loss 0.868623
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.242456
+INFO:yago-cli.py:Epoch 1/5	Batch 87/313	Loss 0.838524
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.573367
+INFO:yago-cli.py:Epoch 1/5	Batch 88/313	Loss 0.813323
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.198414
+INFO:yago-cli.py:Epoch 1/5	Batch 89/313	Loss 0.826725
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.300166
+INFO:yago-cli.py:Epoch 1/5	Batch 90/313	Loss 0.840328
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.552438
+INFO:yago-cli.py:Epoch 1/5	Batch 91/313	Loss 0.846295
+INFO:yago-cli.py:Time taken for this batch: 0:00:11.210169

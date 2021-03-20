@@ -1,0 +1,57 @@
+nohup: ignoring input
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+./bin/yago-cli.py --train /home/baadalvm/data/fb15k-237/train.csv --test /home/baadalvm/data/fb15k-237/test.csv --dev /home/baadalvm/data/fb15k-237/valid.csv -e 1 -b 1000000 --seed 1 --eval-batch-size 100
+{'GNTP_R': None,
+ 'N2': None,
+ 'N3': None,
+ 'batch_size': 1000000,
+ 'dev': '/home/baadalvm/data/fb15k-237/valid.csv',
+ 'embedding_size': 20,
+ 'epochs': 1,
+ 'eval_batch_size': 100,
+ 'fraction': 1.0,
+ 'freeze_entities': None,
+ 'hops': ['1', '2'],
+ 'index_type': 'faiss',
+ 'init': 'uniform',
+ 'init_size': 1.0,
+ 'input_type': 'standard',
+ 'k_max': 3,
+ 'learning_rate': 0.001,
+ 'load': None,
+ 'lower_bound': -1.0,
+ 'max_train': None,
+ 'nb_negatives': 1,
+ 'nb_rules': 4,
+ 'optimizer': 'adam',
+ 'quiet': False,
+ 'ref_init': 'uniform',
+ 'reformulator': 'linear',
+ 'refresh_interval': None,
+ 'save': None,
+ 'seed': 1,
+ 'slow_eval': False,
+ 'test': '/home/baadalvm/data/fb15k-237/test.csv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/data/fb15k-237/train.csv',
+ 'upper_bound': 1.0,
+ 'validate_every': None}
+INFO:yago-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  272115
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  310116
+entity indexes are set!
+for loop is done..!
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([14541, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([237, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu

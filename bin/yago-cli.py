@@ -183,10 +183,9 @@ def main(argv):
 
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
     logger.info(f'Device: {device}')
-
+    print("hello!")
     if torch.cuda.is_available():
         torch.set_default_tensor_type(torch.cuda.FloatTensor)
-
     data = Data(train_path=train_path, dev_path=dev_path, test_path=test_path,
                 test_i_path=test_i_path, test_ii_path=test_ii_path, input_type=input_type, fraction=fraction, maxTrain=maxTrain)
 
@@ -416,7 +415,9 @@ def main(argv):
         test_auc = evaluate_on_countries('test', data.entity_to_idx, data.predicate_to_idx, scoring_function)
         print('Last AUC-PR (test) {:.4f}'.format(test_auc))
     else:
+        print("this is before for loop: line 418")
         for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
+            print("Evaluating in for loop!")
             metrics = evaluate_(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                 test_triples=triples, all_triples=data.all_triples,
                                 entity_to_index=data.entity_to_idx, predicate_to_index=data.predicate_to_idx,
@@ -427,7 +428,6 @@ def main(argv):
         torch.save(model.state_dict(), save_path)
 
     logger.info("Training finished")
-
 
 if __name__ == '__main__':
     logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)

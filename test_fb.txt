@@ -1,0 +1,115 @@
+nohup: ignoring input
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+./bin/yago-cli.py --train /home/baadalvm/data/fb15k-237/train.csv --test /home/baadalvm/data/fb15k-237/test.csv --dev /home/baadalvm/data/fb15k-237/valid.csv -e 1 -b 10000 --seed 1
+{'GNTP_R': None,
+ 'N2': None,
+ 'N3': None,
+ 'batch_size': 10000,
+ 'dev': '/home/baadalvm/data/fb15k-237/valid.csv',
+ 'embedding_size': 20,
+ 'epochs': 1,
+ 'eval_batch_size': None,
+ 'fraction': 1.0,
+ 'freeze_entities': None,
+ 'hops': ['1', '2'],
+ 'index_type': 'faiss',
+ 'init': 'uniform',
+ 'init_size': 1.0,
+ 'input_type': 'standard',
+ 'k_max': 3,
+ 'learning_rate': 0.001,
+ 'load': None,
+ 'lower_bound': -1.0,
+ 'max_train': None,
+ 'nb_negatives': 1,
+ 'nb_rules': 4,
+ 'optimizer': 'adam',
+ 'quiet': False,
+ 'ref_init': 'uniform',
+ 'reformulator': 'linear',
+ 'refresh_interval': None,
+ 'save': None,
+ 'seed': 1,
+ 'slow_eval': False,
+ 'test': '/home/baadalvm/data/fb15k-237/test.csv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/data/fb15k-237/train.csv',
+ 'upper_bound': 1.0,
+ 'validate_every': None}
+INFO:yago-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  272115
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  310116
+entity indexes are set!
+for loop is done..!
+INFO:yago-cli.py:	torch.Size([237, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([14541, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:Epoch 1/1	Batch 1/28	Loss 1.611375
+INFO:yago-cli.py:Time taken for this batch: 0:02:31.160073
+INFO:yago-cli.py:Epoch 1/1	Batch 2/28	Loss 1.605350
+INFO:yago-cli.py:Time taken for this batch: 0:02:33.194709
+INFO:yago-cli.py:Epoch 1/1	Batch 3/28	Loss 1.595840
+INFO:yago-cli.py:Time taken for this batch: 0:02:33.960619
+INFO:yago-cli.py:Epoch 1/1	Batch 4/28	Loss 1.596423
+INFO:yago-cli.py:Time taken for this batch: 0:02:22.870049
+INFO:yago-cli.py:Epoch 1/1	Batch 5/28	Loss 1.589802
+INFO:yago-cli.py:Time taken for this batch: 0:02:17.423654
+INFO:yago-cli.py:Epoch 1/1	Batch 6/28	Loss 1.580984
+INFO:yago-cli.py:Time taken for this batch: 0:02:18.333898
+INFO:yago-cli.py:Epoch 1/1	Batch 7/28	Loss 1.579948
+INFO:yago-cli.py:Time taken for this batch: 0:02:29.519946
+INFO:yago-cli.py:Epoch 1/1	Batch 8/28	Loss 1.574961
+INFO:yago-cli.py:Time taken for this batch: 0:02:21.963379
+INFO:yago-cli.py:Epoch 1/1	Batch 9/28	Loss 1.569251
+INFO:yago-cli.py:Time taken for this batch: 0:02:39.185575
+INFO:yago-cli.py:Epoch 1/1	Batch 10/28	Loss 1.565904
+INFO:yago-cli.py:Time taken for this batch: 0:02:39.794562
+INFO:yago-cli.py:Epoch 1/1	Batch 11/28	Loss 1.555016
+INFO:yago-cli.py:Time taken for this batch: 0:02:24.880277
+INFO:yago-cli.py:Epoch 1/1	Batch 12/28	Loss 1.549452
+INFO:yago-cli.py:Time taken for this batch: 0:02:34.765452
+INFO:yago-cli.py:Epoch 1/1	Batch 13/28	Loss 1.545194
+INFO:yago-cli.py:Time taken for this batch: 0:02:30.471998
+INFO:yago-cli.py:Epoch 1/1	Batch 14/28	Loss 1.543190
+INFO:yago-cli.py:Time taken for this batch: 0:02:39.275478
+INFO:yago-cli.py:Epoch 1/1	Batch 15/28	Loss 1.532996
+INFO:yago-cli.py:Time taken for this batch: 0:02:41.744002
+INFO:yago-cli.py:Epoch 1/1	Batch 16/28	Loss 1.530944
+INFO:yago-cli.py:Time taken for this batch: 0:02:29.186008
+INFO:yago-cli.py:Epoch 1/1	Batch 17/28	Loss 1.523560
+INFO:yago-cli.py:Time taken for this batch: 0:02:26.808723
+INFO:yago-cli.py:Epoch 1/1	Batch 18/28	Loss 1.517040
+INFO:yago-cli.py:Time taken for this batch: 0:02:45.747198
+INFO:yago-cli.py:Epoch 1/1	Batch 19/28	Loss 1.514242
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.460526
+INFO:yago-cli.py:Epoch 1/1	Batch 20/28	Loss 1.513280
+INFO:yago-cli.py:Time taken for this batch: 0:02:47.390311
+INFO:yago-cli.py:Epoch 1/1	Batch 21/28	Loss 1.505935
+INFO:yago-cli.py:Time taken for this batch: 0:02:48.445204
+INFO:yago-cli.py:Epoch 1/1	Batch 22/28	Loss 1.499950
+INFO:yago-cli.py:Time taken for this batch: 0:02:49.395403
+INFO:yago-cli.py:Epoch 1/1	Batch 23/28	Loss 1.494237
+INFO:yago-cli.py:Time taken for this batch: 0:02:47.368059
+INFO:yago-cli.py:Epoch 1/1	Batch 24/28	Loss 1.492678
+INFO:yago-cli.py:Time taken for this batch: 0:02:32.017995
+INFO:yago-cli.py:Epoch 1/1	Batch 25/28	Loss 1.482603
+INFO:yago-cli.py:Time taken for this batch: 0:02:43.312106
+INFO:yago-cli.py:Epoch 1/1	Batch 26/28	Loss 1.478261
+INFO:yago-cli.py:Time taken for this batch: 0:02:33.092179
+INFO:yago-cli.py:Epoch 1/1	Batch 27/28	Loss 1.477427
+INFO:yago-cli.py:Time taken for this batch: 0:02:52.191995
+INFO:yago-cli.py:Epoch 1/1	Batch 28/28	Loss 1.472901
+INFO:yago-cli.py:Time taken for this batch: 0:02:36.724380
+INFO:yago-cli.py:Epoch 1/1	Loss 1.5392 ± 0.0420
+INFO:yago-cli.py:Time taken for this epoch: 1:12:36.709779

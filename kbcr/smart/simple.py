@@ -5,7 +5,7 @@ from torch import nn, Tensor
 
 from kbcr.smart import BaseSmartModel
 from kbcr.reformulators import BaseReformulator
-
+from profilehooks import profile
 from typing import Tuple, Optional, List
 
 import logging
@@ -49,6 +49,7 @@ class SimpleHoppy(BaseSmartModel):
         # [B, K], [B, K, E]
         return res
 
+    @profile(immediate=True)
     def score(self,
               rel: Tensor,
               arg1: Tensor,
@@ -128,6 +129,7 @@ class SimpleHoppy(BaseSmartModel):
 
         return global_res
 
+    @profile(immediate=True)
     def forward(self,
                 rel: Tensor,
                 arg1: Optional[Tensor],
@@ -271,6 +273,7 @@ class SimpleHoppy(BaseSmartModel):
 
         return global_scores_sp, global_scores_po
 
+    @profile(immediate=True)
     def forward_(self,
                  rel: Tensor,
                  arg1: Optional[Tensor],
@@ -406,6 +409,7 @@ class SimpleHoppy(BaseSmartModel):
 
         return (global_scores_sp, None), (global_scores_po, None)
 
+    @profile(immediate=True)
     def forward__(self,
                   rel: Tensor,
                   arg1: Optional[Tensor],

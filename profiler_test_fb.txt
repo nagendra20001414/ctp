@@ -1,0 +1,2363 @@
+nohup: ignoring input
+Your CPU supports instructions that this binary was not compiled to use: SSE4.1 SSE4.2 AVX
+For maximum performance, you can install NMSLIB from sources 
+pip install --no-binary :all: nmslib
+./bin/yago-cli.py --train /home/baadalvm/data/fb15k-237/train.csv --test /home/baadalvm/data/fb15k-237/test.csv --dev /home/baadalvm/data/fb15k-237/valid.csv -e 1 -b 10000 --seed 1 --eval-batch-size 10
+{'GNTP_R': None,
+ 'N2': None,
+ 'N3': None,
+ 'batch_size': 10000,
+ 'dev': '/home/baadalvm/data/fb15k-237/valid.csv',
+ 'embedding_size': 20,
+ 'epochs': 1,
+ 'eval_batch_size': 10,
+ 'fraction': 1.0,
+ 'freeze_entities': None,
+ 'hops': ['1', '2'],
+ 'index_type': 'faiss',
+ 'init': 'uniform',
+ 'init_size': 1.0,
+ 'input_type': 'standard',
+ 'k_max': 3,
+ 'learning_rate': 0.001,
+ 'load': None,
+ 'lower_bound': -1.0,
+ 'max_train': None,
+ 'nb_negatives': 1,
+ 'nb_rules': 4,
+ 'optimizer': 'adam',
+ 'quiet': False,
+ 'ref_init': 'uniform',
+ 'reformulator': 'linear',
+ 'refresh_interval': None,
+ 'save': None,
+ 'seed': 1,
+ 'slow_eval': False,
+ 'test': '/home/baadalvm/data/fb15k-237/test.csv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/data/fb15k-237/train.csv',
+ 'upper_bound': 1.0,
+ 'validate_every': None}
+INFO:yago-cli.py:Device: cpu
+hello!
+triples reading and predicates.. Done!
+size of training triples is  272115
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  310116
+entity indexes are set!
+for loop is done..!
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20, 20])	cpu
+INFO:yago-cli.py:	torch.Size([237, 20])	cpu
+INFO:yago-cli.py:	torch.Size([20])	cpu
+INFO:yago-cli.py:	torch.Size([14541, 20])	cpu
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 143.090 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.019    0.019  143.090  143.090 simple.py:52(score)
+        3    0.075    0.025  142.635   47.545 kb.py:120(neighbors)
+        9  135.155   15.017  135.156   15.017 nms.py:31(build)
+        2    0.027    0.013   97.087   48.543 kb.py:75(score)
+        1    0.000    0.000   45.971   45.971 simple.py:29(hop)
+        1    0.010    0.010   45.971   45.971 kb.py:154(forward)
+        3    7.102    2.367    7.202    2.401 nms.py:51(query)
+       18    0.315    0.018    0.315    0.018 {built-in method cat}
+        3    0.107    0.036    0.115    0.038 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.109    0.007 module.py:715(_call_impl)
+       13    0.000    0.000    0.101    0.008 sparse.py:123(forward)
+       13    0.000    0.000    0.101    0.008 functional.py:1774(embedding)
+       13    0.101    0.008    0.101    0.008 {built-in method embedding}
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+       15    0.053    0.004    0.053    0.004 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.047    0.016 kb.py:68(generate_facts)
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.007    0.004 base.py:142(forward)
+        2    0.000    0.000    0.007    0.004 base.py:143(<listcomp>)
+        3    0.000    0.000    0.007    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.007    0.002 functional.py:1669(linear)
+        3    0.007    0.002    0.007    0.002 {built-in method addmm}
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        1    0.001    0.001    0.001    0.001 {built-in method min}
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.001    0.000 tensor.py:506(__rsub__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 1/28	Loss 1.611568
+INFO:yago-cli.py:Time taken for this batch: 0:02:37.352295
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 144.288 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  144.288  144.288 simple.py:52(score)
+        3    0.075    0.025  143.826   47.942 kb.py:120(neighbors)
+        9  136.575   15.175  136.577   15.175 nms.py:31(build)
+        2    0.017    0.009   98.072   49.036 kb.py:75(score)
+        1    0.000    0.000   46.197   46.197 simple.py:29(hop)
+        1    0.008    0.008   46.197   46.197 kb.py:154(forward)
+        3    6.852    2.284    6.962    2.321 nms.py:51(query)
+       18    0.381    0.021    0.381    0.021 {built-in method cat}
+        3    0.099    0.033    0.105    0.035 gaussian.py:28(__call__)
+        3    0.102    0.034    0.102    0.034 {built-in method numpy.array}
+    18/15    0.001    0.000    0.088    0.006 module.py:715(_call_impl)
+       13    0.000    0.000    0.083    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.083    0.006 functional.py:1774(embedding)
+       13    0.082    0.006    0.082    0.006 {built-in method embedding}
+       15    0.046    0.003    0.046    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.023    0.008 kb.py:68(generate_facts)
+        3    0.000    0.000    0.011    0.004 kb.py:62(to_tnsr)
+        3    0.011    0.004    0.011    0.004 {method 'type' of 'torch._C._TensorBase' objects}
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 2/28	Loss 1.605321
+INFO:yago-cli.py:Time taken for this batch: 0:02:38.406048
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 145.987 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  145.987  145.987 simple.py:52(score)
+        3    0.074    0.025  145.579   48.526 kb.py:120(neighbors)
+        9  138.225   15.358  138.227   15.359 nms.py:31(build)
+        2    0.016    0.008   98.412   49.206 kb.py:75(score)
+        1    0.000    0.000   47.558   47.558 simple.py:29(hop)
+        1    0.012    0.012   47.557   47.557 kb.py:154(forward)
+        3    7.048    2.349    7.147    2.382 nms.py:51(query)
+       18    0.257    0.014    0.257    0.014 {built-in method cat}
+        3    0.098    0.033    0.104    0.035 gaussian.py:28(__call__)
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.090    0.006 module.py:715(_call_impl)
+       13    0.000    0.000    0.086    0.007 sparse.py:123(forward)
+       13    0.000    0.000    0.086    0.007 functional.py:1774(embedding)
+       13    0.086    0.007    0.086    0.007 {built-in method embedding}
+       15    0.043    0.003    0.043    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.027    0.009 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 3/28	Loss 1.595338
+INFO:yago-cli.py:Time taken for this batch: 0:02:40.199401
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 146.394 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  146.394  146.394 simple.py:52(score)
+        3    0.074    0.025  146.051   48.684 kb.py:120(neighbors)
+        9  138.514   15.390  138.516   15.391 nms.py:31(build)
+        2    0.010    0.005   99.190   49.595 kb.py:75(score)
+        1    0.000    0.000   47.187   47.187 simple.py:29(hop)
+        1    0.004    0.004   47.187   47.187 kb.py:154(forward)
+        3    7.236    2.412    7.335    2.445 nms.py:51(query)
+       18    0.242    0.013    0.242    0.013 {built-in method cat}
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+        3    0.082    0.027    0.088    0.029 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.078    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.074    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.074    0.006 functional.py:1774(embedding)
+       13    0.074    0.006    0.074    0.006 {built-in method embedding}
+       15    0.030    0.002    0.030    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.021    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 4/28	Loss 1.596844
+INFO:yago-cli.py:Time taken for this batch: 0:02:40.511233
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 140.973 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008  140.973  140.973 simple.py:52(score)
+        3    0.068    0.023  140.639   46.880 kb.py:120(neighbors)
+        9  134.007   14.890  134.009   14.890 nms.py:31(build)
+        2    0.010    0.005   93.207   46.603 kb.py:75(score)
+        1    0.000    0.000   47.750   47.750 simple.py:29(hop)
+        1    0.006    0.006   47.750   47.750 kb.py:154(forward)
+        3    6.347    2.116    6.441    2.147 nms.py:51(query)
+       18    0.268    0.015    0.268    0.015 {built-in method cat}
+        3    0.087    0.029    0.087    0.029 {built-in method numpy.array}
+    18/15    0.001    0.000    0.068    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.064    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.064    0.005 functional.py:1774(embedding)
+       13    0.063    0.005    0.063    0.005 {built-in method embedding}
+        3    0.052    0.017    0.059    0.020 gaussian.py:28(__call__)
+       15    0.027    0.002    0.027    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.025    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 5/28	Loss 1.589899
+INFO:yago-cli.py:Time taken for this batch: 0:02:34.866717
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 148.368 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  148.368  148.368 simple.py:52(score)
+        3    0.073    0.024  148.064   49.355 kb.py:120(neighbors)
+        9  140.606   15.623  140.607   15.623 nms.py:31(build)
+        2    0.020    0.010  100.175   50.087 kb.py:75(score)
+        1    0.000    0.000   48.174   48.174 simple.py:29(hop)
+        1    0.006    0.006   48.174   48.174 kb.py:154(forward)
+        3    7.138    2.379    7.236    2.412 nms.py:51(query)
+       18    0.241    0.013    0.241    0.013 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.068    0.005 module.py:715(_call_impl)
+        3    0.060    0.020    0.067    0.022 gaussian.py:28(__call__)
+       13    0.000    0.000    0.062    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.062    0.005 functional.py:1774(embedding)
+       13    0.062    0.005    0.062    0.005 {built-in method embedding}
+       15    0.034    0.002    0.034    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.026    0.009 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.005    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 6/28	Loss 1.582878
+INFO:yago-cli.py:Time taken for this batch: 0:02:42.337575
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 148.694 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  148.694  148.694 simple.py:52(score)
+        3    0.073    0.024  148.385   49.462 kb.py:120(neighbors)
+        9  141.200   15.689  141.201   15.689 nms.py:31(build)
+        2    0.010    0.005  100.610   50.305 kb.py:75(score)
+        1    0.000    0.000   48.065   48.065 simple.py:29(hop)
+        1    0.008    0.008   48.065   48.065 kb.py:154(forward)
+        3    6.873    2.291    6.972    2.324 nms.py:51(query)
+       18    0.237    0.013    0.237    0.013 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.072    0.005 module.py:715(_call_impl)
+        3    0.062    0.021    0.069    0.023 gaussian.py:28(__call__)
+       13    0.000    0.000    0.067    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.067    0.005 functional.py:1774(embedding)
+       13    0.067    0.005    0.067    0.005 {built-in method embedding}
+       15    0.034    0.002    0.034    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.021    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.006    0.002    0.006    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 7/28	Loss 1.578704
+INFO:yago-cli.py:Time taken for this batch: 0:02:42.879819
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 150.384 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  150.384  150.384 simple.py:52(score)
+        3    0.073    0.024  150.100   50.033 kb.py:120(neighbors)
+        9  142.664   15.852  142.665   15.852 nms.py:31(build)
+        2    0.015    0.008  101.628   50.814 kb.py:75(score)
+        1    0.000    0.000   48.739   48.739 simple.py:29(hop)
+        1    0.006    0.006   48.739   48.739 kb.py:154(forward)
+        3    7.143    2.381    7.242    2.414 nms.py:51(query)
+       18    0.191    0.011    0.191    0.011 {built-in method cat}
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+        3    0.071    0.024    0.077    0.026 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.066    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.062    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.062    0.005 functional.py:1774(embedding)
+       13    0.062    0.005    0.062    0.005 {built-in method embedding}
+       15    0.029    0.002    0.029    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.020    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 8/28	Loss 1.573621
+INFO:yago-cli.py:Time taken for this batch: 0:02:44.724477
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 150.947 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  150.947  150.947 simple.py:52(score)
+        3    0.073    0.024  150.634   50.211 kb.py:120(neighbors)
+        9  143.305   15.923  143.306   15.923 nms.py:31(build)
+        2    0.010    0.005  101.839   50.920 kb.py:75(score)
+        1    0.000    0.000   49.090   49.090 simple.py:29(hop)
+        1    0.006    0.006   49.090   49.090 kb.py:154(forward)
+        3    7.032    2.344    7.130    2.377 nms.py:51(query)
+       18    0.222    0.012    0.222    0.012 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.079    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.075    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.075    0.006 functional.py:1774(embedding)
+       13    0.075    0.006    0.075    0.006 {built-in method embedding}
+        3    0.062    0.021    0.068    0.023 gaussian.py:28(__call__)
+       15    0.028    0.002    0.028    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.022    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        4    0.000    0.000    0.008    0.002 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.008    0.002 sparse.py:92(__init__)
+        4    0.006    0.002    0.006    0.002 parameter.py:23(__new__)
+        3    0.004    0.001    0.004    0.001 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 9/28	Loss 1.569617
+INFO:yago-cli.py:Time taken for this batch: 0:02:45.053746
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 151.416 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  151.416  151.416 simple.py:52(score)
+        3    0.074    0.025  151.113   50.371 kb.py:120(neighbors)
+        9  143.674   15.964  143.675   15.964 nms.py:31(build)
+        2    0.014    0.007  102.371   51.186 kb.py:75(score)
+        1    0.000    0.000   49.026   49.026 simple.py:29(hop)
+        1    0.016    0.016   49.025   49.025 kb.py:154(forward)
+        3    7.107    2.369    7.207    2.402 nms.py:51(query)
+       18    0.245    0.014    0.245    0.014 {built-in method cat}
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+        3    0.061    0.020    0.068    0.023 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.067    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.062    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.062    0.005 functional.py:1774(embedding)
+       13    0.062    0.005    0.062    0.005 {built-in method embedding}
+       15    0.032    0.002    0.032    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.026    0.009 kb.py:68(generate_facts)
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 10/28	Loss 1.566097
+INFO:yago-cli.py:Time taken for this batch: 0:02:45.531001
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 152.168 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  152.168  152.168 simple.py:52(score)
+        3    0.075    0.025  151.856   50.619 kb.py:120(neighbors)
+        9  144.488   16.054  144.489   16.054 nms.py:31(build)
+        2    0.015    0.007  103.151   51.576 kb.py:75(score)
+        1    0.000    0.000   49.000   49.000 simple.py:29(hop)
+        1    0.008    0.008   49.000   49.000 kb.py:154(forward)
+        3    7.038    2.346    7.145    2.382 nms.py:51(query)
+       18    0.226    0.013    0.226    0.013 {built-in method cat}
+        3    0.098    0.033    0.098    0.033 {built-in method numpy.array}
+        3    0.075    0.025    0.082    0.027 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.074    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.069    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.069    0.005 functional.py:1774(embedding)
+       13    0.069    0.005    0.069    0.005 {built-in method embedding}
+       15    0.037    0.002    0.037    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.021    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {method 'float' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 11/28	Loss 1.556160
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.187353
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 152.229 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  152.229  152.229 simple.py:52(score)
+        3    0.073    0.024  151.935   50.645 kb.py:120(neighbors)
+        9  144.579   16.064  144.581   16.065 nms.py:31(build)
+        2    0.012    0.006  102.994   51.497 kb.py:75(score)
+        1    0.000    0.000   49.218   49.218 simple.py:29(hop)
+        1    0.006    0.006   49.218   49.218 kb.py:154(forward)
+        3    7.046    2.349    7.145    2.382 nms.py:51(query)
+       18    0.223    0.012    0.223    0.012 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.078    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.073    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.073    0.006 functional.py:1774(embedding)
+       13    0.073    0.006    0.073    0.006 {built-in method embedding}
+        3    0.057    0.019    0.064    0.021 gaussian.py:28(__call__)
+       15    0.030    0.002    0.030    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.023    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.004    0.001    0.004    0.001 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 12/28	Loss 1.550362
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.476928
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 152.708 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  152.708  152.708 simple.py:52(score)
+        3    0.078    0.026  152.384   50.795 kb.py:120(neighbors)
+        9  145.097   16.122  145.098   16.122 nms.py:31(build)
+        2    0.020    0.010  103.554   51.777 kb.py:75(score)
+        1    0.000    0.000   49.136   49.136 simple.py:29(hop)
+        1    0.006    0.006   49.136   49.136 kb.py:154(forward)
+        3    6.969    2.323    7.068    2.356 nms.py:51(query)
+       18    0.231    0.013    0.231    0.013 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.085    0.006 module.py:715(_call_impl)
+       13    0.000    0.000    0.080    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.080    0.006 functional.py:1774(embedding)
+       13    0.080    0.006    0.080    0.006 {built-in method embedding}
+        3    0.064    0.021    0.070    0.023 gaussian.py:28(__call__)
+       15    0.035    0.002    0.035    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.024    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 13/28	Loss 1.545417
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.770593
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 152.695 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  152.695  152.695 simple.py:52(score)
+        3    0.073    0.024  152.326   50.775 kb.py:120(neighbors)
+        9  144.876   16.097  144.878   16.098 nms.py:31(build)
+        2    0.012    0.006  103.075   51.537 kb.py:75(score)
+        1    0.000    0.000   49.601   49.601 simple.py:29(hop)
+        1    0.006    0.006   49.601   49.601 kb.py:154(forward)
+        3    7.116    2.372    7.214    2.405 nms.py:51(query)
+       18    0.301    0.017    0.301    0.017 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.077    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.070    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.070    0.005 functional.py:1774(embedding)
+       13    0.070    0.005    0.070    0.005 {built-in method embedding}
+        3    0.061    0.020    0.068    0.023 gaussian.py:28(__call__)
+       15    0.034    0.002    0.034    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.028    0.009 kb.py:68(generate_facts)
+        3    0.000    0.000    0.015    0.005 kb.py:62(to_tnsr)
+        3    0.015    0.005    0.015    0.005 {method 'type' of 'torch._C._TensorBase' objects}
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.006    0.003 base.py:142(forward)
+        2    0.000    0.000    0.006    0.003 base.py:143(<listcomp>)
+        3    0.000    0.000    0.006    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.006    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 14/28	Loss 1.543370
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.869324
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 153.819 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  153.819  153.819 simple.py:52(score)
+        3    0.073    0.024  153.351   51.117 kb.py:120(neighbors)
+        9  145.896   16.211  145.897   16.211 nms.py:31(build)
+        2    0.034    0.017  103.625   51.813 kb.py:75(score)
+        1    0.000    0.000   50.174   50.174 simple.py:29(hop)
+        1    0.008    0.008   50.174   50.174 kb.py:154(forward)
+        3    7.119    2.373    7.217    2.406 nms.py:51(query)
+       18    0.312    0.017    0.312    0.017 {built-in method cat}
+        3    0.105    0.035    0.112    0.037 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.106    0.007 module.py:715(_call_impl)
+       13    0.000    0.000    0.100    0.008 sparse.py:123(forward)
+       13    0.000    0.000    0.100    0.008 functional.py:1774(embedding)
+       13    0.100    0.008    0.100    0.008 {built-in method embedding}
+        3    0.089    0.030    0.089    0.030 {built-in method numpy.array}
+       15    0.042    0.003    0.042    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.028    0.009 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.005    0.003 base.py:142(forward)
+        2    0.000    0.000    0.005    0.003 base.py:143(<listcomp>)
+        3    0.000    0.000    0.005    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.005    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 15/28	Loss 1.532714
+INFO:yago-cli.py:Time taken for this batch: 0:02:47.983856
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 153.840 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  153.840  153.840 simple.py:52(score)
+        3    0.074    0.025  153.414   51.138 kb.py:120(neighbors)
+        9  145.959   16.218  145.961   16.218 nms.py:31(build)
+        2    0.024    0.012  103.702   51.851 kb.py:75(score)
+        1    0.000    0.000   50.116   50.116 simple.py:29(hop)
+        1    0.008    0.008   50.116   50.116 kb.py:154(forward)
+        3    7.096    2.365    7.195    2.398 nms.py:51(query)
+       18    0.322    0.018    0.322    0.018 {built-in method cat}
+    18/15    0.001    0.000    0.102    0.007 module.py:715(_call_impl)
+       13    0.000    0.000    0.095    0.007 sparse.py:123(forward)
+       13    0.000    0.000    0.095    0.007 functional.py:1774(embedding)
+       13    0.095    0.007    0.095    0.007 {built-in method embedding}
+        3    0.091    0.030    0.091    0.030 {built-in method numpy.array}
+        3    0.074    0.025    0.082    0.027 gaussian.py:28(__call__)
+       15    0.055    0.004    0.055    0.004 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.038    0.013 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.006    0.003 base.py:142(forward)
+        2    0.000    0.000    0.006    0.003 base.py:143(<listcomp>)
+        3    0.000    0.000    0.006    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.006    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.001    0.000 tensor.py:506(__rsub__)
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+        9    0.001    0.000    0.001    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method rsub}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 16/28	Loss 1.530050
+INFO:yago-cli.py:Time taken for this batch: 0:02:48.005919
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 145.582 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  145.582  145.582 simple.py:52(score)
+        3    0.072    0.024  145.307   48.436 kb.py:120(neighbors)
+        9  138.130   15.348  138.131   15.348 nms.py:31(build)
+        2    0.014    0.007  101.953   50.976 kb.py:75(score)
+        1    0.000    0.000   43.610   43.610 simple.py:29(hop)
+        1    0.006    0.006   43.610   43.610 kb.py:154(forward)
+        3    6.849    2.283    6.946    2.315 nms.py:51(query)
+       18    0.229    0.013    0.229    0.013 {built-in method cat}
+        3    0.088    0.029    0.088    0.029 {built-in method numpy.array}
+    18/15    0.001    0.000    0.073    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.067    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.067    0.005 functional.py:1774(embedding)
+       13    0.067    0.005    0.067    0.005 {built-in method embedding}
+        3    0.060    0.020    0.066    0.022 gaussian.py:28(__call__)
+        3    0.000    0.000    0.036    0.012 kb.py:68(generate_facts)
+       15    0.029    0.002    0.029    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.005    0.002 base.py:142(forward)
+        2    0.000    0.000    0.005    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.005    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.005    0.002 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        3    0.004    0.001    0.004    0.001 {built-in method sum}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        3    0.000    0.000    0.000    0.000 {built-in method clamp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method rsub}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 17/28	Loss 1.523680
+INFO:yago-cli.py:Time taken for this batch: 0:02:39.825015
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 151.388 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  151.388  151.388 simple.py:52(score)
+        3    0.072    0.024  151.072   50.357 kb.py:120(neighbors)
+        9  143.616   15.957  143.618   15.958 nms.py:31(build)
+        2    0.025    0.012  104.730   52.365 kb.py:75(score)
+        1    0.000    0.000   46.639   46.639 simple.py:29(hop)
+        1    0.008    0.008   46.639   46.639 kb.py:154(forward)
+        3    7.141    2.380    7.238    2.413 nms.py:51(query)
+       18    0.230    0.013    0.230    0.013 {built-in method cat}
+        3    0.089    0.030    0.089    0.030 {built-in method numpy.array}
+        3    0.068    0.023    0.075    0.025 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.066    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.061    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.061    0.005 functional.py:1774(embedding)
+       13    0.061    0.005    0.061    0.005 {built-in method embedding}
+       15    0.038    0.003    0.038    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.025    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 18/28	Loss 1.516363
+INFO:yago-cli.py:Time taken for this batch: 0:02:45.507380
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 157.058 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  157.058  157.058 simple.py:52(score)
+        3    0.077    0.026  156.650   52.217 kb.py:120(neighbors)
+        9  149.125   16.569  149.126   16.570 nms.py:31(build)
+        2    0.018    0.009  106.178   53.089 kb.py:75(score)
+        1    0.000    0.000   50.859   50.859 simple.py:29(hop)
+        1    0.008    0.008   50.859   50.859 kb.py:154(forward)
+        3    7.164    2.388    7.271    2.424 nms.py:51(query)
+       18    0.301    0.017    0.301    0.017 {built-in method cat}
+        3    0.094    0.031    0.102    0.034 gaussian.py:28(__call__)
+        3    0.098    0.033    0.098    0.033 {built-in method numpy.array}
+    18/15    0.001    0.000    0.095    0.006 module.py:715(_call_impl)
+       13    0.000    0.000    0.089    0.007 sparse.py:123(forward)
+       13    0.000    0.000    0.089    0.007 functional.py:1774(embedding)
+       13    0.089    0.007    0.089    0.007 {built-in method embedding}
+       15    0.041    0.003    0.041    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.034    0.011 kb.py:68(generate_facts)
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        3    0.006    0.002    0.006    0.002 {built-in method sum}
+        2    0.000    0.000    0.006    0.003 base.py:142(forward)
+        2    0.000    0.000    0.005    0.003 base.py:143(<listcomp>)
+        3    0.000    0.000    0.005    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.005    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method exp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 19/28	Loss 1.514396
+INFO:yago-cli.py:Time taken for this batch: 0:02:51.077877
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 158.083 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  158.083  158.083 simple.py:52(score)
+        3    0.073    0.024  157.791   52.597 kb.py:120(neighbors)
+        9  150.253   16.695  150.254   16.695 nms.py:31(build)
+        2    0.014    0.007  106.778   53.389 kb.py:75(score)
+        1    0.000    0.000   51.286   51.286 simple.py:29(hop)
+        1    0.008    0.008   51.286   51.286 kb.py:154(forward)
+        3    7.202    2.401    7.303    2.434 nms.py:51(query)
+       18    0.232    0.013    0.232    0.013 {built-in method cat}
+        3    0.092    0.031    0.092    0.031 {built-in method numpy.array}
+        3    0.078    0.026    0.085    0.028 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.065    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.059    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.059    0.005 functional.py:1774(embedding)
+       13    0.059    0.005    0.059    0.005 {built-in method embedding}
+       15    0.031    0.002    0.031    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.026    0.009 kb.py:68(generate_facts)
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.005    0.003 base.py:142(forward)
+        2    0.000    0.000    0.005    0.003 base.py:143(<listcomp>)
+        3    0.000    0.000    0.005    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.005    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 20/28	Loss 1.512598
+INFO:yago-cli.py:Time taken for this batch: 0:02:52.415061
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 159.687 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  159.687  159.687 simple.py:52(score)
+        3    0.074    0.025  159.366   53.122 kb.py:120(neighbors)
+        9  151.661   16.851  151.662   16.851 nms.py:31(build)
+        2    0.024    0.012  108.125   54.062 kb.py:75(score)
+        1    0.000    0.000   51.546   51.546 simple.py:29(hop)
+        1    0.008    0.008   51.546   51.546 kb.py:154(forward)
+        3    7.390    2.463    7.492    2.497 nms.py:51(query)
+       18    0.227    0.013    0.227    0.013 {built-in method cat}
+        3    0.092    0.031    0.092    0.031 {built-in method numpy.array}
+    18/15    0.001    0.000    0.078    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.074    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.073    0.006 functional.py:1774(embedding)
+       13    0.073    0.006    0.073    0.006 {built-in method embedding}
+        3    0.059    0.020    0.066    0.022 gaussian.py:28(__call__)
+       15    0.034    0.002    0.034    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.022    0.007 kb.py:68(generate_facts)
+        3    0.010    0.003    0.010    0.003 nms.py:55(<listcomp>)
+        3    0.000    0.000    0.007    0.002 kb.py:62(to_tnsr)
+        3    0.007    0.002    0.007    0.002 {method 'type' of 'torch._C._TensorBase' objects}
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 21/28	Loss 1.506035
+INFO:yago-cli.py:Time taken for this batch: 0:02:54.024190
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 142.830 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008  142.830  142.830 simple.py:52(score)
+        3    0.064    0.021  142.503   47.501 kb.py:120(neighbors)
+        9  135.937   15.104  135.939   15.104 nms.py:31(build)
+        2    0.015    0.007   98.094   49.047 kb.py:75(score)
+        1    0.000    0.000   44.718   44.718 simple.py:29(hop)
+        1    0.008    0.008   44.718   44.718 kb.py:154(forward)
+        3    6.231    2.077    6.318    2.106 nms.py:51(query)
+       18    0.287    0.016    0.287    0.016 {built-in method cat}
+    18/15    0.001    0.000    0.083    0.006 module.py:715(_call_impl)
+        3    0.079    0.026    0.079    0.026 {built-in method numpy.array}
+       13    0.000    0.000    0.078    0.006 sparse.py:123(forward)
+       13    0.000    0.000    0.077    0.006 functional.py:1774(embedding)
+       13    0.077    0.006    0.077    0.006 {built-in method embedding}
+        3    0.056    0.019    0.062    0.021 gaussian.py:28(__call__)
+       15    0.040    0.003    0.040    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.031    0.010 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.005    0.002 base.py:142(forward)
+        2    0.000    0.000    0.005    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.000    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.000    0.000 __init__.py:1544(isEnabledFor)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method clamp}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 22/28	Loss 1.500172
+INFO:yago-cli.py:Time taken for this batch: 0:02:36.641857
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 157.216 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008  157.216  157.216 simple.py:52(score)
+        3    0.070    0.023  156.930   52.310 kb.py:120(neighbors)
+        9  150.120   16.680  150.122   16.680 nms.py:31(build)
+        2    0.020    0.010  105.001   52.500 kb.py:75(score)
+        1    0.000    0.000   52.195   52.195 simple.py:29(hop)
+        1    0.008    0.008   52.195   52.195 kb.py:154(forward)
+        3    6.495    2.165    6.589    2.196 nms.py:51(query)
+       18    0.231    0.013    0.231    0.013 {built-in method cat}
+        3    0.086    0.029    0.086    0.029 {built-in method numpy.array}
+        3    0.062    0.021    0.069    0.023 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.061    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.056    0.004 sparse.py:123(forward)
+       13    0.000    0.000    0.056    0.004 functional.py:1774(embedding)
+       13    0.056    0.004    0.056    0.004 {built-in method embedding}
+       15    0.029    0.002    0.029    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.025    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        1    0.000    0.000    0.000    0.000 {built-in method min}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 23/28	Loss 1.494084
+INFO:yago-cli.py:Time taken for this batch: 0:02:51.010704
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 161.045 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  161.045  161.045 simple.py:52(score)
+        3    0.073    0.024  160.686   53.562 kb.py:120(neighbors)
+        9  153.279   17.031  153.281   17.031 nms.py:31(build)
+        2    0.017    0.008  108.526   54.263 kb.py:75(score)
+        1    0.000    0.000   52.500   52.500 simple.py:29(hop)
+        1    0.008    0.008   52.500   52.500 kb.py:154(forward)
+        3    7.078    2.359    7.176    2.392 nms.py:51(query)
+       18    0.310    0.017    0.310    0.017 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+        3    0.064    0.021    0.071    0.024 gaussian.py:28(__call__)
+    18/15    0.001    0.000    0.062    0.004 module.py:715(_call_impl)
+       13    0.000    0.000    0.057    0.004 sparse.py:123(forward)
+       13    0.000    0.000    0.057    0.004 functional.py:1774(embedding)
+       13    0.056    0.004    0.056    0.004 {built-in method embedding}
+       15    0.030    0.002    0.030    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.025    0.008 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        2    0.000    0.000    0.004    0.002 base.py:142(forward)
+        2    0.000    0.000    0.004    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.004    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.004    0.001 functional.py:1669(linear)
+        3    0.004    0.001    0.004    0.001 {built-in method addmm}
+        3    0.000    0.000    0.002    0.001 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.002    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        4    0.000    0.000    0.001    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 24/28	Loss 1.488819
+INFO:yago-cli.py:Time taken for this batch: 0:02:55.426807
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 157.756 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.010    0.010  157.756  157.756 simple.py:52(score)
+        3    0.072    0.024  157.471   52.490 kb.py:120(neighbors)
+        9  150.231   16.692  150.232   16.692 nms.py:31(build)
+        2    0.012    0.006  106.940   53.470 kb.py:75(score)
+        1    0.000    0.000   50.797   50.797 simple.py:29(hop)
+        1    0.006    0.006   50.797   50.797 kb.py:154(forward)
+        3    6.921    2.307    7.019    2.340 nms.py:51(query)
+       18    0.233    0.013    0.233    0.013 {built-in method cat}
+        3    0.090    0.030    0.090    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.069    0.005 module.py:715(_call_impl)
+        3    0.061    0.020    0.068    0.023 gaussian.py:28(__call__)
+       13    0.000    0.000    0.063    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.063    0.005 functional.py:1774(embedding)
+       13    0.063    0.005    0.063    0.005 {built-in method embedding}
+        3    0.000    0.000    0.029    0.010 kb.py:68(generate_facts)
+       15    0.028    0.002    0.028    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        2    0.000    0.000    0.005    0.003 base.py:142(forward)
+        2    0.000    0.000    0.005    0.002 base.py:143(<listcomp>)
+        3    0.005    0.002    0.005    0.002 {built-in method sum}
+        3    0.000    0.000    0.005    0.002 linear.py:92(forward)
+        3    0.000    0.000    0.005    0.002 functional.py:1669(linear)
+        3    0.005    0.002    0.005    0.002 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+        3    0.001    0.000    0.001    0.000 {built-in method clamp}
+        3    0.001    0.000    0.001    0.000 {built-in method sqrt}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 25/28	Loss 1.483373
+INFO:yago-cli.py:Time taken for this batch: 0:02:51.861457
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 152.577 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008  152.577  152.577 simple.py:52(score)
+        3    0.069    0.023  152.302   50.767 kb.py:120(neighbors)
+        9  145.654   16.184  145.655   16.184 nms.py:31(build)
+        2    0.010    0.005  101.705   50.853 kb.py:75(score)
+        1    0.000    0.000   50.857   50.857 simple.py:29(hop)
+        1    0.004    0.004   50.857   50.857 kb.py:154(forward)
+        3    6.391    2.130    6.483    2.161 nms.py:51(query)
+       18    0.173    0.010    0.173    0.010 {built-in method cat}
+        3    0.084    0.028    0.084    0.028 {built-in method numpy.array}
+    18/15    0.001    0.000    0.068    0.005 module.py:715(_call_impl)
+        3    0.062    0.021    0.067    0.022 gaussian.py:28(__call__)
+       13    0.000    0.000    0.064    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.064    0.005 functional.py:1774(embedding)
+       13    0.064    0.005    0.064    0.005 {built-in method embedding}
+       15    0.034    0.002    0.034    0.002 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.022    0.007 kb.py:68(generate_facts)
+        3    0.008    0.003    0.008    0.003 nms.py:55(<listcomp>)
+        3    0.004    0.001    0.004    0.001 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method clamp}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        3    0.000    0.000    0.000    0.000 {built-in method sqrt}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 {built-in method rsub}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 26/28	Loss 1.479702
+INFO:yago-cli.py:Time taken for this batch: 0:02:46.408285
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 154.793 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009  154.793  154.793 simple.py:52(score)
+        3    0.072    0.024  154.493   51.498 kb.py:120(neighbors)
+        9  147.143   16.349  147.144   16.349 nms.py:31(build)
+        2    0.010    0.005  106.235   53.118 kb.py:75(score)
+        1    0.000    0.000   48.541   48.541 simple.py:29(hop)
+        1    0.006    0.006   48.541   48.541 kb.py:154(forward)
+        3    7.060    2.353    7.158    2.386 nms.py:51(query)
+       18    0.212    0.012    0.212    0.012 {built-in method cat}
+        3    0.089    0.030    0.089    0.030 {built-in method numpy.array}
+    18/15    0.001    0.000    0.072    0.005 module.py:715(_call_impl)
+       13    0.000    0.000    0.069    0.005 sparse.py:123(forward)
+       13    0.000    0.000    0.068    0.005 functional.py:1774(embedding)
+       13    0.068    0.005    0.068    0.005 {built-in method embedding}
+        3    0.053    0.018    0.059    0.020 gaussian.py:28(__call__)
+       15    0.043    0.003    0.043    0.003 {method 'repeat' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.020    0.007 kb.py:68(generate_facts)
+        3    0.009    0.003    0.009    0.003 nms.py:55(<listcomp>)
+        3    0.004    0.001    0.004    0.001 {built-in method sum}
+        2    0.000    0.000    0.003    0.002 base.py:142(forward)
+        2    0.000    0.000    0.003    0.002 base.py:143(<listcomp>)
+        3    0.000    0.000    0.003    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.003    0.001 functional.py:1669(linear)
+        3    0.003    0.001    0.003    0.001 {built-in method addmm}
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.000    0.000    0.001    0.000 tensor.py:21(wrapped)
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method clamp}
+        3    0.000    0.000    0.000    0.000 {built-in method sqrt}
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 27/28	Loss 1.477022
+INFO:yago-cli.py:Time taken for this batch: 0:02:48.843247
+
+*** PROFILER RESULTS ***
+score (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:52)
+function called 1 times
+
+         1598 function calls (1595 primitive calls) in 157.352 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 80 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.000    0.000  157.352  157.352 simple.py:52(score)
+        3    0.016    0.005  157.209   52.403 kb.py:120(neighbors)
+        9  155.255   17.251  155.256   17.251 nms.py:31(build)
+        2    0.012    0.006  105.125   52.563 kb.py:75(score)
+        1    0.000    0.000   52.222   52.222 simple.py:29(hop)
+        1    0.004    0.004   52.222   52.222 kb.py:154(forward)
+        3    1.804    0.601    1.824    0.608 nms.py:51(query)
+       18    0.186    0.010    0.186    0.010 {built-in method cat}
+    18/15    0.001    0.000    0.032    0.002 module.py:715(_call_impl)
+       13    0.000    0.000    0.030    0.002 sparse.py:123(forward)
+       13    0.000    0.000    0.030    0.002 functional.py:1774(embedding)
+       13    0.029    0.002    0.029    0.002 {built-in method embedding}
+        3    0.000    0.000    0.024    0.008 kb.py:68(generate_facts)
+        3    0.019    0.006    0.019    0.006 {built-in method numpy.array}
+        3    0.008    0.003    0.010    0.003 gaussian.py:28(__call__)
+       15    0.006    0.000    0.006    0.000 {method 'repeat' of 'torch._C._TensorBase' objects}
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+        2    0.000    0.000    0.002    0.001 base.py:143(<listcomp>)
+        3    0.000    0.000    0.002    0.001 linear.py:92(forward)
+        3    0.000    0.000    0.002    0.001 functional.py:1669(linear)
+        3    0.002    0.001    0.002    0.001 nms.py:55(<listcomp>)
+        3    0.001    0.000    0.001    0.000 {built-in method addmm}
+        4    0.000    0.000    0.001    0.000 sparse.py:142(from_pretrained)
+        3    0.001    0.000    0.001    0.000 {built-in method sum}
+        4    0.000    0.000    0.001    0.000 sparse.py:92(__init__)
+        3    0.000    0.000    0.001    0.000 kb.py:62(to_tnsr)
+        5    0.001    0.000    0.001    0.000 {built-in method max}
+      198    0.000    0.000    0.001    0.000 __init__.py:1298(info)
+       42    0.001    0.000    0.001    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       75    0.000    0.000    0.001    0.000 module.py:781(__setattr__)
+        3    0.001    0.000    0.001    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+      198    0.000    0.000    0.001    0.000 __init__.py:1544(isEnabledFor)
+        3    0.000    0.000    0.000    0.000 {built-in method sqrt}
+        3    0.000    0.000    0.000    0.000 tensor.py:21(wrapped)
+        4    0.000    0.000    0.000    0.000 module.py:223(__init__)
+        9    0.000    0.000    0.000    0.000 {built-in method nmslib.init}
+        3    0.000    0.000    0.000    0.000 {built-in method clamp}
+       12    0.000    0.000    0.000    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+        3    0.000    0.000    0.000    0.000 tensor.py:506(__rsub__)
+        3    0.000    0.000    0.000    0.000 {built-in method exp}
+
+
+INFO:yago-cli.py:Epoch 1/1	Batch 28/28	Loss 1.470188
+INFO:yago-cli.py:Time taken for this batch: 0:02:40.373479
+INFO:yago-cli.py:Epoch 1/1	Loss 1.5391 ± 0.0423
+INFO:yago-cli.py:Time taken for this epoch: 1:17:07.602793
+this is before for loop: line 418
+Evaluating in for loop!
+New evaluation is on!
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4315.679 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.011    0.011 4315.678 4315.678 simple.py:412(forward__)
+       82    0.434    0.005 4314.363   52.614 kb.py:120(neighbors)
+      246 4260.016   17.317 4260.052   17.317 nms.py:31(build)
+        4    0.341    0.085 4210.397 1052.599 kb.py:298(forward__)
+        2    0.000    0.000  105.266   52.633 simple.py:29(hop)
+        2    0.004    0.002  105.265   52.633 kb.py:154(forward)
+       82   49.401    0.602   49.961    0.609 nms.py:51(query)
+      420    4.050    0.010    4.050    0.010 {built-in method cat}
+       82    0.516    0.006    0.516    0.006 {built-in method numpy.array}
+  107/104    0.005    0.000    0.293    0.003 module.py:715(_call_impl)
+       82    0.223    0.003    0.293    0.004 gaussian.py:28(__call__)
+      102    0.003    0.000    0.284    0.003 sparse.py:123(forward)
+      102    0.001    0.000    0.281    0.003 functional.py:1774(embedding)
+      102    0.280    0.003    0.280    0.003 {built-in method embedding}
+      252    0.136    0.001    0.136    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.072    0.012 kb.py:68(generate_facts)
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+       82    0.003    0.000    0.038    0.000 kb.py:62(to_tnsr)
+       82    0.037    0.000    0.037    0.000 {built-in method sum}
+       82    0.027    0.000    0.027    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+     5412    0.009    0.000    0.024    0.000 __init__.py:1298(info)
+       84    0.018    0.000    0.018    0.000 {built-in method max}
+     5412    0.010    0.000    0.015    0.000 __init__.py:1544(isEnabledFor)
+      602    0.012    0.000    0.012    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      328    0.012    0.000    0.012    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+       82    0.012    0.000    0.012    0.000 {built-in method sqrt}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.009    0.000    0.009    0.000 {built-in method clamp}
+       82    0.008    0.000    0.008    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.006    0.000    0.006    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.003    0.000    0.003    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+        2    0.000    0.000    0.002    0.001 base.py:143(<listcomp>)
+       82    0.002    0.000    0.002    0.000 {method 'to' of 'torch._C._TensorBase' objects}
+
+
+time taken for hit update of this batch is: 9.298324584960938e-05
+time taken for batch 0 while evaluating: 4315.738430023193
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4398.830 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008 4398.830 4398.830 simple.py:412(forward__)
+       82    0.425    0.005 4397.234   53.625 kb.py:120(neighbors)
+      246 4342.418   17.652 4342.458   17.652 nms.py:31(build)
+        4    0.315    0.079 4292.173 1073.043 kb.py:298(forward__)
+        2    0.004    0.002  106.643   53.322 simple.py:29(hop)
+        2    0.004    0.002  106.640   53.320 kb.py:154(forward)
+       82   49.292    0.601   49.850    0.608 nms.py:51(query)
+      420    4.686    0.011    4.686    0.011 {built-in method cat}
+       82    0.514    0.006    0.514    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.397    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.387    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.383    0.004 functional.py:1774(embedding)
+      102    0.383    0.004    0.383    0.004 {built-in method embedding}
+       82    0.275    0.003    0.355    0.004 gaussian.py:28(__call__)
+      252    0.175    0.001    0.175    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.090    0.015 kb.py:68(generate_facts)
+       82    0.008    0.000    0.084    0.001 kb.py:62(to_tnsr)
+       82    0.068    0.001    0.068    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+       82    0.043    0.001    0.043    0.001 {built-in method sum}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.019    0.000    0.019    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.006    0.000    0.006    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+        2    0.000    0.000    0.002    0.001 base.py:143(<listcomp>)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+
+
+time taken for hit update of this batch is: 8.630752563476562e-05
+time taken for batch 1 while evaluating: 4398.8838148117065
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4432.031 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008 4432.031 4432.031 simple.py:412(forward__)
+       82    0.433    0.005 4430.366   54.029 kb.py:120(neighbors)
+      246 4374.478   17.782 4374.518   17.783 nms.py:31(build)
+        4    0.405    0.101 4325.356 1081.339 kb.py:298(forward__)
+        2    0.000    0.000  106.659   53.330 simple.py:29(hop)
+        2    0.004    0.002  106.659   53.330 kb.py:154(forward)
+       82   50.377    0.614   50.945    0.621 nms.py:51(query)
+      420    4.608    0.011    4.608    0.011 {built-in method cat}
+       82    0.523    0.006    0.523    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.431    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.420    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.416    0.004 functional.py:1774(embedding)
+      102    0.416    0.004    0.416    0.004 {built-in method embedding}
+       82    0.292    0.004    0.373    0.005 gaussian.py:28(__call__)
+      252    0.178    0.001    0.178    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.096    0.016 kb.py:68(generate_facts)
+       82    0.003    0.000    0.053    0.001 kb.py:62(to_tnsr)
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+       82    0.043    0.001    0.043    0.001 {built-in method sum}
+       82    0.042    0.001    0.042    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.021    0.000    0.021    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.010    0.000    0.010    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.004    0.000 sparse.py:92(__init__)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 0.0001239776611328125
+time taken for batch 2 while evaluating: 4432.1018278598785
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4398.149 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.022    0.022 4398.149 4398.149 simple.py:412(forward__)
+       82    0.429    0.005 4396.779   53.619 kb.py:120(neighbors)
+      246 4343.461   17.656 4343.500   17.657 nms.py:31(build)
+        4    0.246    0.062 4291.251 1072.813 kb.py:298(forward__)
+        2    0.004    0.002  106.871   53.435 simple.py:29(hop)
+        2    0.005    0.002  106.866   53.433 kb.py:154(forward)
+       82   48.873    0.596   49.432    0.603 nms.py:51(query)
+      420    3.568    0.008    3.568    0.008 {built-in method cat}
+       82    0.516    0.006    0.516    0.006 {built-in method numpy.array}
+  107/104    0.007    0.000    0.350    0.003 module.py:715(_call_impl)
+      102    0.004    0.000    0.339    0.003 sparse.py:123(forward)
+      102    0.001    0.000    0.334    0.003 functional.py:1774(embedding)
+      102    0.334    0.003    0.334    0.003 {built-in method embedding}
+       82    0.247    0.003    0.319    0.004 gaussian.py:28(__call__)
+      252    0.153    0.001    0.153    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.094    0.016 kb.py:68(generate_facts)
+       82    0.003    0.000    0.048    0.001 kb.py:62(to_tnsr)
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+       82    0.037    0.000    0.037    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.036    0.000    0.036    0.000 {built-in method sum}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.019    0.000    0.019    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      226    0.005    0.000    0.007    0.000 module.py:781(__setattr__)
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.005    0.001 sparse.py:142(from_pretrained)
+        8    0.001    0.000    0.004    0.000 sparse.py:92(__init__)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 9.72747802734375e-05
+time taken for batch 3 while evaluating: 4398.212511777878
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4439.591 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.022    0.022 4439.591 4439.591 simple.py:412(forward__)
+       82    0.424    0.005 4438.130   54.124 kb.py:120(neighbors)
+      246 4382.861   17.817 4382.900   17.817 nms.py:31(build)
+        4    0.239    0.060 4331.835 1082.959 kb.py:298(forward__)
+        2    0.004    0.002  107.729   53.865 simple.py:29(hop)
+        2    0.005    0.002  107.725   53.863 kb.py:154(forward)
+       82   50.626    0.617   51.190    0.624 nms.py:51(query)
+      420    3.817    0.009    3.817    0.009 {built-in method cat}
+       82    0.519    0.006    0.519    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.369    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.358    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.354    0.003 functional.py:1774(embedding)
+      102    0.353    0.003    0.353    0.003 {built-in method embedding}
+       82    0.266    0.003    0.341    0.004 gaussian.py:28(__call__)
+      252    0.162    0.001    0.162    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.096    0.016 kb.py:68(generate_facts)
+       82    0.003    0.000    0.046    0.001 kb.py:62(to_tnsr)
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+       82    0.038    0.000    0.038    0.000 {built-in method sum}
+       82    0.034    0.000    0.034    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.005    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+       82    0.002    0.000    0.002    0.000 {method 'to' of 'torch._C._TensorBase' objects}
+
+
+time taken for hit update of this batch is: 8.678436279296875e-05
+time taken for batch 4 while evaluating: 4439.650866270065
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4470.466 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.009    0.009 4470.466 4470.466 simple.py:412(forward__)
+       82    0.436    0.005 4469.085   54.501 kb.py:120(neighbors)
+      246 4415.703   17.950 4415.743   17.950 nms.py:31(build)
+        4    0.303    0.076 4362.179 1090.545 kb.py:298(forward__)
+        2    0.004    0.002  108.273   54.137 simple.py:29(hop)
+        2    0.000    0.000  108.269   54.134 kb.py:154(forward)
+       82   49.048    0.598   49.607    0.605 nms.py:51(query)
+      420    3.424    0.008    3.424    0.008 {built-in method cat}
+       82    0.515    0.006    0.515    0.006 {built-in method numpy.array}
+  107/104    0.007    0.000    0.336    0.003 module.py:715(_call_impl)
+      102    0.004    0.000    0.324    0.003 sparse.py:123(forward)
+      102    0.001    0.000    0.320    0.003 functional.py:1774(embedding)
+      102    0.319    0.003    0.319    0.003 {built-in method embedding}
+       82    0.246    0.003    0.319    0.004 gaussian.py:28(__call__)
+      252    0.153    0.001    0.153    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.092    0.015 kb.py:68(generate_facts)
+       82    0.003    0.000    0.058    0.001 kb.py:62(to_tnsr)
+       82    0.046    0.001    0.046    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+       82    0.035    0.000    0.035    0.000 {built-in method sum}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.021    0.000    0.021    0.000 {built-in method max}
+     5412    0.012    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.014    0.000    0.014    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.014    0.000    0.014    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+      226    0.005    0.000    0.007    0.000 module.py:781(__setattr__)
+       82    0.007    0.000    0.007    0.000 {built-in method from_numpy}
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.004    0.000 sparse.py:92(__init__)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+
+
+time taken for hit update of this batch is: 8.559226989746094e-05
+time taken for batch 5 while evaluating: 4470.522186279297
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4447.701 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.014    0.014 4447.701 4447.701 simple.py:412(forward__)
+       82    0.423    0.005 4446.286   54.223 kb.py:120(neighbors)
+      246 4391.322   17.851 4391.360   17.851 nms.py:31(build)
+        4    0.326    0.082 4346.424 1086.606 kb.py:298(forward__)
+        2    0.000    0.000  101.255   50.628 simple.py:29(hop)
+        2    0.004    0.002  101.255   50.628 kb.py:154(forward)
+       82   50.391    0.615   50.946    0.621 nms.py:51(query)
+      420    3.697    0.009    3.697    0.009 {built-in method cat}
+       82    0.511    0.006    0.511    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.319    0.003 module.py:715(_call_impl)
+       82    0.241    0.003    0.313    0.004 gaussian.py:28(__call__)
+      102    0.003    0.000    0.309    0.003 sparse.py:123(forward)
+      102    0.001    0.000    0.305    0.003 functional.py:1774(embedding)
+      102    0.305    0.003    0.305    0.003 {built-in method embedding}
+      252    0.151    0.001    0.151    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+       82    0.003    0.000    0.077    0.001 kb.py:62(to_tnsr)
+        6    0.000    0.000    0.066    0.011 kb.py:68(generate_facts)
+       82    0.065    0.001    0.065    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+       82    0.037    0.000    0.037    0.000 {built-in method sum}
+     5412    0.010    0.000    0.026    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.013    0.000    0.013    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.006    0.000    0.006    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.003    0.000    0.003    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+
+
+time taken for hit update of this batch is: 8.821487426757812e-05
+time taken for batch 6 while evaluating: 4447.7555639743805
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4512.832 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.021    0.021 4512.832 4512.832 simple.py:412(forward__)
+       82    0.428    0.005 4511.246   55.015 kb.py:120(neighbors)
+      246 4455.403   18.111 4455.441   18.112 nms.py:31(build)
+        4    0.147    0.037 4403.706 1100.927 kb.py:298(forward__)
+        2    0.008    0.004  109.098   54.549 simple.py:29(hop)
+        2    0.000    0.000  109.090   54.545 kb.py:154(forward)
+       82   50.833    0.620   51.398    0.627 nms.py:51(query)
+      420    4.175    0.010    4.175    0.010 {built-in method cat}
+       82    0.521    0.006    0.521    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.486    0.005 module.py:715(_call_impl)
+      102    0.003    0.000    0.476    0.005 sparse.py:123(forward)
+      102    0.001    0.000    0.472    0.005 functional.py:1774(embedding)
+      102    0.472    0.005    0.472    0.005 {built-in method embedding}
+       82    0.309    0.004    0.394    0.005 gaussian.py:28(__call__)
+      252    0.197    0.001    0.197    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.129    0.022 kb.py:68(generate_facts)
+       82    0.003    0.000    0.066    0.001 kb.py:62(to_tnsr)
+       82    0.055    0.001    0.055    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.048    0.001    0.048    0.001 {built-in method sum}
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+     5412    0.010    0.000    0.026    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method exp}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.006    0.000    0.006    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 9.703636169433594e-05
+time taken for batch 7 while evaluating: 4512.889522314072
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4493.767 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008 4493.767 4493.767 simple.py:412(forward__)
+       82    0.421    0.005 4492.027   54.781 kb.py:120(neighbors)
+      246 4436.408   18.034 4436.447   18.034 nms.py:31(build)
+        4    0.368    0.092 4386.663 1096.666 kb.py:298(forward__)
+        2    0.000    0.000  107.090   53.545 simple.py:29(hop)
+        2    0.009    0.004  107.090   53.545 kb.py:154(forward)
+       82   50.194    0.612   50.752    0.619 nms.py:51(query)
+      420    4.586    0.011    4.586    0.011 {built-in method cat}
+       82    0.513    0.006    0.513    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.461    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.451    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.447    0.004 functional.py:1774(embedding)
+      102    0.447    0.004    0.447    0.004 {built-in method embedding}
+       82    0.303    0.004    0.389    0.005 gaussian.py:28(__call__)
+      252    0.195    0.001    0.195    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.121    0.020 kb.py:68(generate_facts)
+       82    0.003    0.000    0.062    0.001 kb.py:62(to_tnsr)
+       82    0.051    0.001    0.051    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.049    0.001    0.049    0.001 {built-in method sum}
+       82    0.044    0.001    0.044    0.001 nms.py:55(<listcomp>)
+     5412    0.010    0.000    0.026    0.000 __init__.py:1298(info)
+       84    0.019    0.000    0.019    0.000 {built-in method max}
+     5412    0.011    0.000    0.016    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.012    0.000    0.012    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.012    0.000    0.012    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method exp}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.006    0.000    0.006    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.000    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+       82    0.002    0.000    0.002    0.000 {method 'to' of 'torch._C._TensorBase' objects}
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+
+
+time taken for hit update of this batch is: 0.00010061264038085938
+time taken for batch 8 while evaluating: 4493.823853731155
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4536.639 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.022    0.022 4536.639 4536.639 simple.py:412(forward__)
+       82    0.430    0.005 4535.126   55.306 kb.py:120(neighbors)
+      246 4479.297   18.209 4479.336   18.209 nms.py:31(build)
+        4    0.234    0.058 4427.380 1106.845 kb.py:298(forward__)
+        2    0.004    0.002  109.229   54.614 simple.py:29(hop)
+        2    0.000    0.000  109.225   54.612 kb.py:154(forward)
+       82   50.887    0.621   51.460    0.628 nms.py:51(query)
+      420    4.034    0.010    4.034    0.010 {built-in method cat}
+       82    0.527    0.006    0.527    0.006 {built-in method numpy.array}
+  107/104    0.007    0.000    0.409    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.398    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.394    0.004 functional.py:1774(embedding)
+      102    0.394    0.004    0.394    0.004 {built-in method embedding}
+       82    0.303    0.004    0.385    0.005 gaussian.py:28(__call__)
+      252    0.194    0.001    0.194    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.094    0.016 kb.py:68(generate_facts)
+       82    0.003    0.000    0.057    0.001 kb.py:62(to_tnsr)
+       82    0.046    0.001    0.046    0.001 nms.py:55(<listcomp>)
+       82    0.045    0.001    0.045    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.044    0.001    0.044    0.001 {built-in method sum}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.022    0.000    0.022    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.015    0.000    0.015    0.000 {built-in method sqrt}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.010    0.000    0.010    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 8.559226989746094e-05
+time taken for batch 9 while evaluating: 4536.694360494614
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4538.863 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.002    0.002 4538.863 4538.863 simple.py:412(forward__)
+       82    0.426    0.005 4537.169   55.331 kb.py:120(neighbors)
+      246 4482.265   18.221 4482.311   18.221 nms.py:31(build)
+        4    0.433    0.108 4429.124 1107.281 kb.py:298(forward__)
+        2    0.000    0.000  109.730   54.865 simple.py:29(hop)
+        2    0.012    0.006  109.730   54.865 kb.py:154(forward)
+       82   49.489    0.604   50.053    0.610 nms.py:51(query)
+      420    4.501    0.011    4.501    0.011 {built-in method cat}
+       82    0.519    0.006    0.519    0.006 {built-in method numpy.array}
+  107/104    0.007    0.000    0.425    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.414    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.410    0.004 functional.py:1774(embedding)
+      102    0.409    0.004    0.409    0.004 {built-in method embedding}
+       82    0.293    0.004    0.376    0.005 gaussian.py:28(__call__)
+      252    0.187    0.001    0.187    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.115    0.019 kb.py:68(generate_facts)
+       82    0.003    0.000    0.062    0.001 kb.py:62(to_tnsr)
+       82    0.050    0.001    0.050    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.046    0.001    0.046    0.001 {built-in method sum}
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.021    0.000    0.021    0.000 {built-in method max}
+      246    0.019    0.000    0.019    0.000 {built-in method nmslib.init}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.010    0.000    0.010    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+      226    0.005    0.000    0.007    0.000 module.py:781(__setattr__)
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.001 sparse.py:142(from_pretrained)
+        8    0.001    0.000    0.004    0.000 sparse.py:92(__init__)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 0.0001518726348876953
+time taken for batch 10 while evaluating: 4538.933554172516
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4542.881 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.025    0.025 4542.881 4542.881 simple.py:412(forward__)
+       82    0.424    0.005 4541.399   55.383 kb.py:120(neighbors)
+      246 4485.831   18.235 4485.871   18.235 nms.py:31(build)
+        4    0.249    0.062 4432.483 1108.121 kb.py:298(forward__)
+        2    0.004    0.002  110.367   55.184 simple.py:29(hop)
+        2    0.000    0.000  110.363   55.182 kb.py:154(forward)
+       82   50.576    0.617   51.138    0.624 nms.py:51(query)
+      420    4.128    0.010    4.128    0.010 {built-in method cat}
+       82    0.517    0.006    0.517    0.006 {built-in method numpy.array}
+  107/104    0.007    0.000    0.409    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.398    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.394    0.004 functional.py:1774(embedding)
+      102    0.393    0.004    0.393    0.004 {built-in method embedding}
+       82    0.267    0.003    0.345    0.004 gaussian.py:28(__call__)
+      252    0.175    0.001    0.175    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.102    0.017 kb.py:68(generate_facts)
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+       82    0.041    0.000    0.041    0.000 {built-in method sum}
+       82    0.003    0.000    0.040    0.000 kb.py:62(to_tnsr)
+       82    0.028    0.000    0.028    0.000 {method 'type' of 'torch._C._TensorBase' objects}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.005    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.005    0.000    0.005    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.003    0.001 base.py:142(forward)
+        2    0.000    0.000    0.002    0.001 base.py:143(<listcomp>)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+
+
+time taken for hit update of this batch is: 9.894371032714844e-05
+time taken for batch 11 while evaluating: 4542.9393658638
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4521.793 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.008    0.008 4521.793 4521.793 simple.py:412(forward__)
+       82    0.420    0.005 4520.172   55.124 kb.py:120(neighbors)
+      246 4465.931   18.154 4465.970   18.154 nms.py:31(build)
+        4    0.381    0.095 4413.498 1103.374 kb.py:298(forward__)
+        2    0.000    0.000  108.282   54.141 simple.py:29(hop)
+        2    0.005    0.002  108.282   54.141 kb.py:154(forward)
+       82   49.563    0.604   50.123    0.611 nms.py:51(query)
+      420    3.843    0.009    3.843    0.009 {built-in method cat}
+       82    0.516    0.006    0.516    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.427    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.416    0.004 sparse.py:123(forward)
+      102    0.001    0.000    0.412    0.004 functional.py:1774(embedding)
+      102    0.412    0.004    0.412    0.004 {built-in method embedding}
+       82    0.253    0.003    0.328    0.004 gaussian.py:28(__call__)
+      252    0.159    0.001    0.159    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.154    0.026 kb.py:68(generate_facts)
+       82    0.003    0.000    0.058    0.001 kb.py:62(to_tnsr)
+       82    0.047    0.001    0.047    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+       82    0.038    0.000    0.038    0.000 {built-in method sum}
+     5412    0.010    0.000    0.026    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.007    0.000    0.007    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.005    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
+        8    0.001    0.000    0.004    0.000 sparse.py:142(from_pretrained)
+      164    0.004    0.000    0.004    0.000 {built-in method reshape}
+        8    0.001    0.000    0.003    0.000 sparse.py:92(__init__)
+        2    0.000    0.000    0.002    0.001 base.py:142(forward)
+      107    0.002    0.000    0.002    0.000 {built-in method torch._C._get_tracing_state}
+      240    0.002    0.000    0.002    0.000 module.py:765(__getattr__)
+
+
+time taken for hit update of this batch is: 9.1552734375e-05
+time taken for batch 12 while evaluating: 4521.849692821503
+
+*** PROFILER RESULTS ***
+forward__ (/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/ctp-0.9-py3.6.egg/kbcr/smart/simple.py:412)
+function called 1 times
+
+         23297 function calls (23294 primitive calls) in 4561.195 seconds
+
+   Ordered by: cumulative time, internal time, call count
+   List reduced from 73 to 40 due to restriction <40>
+
+   ncalls  tottime  percall  cumtime  percall filename:lineno(function)
+        1    0.014    0.014 4561.195 4561.195 simple.py:412(forward__)
+       82    0.424    0.005 4559.784   55.607 kb.py:120(neighbors)
+      246 4505.357   18.314 4505.397   18.315 nms.py:31(build)
+        4    0.253    0.063 4454.745 1113.686 kb.py:298(forward__)
+        2    0.004    0.002  106.429   53.215 simple.py:29(hop)
+        2    0.000    0.000  106.425   53.213 kb.py:154(forward)
+       82   49.813    0.607   50.371    0.614 nms.py:51(query)
+      420    3.707    0.009    3.707    0.009 {built-in method cat}
+       82    0.513    0.006    0.513    0.006 {built-in method numpy.array}
+  107/104    0.006    0.000    0.364    0.004 module.py:715(_call_impl)
+      102    0.003    0.000    0.353    0.003 sparse.py:123(forward)
+      102    0.001    0.000    0.349    0.003 functional.py:1774(embedding)
+      102    0.348    0.003    0.348    0.003 {built-in method embedding}
+       82    0.248    0.003    0.324    0.004 gaussian.py:28(__call__)
+      252    0.164    0.001    0.164    0.001 {method 'repeat' of 'torch._C._TensorBase' objects}
+       82    0.003    0.000    0.098    0.001 kb.py:62(to_tnsr)
+       82    0.087    0.001    0.087    0.001 {method 'type' of 'torch._C._TensorBase' objects}
+        6    0.000    0.000    0.077    0.013 kb.py:68(generate_facts)
+       82    0.045    0.001    0.045    0.001 nms.py:55(<listcomp>)
+       82    0.039    0.000    0.039    0.000 {built-in method sum}
+     5412    0.010    0.000    0.027    0.000 __init__.py:1298(info)
+       84    0.020    0.000    0.020    0.000 {built-in method max}
+     5412    0.011    0.000    0.017    0.000 __init__.py:1544(isEnabledFor)
+       82    0.014    0.000    0.014    0.000 {built-in method sqrt}
+      328    0.013    0.000    0.013    0.000 {method 'cpu' of 'torch._C._TensorBase' objects}
+      602    0.013    0.000    0.013    0.000 {method 'view' of 'torch._C._TensorBase' objects}
+      246    0.013    0.000    0.013    0.000 {built-in method nmslib.init}
+       82    0.010    0.000    0.010    0.000 {built-in method clamp}
+       82    0.009    0.000    0.009    0.000 {built-in method exp}
+      328    0.008    0.000    0.008    0.000 {method 'detach' of 'torch._C._TensorBase' objects}
+      328    0.007    0.000    0.007    0.000 {method 'numpy' of 'torch._C._TensorBase' objects}
+       82    0.006    0.000    0.006    0.000 {built-in method from_numpy}
+      226    0.004    0.000    0.006    0.000 module.py:781(__setattr__)
+     5412    0.006    0.000    0.006    0.000 __init__.py:1530(getEffectiveLevel)
