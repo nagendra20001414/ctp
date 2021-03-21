@@ -47,7 +47,7 @@ def main(argv):
 
     # model params
     parser.add_argument('--model', '-m', action='store', type=str, default='distmult',
-                        choices=['distmult', 'complex'])
+                        choices=['distmult', 'complex', 'transe'])
 
     parser.add_argument('--embedding-size', '-k', action='store', type=int, default=100)
     parser.add_argument('--batch-size', '-b', action='store', type=int, default=100)
