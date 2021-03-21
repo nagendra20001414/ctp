@@ -22,6 +22,7 @@ class TransE(BaseLatentFeatureModel):
         self.predicate_embeddings = predicate_embeddings
         self.embedding_size = self.entity_embeddings.weight.shape[1]
 
+    @profile(immediate=True)
     def score(self,
               rel: Tensor,
               arg1: Tensor,
@@ -35,6 +36,7 @@ class TransE(BaseLatentFeatureModel):
 
         # [B] Tensor
         return res
+    
     @profile(immediate=True)
     def forward(self,
                 rel: Tensor,

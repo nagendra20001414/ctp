@@ -3,7 +3,7 @@
 
 import os
 import sys
-
+import datetime as dt
 import argparse
 
 import multiprocessing
@@ -197,11 +197,11 @@ def main(argv):
     for epoch_no in range(1, nb_epochs + 1):
         batcher = Batcher(data, batch_size, 1, random_state)
         nb_batches = len(batcher.batches)
-
+        epoch_start_time = dt.datetime.now()
         epoch_loss_values = []
         for batch_no, (batch_start, batch_end) in enumerate(batcher.batches, 1):
+            batch_start_time = dt.datetime.now()
             xp_batch, xs_batch, xo_batch, xi_batch = batcher.get_batch(batch_start, batch_end)
-
             xp_batch = torch.from_numpy(xp_batch.astype('int64')).to(device)
             xs_batch = torch.from_numpy(xs_batch.astype('int64')).to(device)
             xo_batch = torch.from_numpy(xo_batch.astype('int64')).to(device)
@@ -237,10 +237,11 @@ def main(argv):
 
             if not is_quiet:
                 logger.info(f'Epoch {epoch_no}/{nb_epochs}\tBatch {batch_no}/{nb_batches}\tLoss {loss_value:.6f}')
-
+                logger.info("Time taken for this batch: "+str(dt.datetime.now()-batch_start_time))
+                
         loss_mean, loss_std = np.mean(epoch_loss_values), np.std(epoch_loss_values)
         logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} ± {loss_std:.4f}')
-
+        logger.info("Time taken for this epoch: "+str(dt.datetime.now()-epoch_start_time))
         if validate_every is not None and epoch_no % validate_every == 0:
             for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
                 metrics = evaluate(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
