@@ -112,10 +112,7 @@ class SimpleHoppy(BaseLatentFeatureModel):
             res = self.model.score(rel, arg1, arg2)
 
         return res
-<<<<<<< HEAD
-=======
-    
->>>>>>> f93c91e75af593a92157b281ef911040e5ceffb0
+
     @profile(immediate=True)
     def forward(self,
                 rel: Tensor,

@@ -126,10 +126,6 @@ class SimpleHoppy(BaseSmartModel):
                 res = self.model.score(rel, arg1, arg2, mask_indices=mask_indices)
 
             global_res = res if global_res is None else torch.max(global_res, res)
-<<<<<<< HEAD
-
-=======
->>>>>>> f93c91e75af593a92157b281ef911040e5ceffb0
         return global_res
 
     @profile(immediate=True)
@@ -552,3 +548,4 @@ class SimpleHoppy(BaseSmartModel):
     def factor(self,
                embedding_vector: Tensor) -> Tensor:
         return self.model.factor(embedding_vector)
+

@@ -210,8 +210,9 @@ def main(argv):
             xp_batch_emb = predicate_embeddings(xp_batch)
             xs_batch_emb = entity_embeddings(xs_batch)
             xo_batch_emb = entity_embeddings(xo_batch)
-
+            print("starting forward step")
             sp_scores, po_scores = model.forward(xp_batch_emb, xs_batch_emb, xo_batch_emb)
+            print("forward step finished")
             # factors = [model.factor(e) for e in [xp_batch_emb, xs_batch_emb, xo_batch_emb]]
 
             s_loss = loss_function(sp_scores, xo_batch)

@@ -1,0 +1,281 @@
+./bin/transe-cli.py --train /home/baadalvm/ctp/data/nations/train.tsv --test /home/baadalvm/ctp/data/nations/test.tsv --dev /home/baadalvm/ctp/data/nations/dev.tsv -e 5 -b 100 --seed 1 --eval-batch-size 100 --save transe-params.txt
+{'N2': None,
+ 'N3': None,
+ 'batch_size': 100,
+ 'dev': '/home/baadalvm/ctp/data/nations/dev.tsv',
+ 'embedding_size': 100,
+ 'epochs': 5,
+ 'eval_batch_size': 100,
+ 'gradient_accumulation_steps': 1,
+ 'input_type': 'standard',
+ 'learning_rate': 0.1,
+ 'load': None,
+ 'model': 'distmult',
+ 'optimizer': 'adagrad',
+ 'quiet': False,
+ 'save': 'transe-params.txt',
+ 'seed': 1,
+ 'test': '/home/baadalvm/ctp/data/nations/test.tsv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/ctp/data/nations/train.tsv',
+ 'validate_every': None}
+INFO:transe-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  1592
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  1992
+entity indexes are set!
+for loop is done..!
+INFO:transe-cli.py:Model state:
+INFO:transe-cli.py:	entities.weight	torch.Size([14, 100])
+INFO:transe-cli.py:	predicates.weight	torch.Size([55, 100])
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 1/16	Loss 5.278113
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 2/16	Loss 5.277959
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 3/16	Loss 5.283940
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 4/16	Loss 5.273930
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 5/16	Loss 5.286530
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 6/16	Loss 5.256975
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 7/16	Loss 5.249827
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 8/16	Loss 5.277135
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 9/16	Loss 5.236781
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 10/16	Loss 5.248554
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 11/16	Loss 5.206219
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 12/16	Loss 5.227819
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 13/16	Loss 5.182660
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 14/16	Loss 5.156818
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 15/16	Loss 5.227592
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/5	Batch 16/16	Loss 5.207714
+INFO:transe-cli.py:Epoch 1/5	Loss 5.2424 ± 0.0376
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 1/16	Loss 4.836092
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 2/16	Loss 4.763058
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 3/16	Loss 4.837548
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 4/16	Loss 4.862173
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 5/16	Loss 4.835930
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 6/16	Loss 4.863410
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 7/16	Loss 4.962284
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 8/16	Loss 4.705232
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 9/16	Loss 4.765227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 10/16	Loss 4.659477
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 11/16	Loss 4.741797
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 12/16	Loss 4.752543
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 13/16	Loss 4.678465
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 14/16	Loss 4.700153
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 15/16	Loss 4.609747
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/5	Batch 16/16	Loss 4.688918
+INFO:transe-cli.py:Epoch 2/5	Loss 4.7664 ± 0.0903
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 1/16	Loss 4.267976
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 2/16	Loss 4.138896
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 3/16	Loss 4.278249
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 4/16	Loss 4.630671
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 5/16	Loss 4.345342
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 6/16	Loss 4.282664
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 7/16	Loss 4.247328
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 8/16	Loss 4.388907
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 9/16	Loss 4.336382
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 10/16	Loss 4.480094
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 11/16	Loss 4.246845
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 12/16	Loss 4.322660
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 13/16	Loss 4.456795
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 14/16	Loss 4.346573
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 15/16	Loss 4.397316
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/5	Batch 16/16	Loss 4.480822
+INFO:transe-cli.py:Epoch 3/5	Loss 4.3530 ± 0.1148
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 1/16	Loss 4.099834
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 2/16	Loss 4.071160
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 3/16	Loss 3.847645
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 4/16	Loss 4.140050
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 5/16	Loss 4.102500
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 6/16	Loss 4.082657
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 7/16	Loss 4.224849
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 8/16	Loss 4.211852
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 9/16	Loss 4.122810
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 10/16	Loss 4.324614
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 11/16	Loss 4.167370
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 12/16	Loss 4.224078
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 13/16	Loss 4.045929
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 14/16	Loss 4.224802
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 15/16	Loss 4.173154
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/5	Batch 16/16	Loss 4.062240
+INFO:transe-cli.py:Epoch 4/5	Loss 4.1328 ± 0.1041
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 1/16	Loss 3.691928
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 2/16	Loss 3.790123
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 3/16	Loss 4.053308
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 4/16	Loss 3.874170
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 5/16	Loss 3.763952
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 6/16	Loss 4.105299
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 7/16	Loss 4.059539
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 8/16	Loss 4.099348
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 9/16	Loss 4.127547
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 10/16	Loss 4.095453
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 11/16	Loss 4.130303
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 12/16	Loss 4.003268
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 13/16	Loss 4.004676
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 14/16	Loss 4.249320
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 15/16	Loss 4.047727
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/5	Batch 16/16	Loss 4.207282
+INFO:transe-cli.py:Epoch 5/5	Loss 4.0190 ± 0.1545
+INFO:transe-cli.py:Final 	dev results	MRR 0.757383	H@1 0.623116	H@3 0.871859	H@5 0.939698	H@10 1.000000
+INFO:transe-cli.py:Final 	test results	MRR 0.736177	H@1 0.597015	H@3 0.845771	H@5 0.930348	H@10 0.992537
+INFO:transe-cli.py:Training finished

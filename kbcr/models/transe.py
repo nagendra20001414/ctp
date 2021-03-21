@@ -8,6 +8,7 @@ from torch import nn, Tensor
 from kbcr.models.base import BaseLatentFeatureModel
 
 from typing import Tuple, Optional
+from profilehooks import profile
 
 logger = logging.getLogger(__name__)
 
@@ -34,7 +35,7 @@ class TransE(BaseLatentFeatureModel):
 
         # [B] Tensor
         return res
-
+    @profile(immediate=True)
     def forward(self,
                 rel: Tensor,
                 arg1: Optional[Tensor],
