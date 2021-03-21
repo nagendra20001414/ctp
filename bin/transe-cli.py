@@ -169,7 +169,7 @@ def main(argv):
         'complex': lambda: ComplEx(entity_embeddings=entity_embeddings),
         'ntpzero': lambda: NeuralKB(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                     kernel=kernel, facts=facts),
-        'transe': lambda: TransE(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings)
+        'transe': lambda: TransE(entity_embeddings=entity_embeddings)
     }
 
     assert model_name in model_factory

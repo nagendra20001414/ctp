@@ -15,11 +15,10 @@ logger = logging.getLogger(__name__)
 
 class TransE(BaseLatentFeatureModel):
     def __init__(self,
-                 entity_embeddings: nn.Embedding,
-                 predicate_embeddings: nn.Embedding) -> None:
+                 entity_embeddings: nn.Embedding) -> None:
         super().__init__()
         self.entity_embeddings = entity_embeddings
-        self.predicate_embeddings = predicate_embeddings
+        # self.predicate_embeddings = predicate_embeddings
         self.embedding_size = self.entity_embeddings.weight.shape[1]
 
     @profile(immediate=True)
@@ -44,7 +43,7 @@ class TransE(BaseLatentFeatureModel):
                 arg2: Optional[Tensor],
                 *args, **kwargs) -> Tuple[Optional[Tensor], Optional[Tensor]]:
         emb = self.entity_embeddings.weight
-        p_emb = self.predicate_embeddings.weight
+        # p_emb = self.predicate_embeddings.weight
 
         # [B] Tensor
         score_sp = score_po = None
@@ -53,7 +52,7 @@ class TransE(BaseLatentFeatureModel):
             arg1_expand = Tensor(arg1+rel)
             arg1_expand.unsqueeze_(-1)
             arg1_expand = arg1_expand.expand(arg1_expand.shape[0], arg1_expand.shape[1], emb.shape[0])
-            emb_expand = Tensor(p_emb)
+            emb_expand = Tensor(emb)
             emb_expand.unsqueeze_(-1)
             emb_expand = emb_expand.expand(emb_expand.shape[0], emb_expand.shape[1], arg1_expand.shape[0])
             emb_expand = emb_expand.permute(2, 1, 0)
@@ -65,7 +64,7 @@ class TransE(BaseLatentFeatureModel):
             arg2_expand = Tensor(rel-arg2)
             arg2_expand.unsqueeze_(-1)
             arg2_expand = arg2_expand.expand(arg2_expand.shape[0], arg2_expand.shape[1], emb.shape[0])
-            emb_expand = Tensor(p_emb)
+            emb_expand = Tensor(emb)
             emb_expand.unsqueeze_(-1)
             emb_expand = emb_expand.expand(emb_expand.shape[0], emb_expand.shape[1], arg2_expand.shape[0])
             emb_expand = emb_expand.permute(2, 1, 0)
