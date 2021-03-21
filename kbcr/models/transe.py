@@ -48,7 +48,7 @@ class TransE(BaseLatentFeatureModel):
 
         # [B] Tensor
         score_sp = score_po = None
-
+        print("this is in forward step!")
         if arg1 is not None:
             arg1_expand = Tensor(arg1+rel)
             arg1_expand.unsqueeze_(-1)
