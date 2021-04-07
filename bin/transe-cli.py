@@ -73,6 +73,7 @@ def main(argv):
     parser.add_argument('--gradient-accumulation-steps', '--gas', action='store', type=int, default=1)
 
     parser.add_argument('--load', action='store', type=str, default=None)
+    parser.add_argument('--load-transe', action='store', type=str, default=None)
     parser.add_argument('--save', action='store', type=str, default=None)
 
     parser.add_argument('--quiet', '-q', action='store_true', default=False)
@@ -112,6 +113,7 @@ def main(argv):
     gradient_accumulation_steps = args.gradient_accumulation_steps
 
     load_path = args.load
+    transe_load_path = args.load_transe
     save_path = args.save
 
     is_quiet = args.quiet
@@ -152,9 +154,16 @@ def main(argv):
     })
     parameters_lst.to(device)
 
+    transe_parameters_lst = nn.ModuleDict({
+        'entities': entity_embeddings,
+        'predicates': predicate_embeddings
+    })
+    transe_parameters_lst.to(device)
+
     if load_path is not None:
         parameters_lst.load_state_dict(torch.load(load_path))
-
+    if transe_load_path is not None:
+        transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
     kernel = facts = None
     if model_name in {'ntpzero'}:
         kernel = GaussianKernel(slope=None)
