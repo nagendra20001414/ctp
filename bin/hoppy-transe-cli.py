@@ -415,19 +415,22 @@ def main(argv):
         test_auc = evaluate_on_countries('test', data.entity_to_idx, data.predicate_to_idx, scoring_function)
         print('Last AUC-PR (test) {:.4f}'.format(test_auc))
     elif transe_eval:
-        transe_parameters_lst = nn.ModuleDict({
-            'entities': entity_embeddings,
-            'predicates': predicate_embeddings
-        })
-        transe_parameters_lst.to(device)
-        if transe_load_path is not None:
-            transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
+        # transe_parameters_lst = nn.ModuleDict({
+        #     'entities': entity_embeddings,
+        #     'predicates': predicate_embeddings
+        # })
+        # transe_parameters_lst.to(device)
+        # if transe_load_path is not None:
+        #     transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
+        saved_transe_model = torch.load(transe_load_path)
+        transe_entities = saved_transe_model['entities']
+        transe_predicates = saved_transe_model['predicates']
         for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
             metrics = evaluate_(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                 test_triples=triples, all_triples=data.all_triples,
                                 entity_to_index=data.entity_to_idx, predicate_to_index=data.predicate_to_idx,
-                                model=model, transe_entity_embeddings=transe_parameters_lst.state_dict()['entities'],
-                                transe_predicate_embeddings=transe_parameters_lst.state_dict()['predicates'], batch_size=eval_batch_size, device=device)
+                                model=model, transe_entity_embeddings=transe_entities,
+                                transe_predicate_embeddings=transe_predicates, batch_size=eval_batch_size, device=device)
             logger.info(f'Final \t{name} results\t{metrics_to_str(metrics)}')
 
     if save_path is not None:
