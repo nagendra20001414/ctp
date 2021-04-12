@@ -9,6 +9,9 @@ from torch import nn
 from kbcr.util import make_batches
 from kbcr.models import BaseLatentFeatureModel
 
+from kbcr.indexing import NMSSearchIndex
+
+
 from typing import Tuple, Dict
 
 
@@ -58,11 +61,16 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
     counter = 0
     mrr = 0.0
 
+    transe_index = NMSSearchIndex()
+    transe_index.build(transe_entity_embeddings.cpu().detach().numpy())
+
     for s, p, o in list(zip(xs, xp, xo)):
         counter += 2
         with torch.no_grad():
-            diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
-            sp_emb = torch.topk(diff_sp, num_entities_select, largest=False).indices.tolist()
+            # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
+            sp_emb = transe_index.query((transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy(), 
+                k=num_entities_select).tolist()
+            # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
             if o not in sp_emb:
                 sp_emb += [o]
 
@@ -70,8 +78,9 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
             for count, x in enumerate(sp_emb):
                 sp_emb_to_idx[x] = count
 
-            diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
-            po_emb = torch.topk(diff_po, num_entities_select, largest=False).indices.tolist()
+            # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
+            po_emb = transe_index.query((transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy(), 
+                k=num_entities_select).tolist()
             if s not in po_emb:
                 po_emb += [s]
 
