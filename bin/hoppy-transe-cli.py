@@ -423,8 +423,8 @@ def main(argv):
         # if transe_load_path is not None:
         #     transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
         saved_transe_model = torch.load(transe_load_path)
-        transe_entities = saved_transe_model['entities']
-        transe_predicates = saved_transe_model['predicates']
+        transe_entities = saved_transe_model['entities.weight']
+        transe_predicates = saved_transe_model['predicates.weight']
         for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
             metrics = evaluate_(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                 test_triples=triples, all_triples=data.all_triples,
