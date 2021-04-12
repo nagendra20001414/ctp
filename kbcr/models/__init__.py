@@ -6,12 +6,13 @@ from kbcr.models.distmult import DistMult
 from kbcr.models.complex import ComplEx
 from kbcr.models.kb import NeuralKB
 from kbcr.models.multi import Multi
-from kbcr.models.transe import evaluate_transe
+from kbcr.models.transe import TransE
+
 __all__ = [
     'BaseLatentFeatureModel',
     'DistMult',
     'ComplEx',
     'NeuralKB',
     'Multi',
-    'evaluate_transe'
+    'TransE'
 ]
