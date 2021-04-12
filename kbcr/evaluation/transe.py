@@ -72,7 +72,7 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
             diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
             sp_emb = transe_index.query(diff_sp, k=num_entities_select)
             print(sp_emb.shape)
-            sp_emb = sp_emb.tolist()
+            sp_emb = sp_emb[0].tolist()
             # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
             if o not in sp_emb:
                 sp_emb += [o]
@@ -83,7 +83,7 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
             # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
             diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
-            po_emb = transe_index.query(diff_po, k=num_entities_select).tolist()
+            po_emb = transe_index.query(diff_po, k=num_entities_select)[0].tolist()
             if s not in po_emb:
                 po_emb += [s]
 
