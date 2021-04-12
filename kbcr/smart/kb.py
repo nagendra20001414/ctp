@@ -4,7 +4,7 @@ import numpy as np
 
 import torch
 from torch import nn, Tensor
-
+from profilehooks import profile
 from kbcr.kernels import BaseKernel
 from kbcr.smart.base import BaseSmartModel
 
@@ -72,6 +72,7 @@ class NeuralKB(BaseSmartModel):
         emb_arg2 = self.entity_embeddings(fact_arg2)
         return emb_rel, emb_arg1, emb_arg2
 
+    @profile(immediate=True)
     def score(self,
               rel: Tensor, arg1: Tensor, arg2: Tensor,
               mask_indices: Optional[Tensor] = None,
@@ -117,6 +118,7 @@ class NeuralKB(BaseSmartModel):
         res, _ = torch.max(scores, dim=1)
         return res
 
+    # @profile(immediate=True)
     def neighbors(self,
                   rel: Tensor, arg1: Optional[Tensor], arg2: Optional[Tensor],
                   fact_rel: Tensor, fact_arg1: Tensor, fact_arg2: Tensor,
@@ -151,6 +153,7 @@ class NeuralKB(BaseSmartModel):
         self.index_count += 1
         return res_sp, res_po, res_spo
 
+    @profile(immediate=True)
     def forward(self,
                 rel: Tensor,
                 arg1: Optional[Tensor],
@@ -241,6 +244,7 @@ class NeuralKB(BaseSmartModel):
 
         return res_sp, res_po
 
+    @profile(immediate=True)
     def forward_(self,
                  rel: Tensor,
                  arg1: Optional[Tensor],
@@ -295,6 +299,7 @@ class NeuralKB(BaseSmartModel):
 
         return (score_sp, None), (score_po, None)
 
+    @profile(immediate=True)
     def forward__(self,
                   rel: Tensor,
                   arg1: Optional[Tensor],

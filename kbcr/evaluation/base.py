@@ -4,6 +4,7 @@ import numpy as np
 
 import torch
 from torch import nn
+import datetime as dt
 
 from kbcr.util import make_batches
 from kbcr.models import BaseLatentFeatureModel
@@ -58,7 +59,9 @@ def evaluate(entity_embeddings: nn.Embedding,
     mrr = 0.0
 
     ranks_l, ranks_r = [], []
+    print("This print statement is from base.py, before for loop")
     for start, end in batches:
+        batch_start = dt.datetime.now()
         batch_xs = xs[start:end]
         batch_xp = xp[start:end]
         batch_xo = xo[start:end]
@@ -112,6 +115,8 @@ def evaluate(entity_embeddings: nn.Embedding,
 
             for n in hits_at:
                 hits_at_n(n, rank_r)
+        batch_end = dt.datetime.now()
+        print("This batch took:", batch_end-batch_start)
 
     counter = float(counter)
 
