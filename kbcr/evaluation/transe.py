@@ -46,7 +46,7 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
     assert xs.shape == xp.shape == xo.shape
     nb_test_triples = xs.shape[0]
-    num_entities_select = 1000
+    num_entities_select = 100
 
     hits = dict()
     hits_at = [1, 3, 5, 10]
@@ -63,14 +63,14 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
     transe_index = NMSSearchIndex()
     transe_index.build(transe_entity_embeddings.cpu().detach().numpy())
-    
+
     timer_start = dt.datetime.now()
     for s, p, o in list(zip(xs, xp, xo)):
         counter += 2
         with torch.no_grad():
             # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
-            sp_emb = transe_index.query((transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy(), 
-                k=num_entities_select).tolist()
+            diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
+            sp_emb = transe_index.query(diff_sp, k=num_entities_select).tolist()
             # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
             if o not in sp_emb:
                 sp_emb += [o]
@@ -80,8 +80,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
                 sp_emb_to_idx[x] = count
 
             # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
-            po_emb = transe_index.query((transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy(), 
-                k=num_entities_select).tolist()
+            diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
+            po_emb = transe_index.query(diff_po, k=num_entities_select).tolist()
             if s not in po_emb:
                 po_emb += [s]
 
