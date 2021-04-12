@@ -124,8 +124,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-        sp_key = (s_idx, p_idx)
-        po_key = (p_idx, o_idx)
+        sp_key = (s, p)
+        po_key = (p, o)
 
         o_to_remove = sp_to_o[sp_key]
         s_to_remove = po_to_s[po_key]
@@ -139,8 +139,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
                 scores_po[po_emb_to_idx[tmp_s_idx]] = - np.infty
         # End of code for the filtered setting
 
-        rank_l = 1 + np.argsort(np.argsort(- scores_po))[po_emb_to_idx[s_idx]]
-        rank_r = 1 + np.argsort(np.argsort(- scores_sp))[sp_emb_to_idx[o_idx]]
+        rank_l = 1 + np.argsort(np.argsort(- scores_po))[po_emb_to_idx[s]]
+        rank_r = 1 + np.argsort(np.argsort(- scores_sp))[sp_emb_to_idx[o]]
 
         mrr += 1.0 / rank_l
         mrr += 1.0 / rank_r
