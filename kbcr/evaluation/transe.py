@@ -139,8 +139,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
                 scores_po[po_emb_to_idx[tmp_s_idx]] = - np.infty
         # End of code for the filtered setting
 
-        rank_l = 1 + np.argsort(np.argsort(- scores_po))[s_idx]
-        rank_r = 1 + np.argsort(np.argsort(- scores_sp))[o_idx]
+        rank_l = 1 + np.argsort(np.argsort(- scores_po))[po_emb_to_idx[s_idx]]
+        rank_r = 1 + np.argsort(np.argsort(- scores_sp))[sp_emb_to_idx[o_idx]]
 
         mrr += 1.0 / rank_l
         mrr += 1.0 / rank_r
