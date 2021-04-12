@@ -30,7 +30,7 @@ from kbcr.reformulators import NTPReformulator
 
 from kbcr.regularizers import N2, N3
 from kbcr.evaluation import evaluate
-from kbcr.models import evaluate_transe
+from kbcr.evaluation import evaluate_transe
 # from kbcr.evaluation import evaluate_slow as evaluate
 from kbcr.evaluation import evaluate_naive
 from kbcr.evaluation import evaluate_on_countries
@@ -278,14 +278,11 @@ def main(argv):
     params_lst = {p for p in model.parameters()} | {entity_embeddings.weight, predicate_embeddings.weight}
     params = nn.ParameterList(params_lst).to(device)
 
-    transe_params_lst = {p for p in model.parameters()} | {entity_embeddings.weight, predicate_embeddings.weight}
-    transe_params = nn.ParameterList(transe_params_lst).to(device)
+
+    # transe_params = nn.ParameterList(transe_params_lst).to(device)
 
     if load_path is not None:
         model.load_state_dict(torch.load(load_path))
-
-    if transe_load_path is not None:
-        transe_params_lst.load_state_dict(torch.load(transe_load_path))
 
     for tensor in params_lst:
         logger.info(f'\t{tensor.size()}\t{tensor.device}')
@@ -396,7 +393,14 @@ def main(argv):
 
                 test_auc = evaluate_on_countries('test', data.entity_to_idx, data.predicate_to_idx, scoring_function)
                 print('Last AUC-PR (test) {:.4f}'.format(test_auc))
-            else:
+            elif transe_eval:
+                transe_parameters_lst = nn.ModuleDict({
+                    'entities': entity_embeddings,
+                    'predicates': predicate_embeddings
+                })
+                transe_parameters_lst.to(device)
+                if transe_load_path is not None:
+                    transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
                 for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
                     metrics = evaluate_(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                         test_triples=triples, all_triples=data.all_triples,
@@ -410,12 +414,23 @@ def main(argv):
 
         test_auc = evaluate_on_countries('test', data.entity_to_idx, data.predicate_to_idx, scoring_function)
         print('Last AUC-PR (test) {:.4f}'.format(test_auc))
-    else:
+    elif transe_eval:
+        # transe_parameters_lst = nn.ModuleDict({
+        #     'entities': entity_embeddings,
+        #     'predicates': predicate_embeddings
+        # })
+        # transe_parameters_lst.to(device)
+        # if transe_load_path is not None:
+        #     transe_parameters_lst.load_state_dict(torch.load(transe_load_path))
+        saved_transe_model = torch.load(transe_load_path)
+        transe_entities = saved_transe_model['entities.weight']
+        transe_predicates = saved_transe_model['predicates.weight']
         for triples, name in [(t, n) for t, n in triples_name_pairs if len(t) > 0]:
             metrics = evaluate_(entity_embeddings=entity_embeddings, predicate_embeddings=predicate_embeddings,
                                 test_triples=triples, all_triples=data.all_triples,
                                 entity_to_index=data.entity_to_idx, predicate_to_index=data.predicate_to_idx,
-                                model=model, batch_size=eval_batch_size, device=device)
+                                model=model, transe_entity_embeddings=transe_entities,
+                                transe_predicate_embeddings=transe_predicates, batch_size=eval_batch_size, device=device)
             logger.info(f'Final \t{name} results\t{metrics_to_str(metrics)}')
 
     if save_path is not None:

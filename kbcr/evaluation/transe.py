@@ -2,7 +2,7 @@
 
 import numpy as np
 # from tqdm import tqdm
-
+import datetime as dt
 import torch
 from torch import nn
 
@@ -63,7 +63,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
     transe_index = NMSSearchIndex()
     transe_index.build(transe_entity_embeddings.cpu().detach().numpy())
-
+    
+    timer_start = dt.datetime.now()
     for s, p, o in list(zip(xs, xp, xo)):
         counter += 2
         with torch.no_grad():
@@ -147,6 +148,9 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
         for n in hits_at:
             hits_at_n(n, rank_r)
+        if counter % 2000 == 0:
+            print("Time taken for this batch:", dt.datetime.now()-timer_start)
+            timer_start = dt.datetime.now()
 
     counter = float(counter)
 
