@@ -15,7 +15,7 @@ from torch import nn, optim
 from kbcr.training.data import Data
 from kbcr.training.batcher import Batcher
 from kbcr.kernels import GaussianKernel
-from kbcr.models import DistMult, ComplEx, NeuralKB, TransE
+from kbcr.models import DistMult, ComplEx, NeuralKB
 
 from kbcr.regularizers import N2, N3
 from kbcr.evaluation import evaluate
