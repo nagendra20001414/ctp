@@ -46,7 +46,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
     assert xs.shape == xp.shape == xo.shape
     nb_test_triples = xs.shape[0]
-    num_entities_select = 100
+    num_entities_select = 10
+    embedding_size = entity_embeddings.shape[-1]
 
     hits = dict()
     hits_at = [1, 3, 5, 10]
@@ -64,38 +65,49 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
     transe_index = NMSSearchIndex()
     transe_index.build(transe_entity_embeddings.cpu().detach().numpy())
 
-    timer_start = dt.datetime.now()
-    for s, p, o in list(zip(xs, xp, xo)):
-        counter += 2
-        with torch.no_grad():
-            # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
+    batches = make_batches(nb_test_triples, batch_size)
+
+
+    for start, end in batches:
+        timer_start = dt.datetime.now()
+        batch_xs = xs[start:end]
+        batch_xp = xp[start:end]
+        batch_xo = xo[start:end]
+
+        batch_size = batch_xs.shape[0]
+        counter += batch_size * 2
+
+        batch_sp_emb = []
+        batch_po_emb = []
+        sp_emb_to_idx = [{} for idx in range(batch_size)]
+        po_emb_to_idx = [{} for idx in range(batch_size)]
+        idx=0
+        for s, p, o in list(zip(batch_xs, batch_xp, batch_xo)):
             diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
-            sp_emb = transe_index.query(diff_sp, k=num_entities_select)
-            print(sp_emb)
-            sp_emb = sp_emb[0].tolist()
-            # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
-            if o not in sp_emb:
-                sp_emb += [o]
+            sp_emb = [o] + transe_index.query(diff_sp, k=num_entities_select)[0].tolist()
 
-            sp_emb_to_idx = {}
-            for count, x in enumerate(sp_emb):
-                sp_emb_to_idx[x] = count
-
-            # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
             diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
-            po_emb = transe_index.query(diff_po, k=num_entities_select)[0].tolist()
-            if s not in po_emb:
-                po_emb += [s]
+            po_emb = [s] + transe_index.query(diff_po, k=num_entities_select)[0].tolist()
 
-            po_emb_to_idx = {}
+            batch_sp_emb += sp_emb
+            batch_po_emb += po_emb
+
+            # sp_emb_to_idx = {}
+            for count, x in enumerate(sp_emb):
+                sp_emb_to_idx[idx][x] = count
+
+            # po_emb_to_idx = {}
             for count, x in enumerate(po_emb):
-                po_emb_to_idx[x] = count
+                po_emb_to_idx[idx][x] = count
 
-            tensor_xs = torch.from_numpy(np.array([s])).to(device)
-            tensor_xp = torch.from_numpy(np.array([p])).to(device)
-            tensor_xo = torch.from_numpy(np.array([o])).to(device)
-            tensor_xsp = torch.from_numpy(np.array(sp_emb)).to(device)
-            tensor_xpo = torch.from_numpy(np.array(po_emb)).to(device)
+            idx+=1
+
+        with torch.no_grad():
+            tensor_xs = torch.from_numpy(batch_xs).to(device)
+            tensor_xp = torch.from_numpy(batch_xp).to(device)
+            tensor_xo = torch.from_numpy(batch_xo).to(device)
+            tensor_xsp = torch.from_numpy(np.array(batch_sp_emb)).to(device)
+            tensor_xpo = torch.from_numpy(np.array(batch_po_emb)).to(device)
 
             tensor_xs_emb = entity_embeddings(tensor_xs)
             tensor_xp_emb = predicate_embeddings(tensor_xp)
@@ -103,57 +115,58 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
             tensor_xsp_emb = entity_embeddings(tensor_xsp)
             tensor_xpo_emb = entity_embeddings(tensor_xpo)
 
-            curr_k = len(sp_emb)
-            tensor_xs_emb_rep = tensor_xs_emb.repeat(curr_k, 1)
-            tensor_xp_emb_rep = tensor_xp_emb.repeat(curr_k, 1)
+            tensor_xs_emb_rep = tensor_xs_emb.repeat(1, num_entities_select+1).view(-1, embedding_size)
+            tensor_xp_emb_rep = tensor_xp_emb.repeat(1, num_entities_select+1).view(-1, embedding_size)
 
             scores_sp = model.score(tensor_xp_emb_rep, tensor_xs_emb_rep, tensor_xsp_emb).cpu().numpy()
             del tensor_xs_emb_rep, tensor_xp_emb_rep
 
-            curr_k = len(po_emb)
-            tensor_xo_emb_rep = tensor_xo_emb.repeat(curr_k, 1)
-            tensor_xp_emb_rep = tensor_xp_emb.repeat(curr_k, 1)
+            tensor_xo_emb_rep = tensor_xo_emb.repeat(num_entities_select+1, 1).view(-1, embedding_size)
+            tensor_xp_emb_rep = tensor_xp_emb.repeat(num_entities_select+1, 1).view(-1, embedding_size)
 
             scores_po = model.score(tensor_xp_emb_rep, tensor_xpo_emb, tensor_xo_emb_rep).cpu().numpy()
             del tensor_xo_emb_rep, tensor_xp_emb_rep
 
             del tensor_xs, tensor_xp, tensor_xo, tensor_xsp, tensor_xpo
             del tensor_xs_emb, tensor_xp_emb, tensor_xo_emb, tensor_xsp_emb, tensor_xpo_emb
-            # print(scores_sp.shape, scores_po.shape)
 
         if torch.cuda.is_available():
             torch.cuda.empty_cache()
 
-        sp_key = (s, p)
-        po_key = (p, o)
+        idx=0
+        for s, p, o in list(zip(batch_xs, batch_xp, batch_xo)):
+            scores_sp_curr = scores_sp[idx*(num_entities_select+1):(idx+1)*(num_entities_select+1)]
+            scores_po_curr = scores_po[idx*(num_entities_select+1):(idx+1)*(num_entities_select+1)]
 
-        o_to_remove = sp_to_o[sp_key]
-        s_to_remove = po_to_s[po_key]
+            sp_key = (s, p)
+            po_key = (p, o)
 
-        for tmp_o_idx in o_to_remove:
-            if tmp_o_idx != o and tmp_o_idx in sp_emb_to_idx:
-                scores_sp[sp_emb_to_idx[tmp_o_idx]] = - np.infty
+            o_to_remove = sp_to_o[sp_key]
+            s_to_remove = po_to_s[po_key]
 
-        for tmp_s_idx in s_to_remove:
-            if tmp_s_idx != s and tmp_s_idx in po_emb_to_idx:
-                scores_po[po_emb_to_idx[tmp_s_idx]] = - np.infty
-        # End of code for the filtered setting
+            for tmp_o_idx in o_to_remove:
+                if tmp_o_idx != o and tmp_o_idx in sp_emb_to_idx:
+                    scores_sp_curr[sp_emb_to_idx[idx][tmp_o_idx]] = - np.infty
 
-        rank_l = 1 + np.argsort(np.argsort(- scores_po))[po_emb_to_idx[s]]
-        rank_r = 1 + np.argsort(np.argsort(- scores_sp))[sp_emb_to_idx[o]]
+            for tmp_s_idx in s_to_remove:
+                if tmp_s_idx != s and tmp_s_idx in po_emb_to_idx:
+                    scores_po_curr[po_emb_to_idx[idx][tmp_s_idx]] = - np.infty
+            # End of code for the filtered setting
 
-        mrr += 1.0 / rank_l
-        mrr += 1.0 / rank_r
+            rank_l = 1 + np.argsort(np.argsort(- scores_po_curr))[po_emb_to_idx[idx][s]]
+            rank_r = 1 + np.argsort(np.argsort(- scores_sp_curr))[sp_emb_to_idx[idx][o]]
 
-        for n in hits_at:
-            hits_at_n(n, rank_l)
+            mrr += 1.0 / rank_l
+            mrr += 1.0 / rank_r
 
-        for n in hits_at:
-            hits_at_n(n, rank_r)
-        if counter % 2000 == 0:
-            print("Time taken for this batch:", dt.datetime.now()-timer_start)
-            timer_start = dt.datetime.now()
+            for n in hits_at:
+                hits_at_n(n, rank_l)
 
+            for n in hits_at:
+                hits_at_n(n, rank_r)
+            idx+=1
+        print("Time taken for this batch:", dt.datetime.now()-timer_start)
+    
     counter = float(counter)
 
     mrr /= counter
@@ -167,6 +180,117 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
         metrics['hits@{}'.format(n)] = hits[n]
 
     return metrics
+
+
+
+
+
+
+
+
+
+    # for s, p, o in list(zip(xs, xp, xo)):
+    #     counter += 2
+    #     with torch.no_grad():
+    #         # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
+    #         diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
+    #         sp_emb = transe_index.query(diff_sp, k=num_entities_select)
+    #         print(sp_emb)
+    #         sp_emb = sp_emb[0].tolist()
+    #         # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
+    #         if o not in sp_emb:
+    #             sp_emb += [o]
+
+    #         sp_emb_to_idx = {}
+    #         for count, x in enumerate(sp_emb):
+    #             sp_emb_to_idx[x] = count
+
+    #         # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
+    #         diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
+    #         po_emb = transe_index.query(diff_po, k=num_entities_select)[0].tolist()
+    #         if s not in po_emb:
+    #             po_emb += [s]
+
+    #         po_emb_to_idx = {}
+    #         for count, x in enumerate(po_emb):
+    #             po_emb_to_idx[x] = count
+
+    #         tensor_xs = torch.from_numpy(np.array([s])).to(device)
+    #         tensor_xp = torch.from_numpy(np.array([p])).to(device)
+    #         tensor_xo = torch.from_numpy(np.array([o])).to(device)
+    #         tensor_xsp = torch.from_numpy(np.array(sp_emb)).to(device)
+    #         tensor_xpo = torch.from_numpy(np.array(po_emb)).to(device)
+
+    #         tensor_xs_emb = entity_embeddings(tensor_xs)
+    #         tensor_xp_emb = predicate_embeddings(tensor_xp)
+    #         tensor_xo_emb = entity_embeddings(tensor_xo)
+    #         tensor_xsp_emb = entity_embeddings(tensor_xsp)
+    #         tensor_xpo_emb = entity_embeddings(tensor_xpo)
+
+    #         curr_k = len(sp_emb)
+    #         tensor_xs_emb_rep = tensor_xs_emb.repeat(curr_k, 1)
+    #         tensor_xp_emb_rep = tensor_xp_emb.repeat(curr_k, 1)
+
+    #         scores_sp = model.score(tensor_xp_emb_rep, tensor_xs_emb_rep, tensor_xsp_emb).cpu().numpy()
+    #         del tensor_xs_emb_rep, tensor_xp_emb_rep
+
+    #         curr_k = len(po_emb)
+    #         tensor_xo_emb_rep = tensor_xo_emb.repeat(curr_k, 1)
+    #         tensor_xp_emb_rep = tensor_xp_emb.repeat(curr_k, 1)
+
+    #         scores_po = model.score(tensor_xp_emb_rep, tensor_xpo_emb, tensor_xo_emb_rep).cpu().numpy()
+    #         del tensor_xo_emb_rep, tensor_xp_emb_rep
+
+    #         del tensor_xs, tensor_xp, tensor_xo, tensor_xsp, tensor_xpo
+    #         del tensor_xs_emb, tensor_xp_emb, tensor_xo_emb, tensor_xsp_emb, tensor_xpo_emb
+    #         # print(scores_sp.shape, scores_po.shape)
+
+    #     if torch.cuda.is_available():
+    #         torch.cuda.empty_cache()
+
+    #     sp_key = (s, p)
+    #     po_key = (p, o)
+
+    #     o_to_remove = sp_to_o[sp_key]
+    #     s_to_remove = po_to_s[po_key]
+
+    #     for tmp_o_idx in o_to_remove:
+    #         if tmp_o_idx != o and tmp_o_idx in sp_emb_to_idx:
+    #             scores_sp[sp_emb_to_idx[tmp_o_idx]] = - np.infty
+
+    #     for tmp_s_idx in s_to_remove:
+    #         if tmp_s_idx != s and tmp_s_idx in po_emb_to_idx:
+    #             scores_po[po_emb_to_idx[tmp_s_idx]] = - np.infty
+    #     # End of code for the filtered setting
+
+    #     rank_l = 1 + np.argsort(np.argsort(- scores_po))[po_emb_to_idx[s]]
+    #     rank_r = 1 + np.argsort(np.argsort(- scores_sp))[sp_emb_to_idx[o]]
+
+    #     mrr += 1.0 / rank_l
+    #     mrr += 1.0 / rank_r
+
+    #     for n in hits_at:
+    #         hits_at_n(n, rank_l)
+
+    #     for n in hits_at:
+    #         hits_at_n(n, rank_r)
+    #     if counter % 2000 == 0:
+    #         print("Time taken for this batch:", dt.datetime.now()-timer_start)
+    #         timer_start = dt.datetime.now()
+
+    # counter = float(counter)
+
+    # mrr /= counter
+
+    # for n in hits_at:
+    #     hits[n] /= counter
+
+    # metrics = dict()
+    # metrics['MRR'] = mrr
+    # for n in hits_at:
+    #     metrics['hits@{}'.format(n)] = hits[n]
+
+    # return metrics
 
     # batches = make_batches(nb_test_triples, batch_size)
 
