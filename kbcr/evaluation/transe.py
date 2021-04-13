@@ -47,7 +47,7 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
     assert xs.shape == xp.shape == xo.shape
     nb_test_triples = xs.shape[0]
     num_entities_select = 10
-    embedding_size = entity_embeddings.shape[-1]
+    embedding_size = entity_embeddings.embedding_dim
 
     hits = dict()
     hits_at = [1, 3, 5, 10]
