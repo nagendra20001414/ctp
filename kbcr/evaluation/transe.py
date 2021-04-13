@@ -164,7 +164,7 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
 
             for n in hits_at:
                 hits_at_n(n, rank_r)
-            idx+=1
+            idx += 1
         print("Time taken for this batch:", dt.datetime.now()-timer_start)
     
     counter = float(counter)
