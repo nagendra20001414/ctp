@@ -83,10 +83,10 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
         po_emb_to_idx = [{} for idx in range(batch_size)]
         idx=0
         for s, p, o in list(zip(batch_xs, batch_xp, batch_xo)):
-            diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
+            diff_sp = np.array([(transe_entity_embeddings[s] + transe_predicate_embeddings[p]).cpu().detach().numpy()])
             sp_emb = [o] + transe_index.query(diff_sp, k=num_entities_select)[0].tolist()
 
-            diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
+            diff_po = np.array([(transe_entity_embeddings[o] - transe_predicate_embeddings[p]).cpu().detach().numpy()])
             po_emb = [s] + transe_index.query(diff_po, k=num_entities_select)[0].tolist()
 
             batch_sp_emb += sp_emb
@@ -192,12 +192,12 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
     # for s, p, o in list(zip(xs, xp, xo)):
     #     counter += 2
     #     with torch.no_grad():
-    #         # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_entity_embeddings[p])
-    #         diff_sp = np.array([(transe_entity_embeddings[s] + transe_entity_embeddings[p]).cpu().detach().numpy()])
+    #         # diff_sp = transe_entity_embeddings - (transe_entity_embeddings[s] + transe_predicate_embeddings[p])
+    #         diff_sp = np.array([(transe_entity_embeddings[s] + transe_predicate_embeddings[p]).cpu().detach().numpy()])
     #         sp_emb = transe_index.query(diff_sp, k=num_entities_select)
     #         print(sp_emb)
     #         sp_emb = sp_emb[0].tolist()
-    #         # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_entity_embeddings[p], num_entities_select, largest=False).indices.tolist()
+    #         # sp_emb = torch.topk(transe_entity_embeddings[s] + transe_predicate_embeddings[p], num_entities_select, largest=False).indices.tolist()
     #         if o not in sp_emb:
     #             sp_emb += [o]
 
@@ -205,8 +205,8 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
     #         for count, x in enumerate(sp_emb):
     #             sp_emb_to_idx[x] = count
 
-    #         # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_entity_embeddings[p])
-    #         diff_po = np.array([(transe_entity_embeddings[o] - transe_entity_embeddings[p]).cpu().detach().numpy()])
+    #         # diff_po = transe_entity_embeddings - (transe_entity_embeddings[o] - transe_predicate_embeddings[p])
+    #         diff_po = np.array([(transe_entity_embeddings[o] - transe_predicate_embeddings[p]).cpu().detach().numpy()])
     #         po_emb = transe_index.query(diff_po, k=num_entities_select)[0].tolist()
     #         if s not in po_emb:
     #             po_emb += [s]
