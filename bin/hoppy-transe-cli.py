@@ -408,6 +408,9 @@ def main(argv):
                                         model=model, batch_size=eval_batch_size, device=device)
                     logger.info(f'Epoch {epoch_no}/{nb_epochs}\t{name} results\t{metrics_to_str(metrics)}')
 
+    if save_path is not None:
+        torch.save(model.state_dict(), save_path)
+
     if 'countries' in train_path:
         dev_auc = evaluate_on_countries('dev', data.entity_to_idx, data.predicate_to_idx, scoring_function)
         print('Last AUC-PR (dev) {:.4f}'.format(dev_auc))
@@ -432,9 +435,6 @@ def main(argv):
                                 model=model, transe_entity_embeddings=transe_entities,
                                 transe_predicate_embeddings=transe_predicates, batch_size=eval_batch_size, device=device)
             logger.info(f'Final \t{name} results\t{metrics_to_str(metrics)}')
-
-    if save_path is not None:
-        torch.save(model.state_dict(), save_path)
 
     logger.info("Training finished")
 
