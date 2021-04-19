@@ -29,8 +29,8 @@ from kbcr.reformulators import MemoryReformulator
 from kbcr.reformulators import NTPReformulator
 
 from kbcr.regularizers import N2, N3
-from kbcr.evaluation import evaluate
-# from kbcr.evaluation import evaluate_slow as evaluate
+# from kbcr.evaluation import evaluate
+from kbcr.evaluation import evaluate_slow as evaluate
 from kbcr.evaluation import evaluate_naive
 from kbcr.evaluation import evaluate_on_countries
 
