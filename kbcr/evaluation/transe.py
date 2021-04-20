@@ -145,11 +145,11 @@ def evaluate_transe(entity_embeddings: nn.Embedding,
             s_to_remove = po_to_s[po_key]
 
             for tmp_o_idx in o_to_remove:
-                if tmp_o_idx != o and tmp_o_idx in sp_emb_to_idx:
+                if tmp_o_idx != o and tmp_o_idx in sp_emb_to_idx[idx]:
                     scores_sp_curr[sp_emb_to_idx[idx][tmp_o_idx]] = - np.infty
 
             for tmp_s_idx in s_to_remove:
-                if tmp_s_idx != s and tmp_s_idx in po_emb_to_idx:
+                if tmp_s_idx != s and tmp_s_idx in po_emb_to_idx[idx]:
                     scores_po_curr[po_emb_to_idx[idx][tmp_s_idx]] = - np.infty
             # End of code for the filtered setting
 
