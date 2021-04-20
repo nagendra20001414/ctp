@@ -1,0 +1,1094 @@
+nohup: ignoring input
+./bin/transe-cli.py --train /home/baadalvm/ctp/data/nations/train.tsv --test /home/baadalvm/ctp/data/nations/test.tsv --dev /home/baadalvm/ctp/data/nations/dev.tsv -e 50 -b 1000 --seed 1 --eval-batch-size 1000 --save nations-transe-params.txt --model transe
+{'N2': None,
+ 'N3': None,
+ 'batch_size': 1000,
+ 'dev': '/home/baadalvm/ctp/data/nations/dev.tsv',
+ 'embedding_size': 100,
+ 'epochs': 50,
+ 'eval_batch_size': 1000,
+ 'gradient_accumulation_steps': 1,
+ 'input_type': 'standard',
+ 'learning_rate': 0.1,
+ 'load': None,
+ 'load_transe': None,
+ 'model': 'transe',
+ 'optimizer': 'adagrad',
+ 'quiet': False,
+ 'save': 'nations-transe-params.txt',
+ 'seed': 1,
+ 'test': '/home/baadalvm/ctp/data/nations/test.tsv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/ctp/data/nations/train.tsv',
+ 'validate_every': None}
+INFO:transe-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  1592
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  1992
+entity indexes are set!
+for loop is done..!
+INFO:transe-cli.py:Model state:
+INFO:transe-cli.py:	entities.weight	torch.Size([14, 100])
+INFO:transe-cli.py:	predicates.weight	torch.Size([55, 100])
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 1/2	Loss 5.277894
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.111107
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 2/2	Loss 5.275990
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.019442
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.132790
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 1/2	Loss 5.099673
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.033177
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 2/2	Loss 5.070179
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.019276
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.053468
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 1/2	Loss 5.035118
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.033508
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 2/2	Loss 5.027340
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018712
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.053219
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 1/2	Loss 4.988810
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.035436
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 2/2	Loss 5.011291
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018876
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.055633
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 1/2	Loss 4.984111
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.035373
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 2/2	Loss 4.972840
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018812
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.055072
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 1/2	Loss 4.951170
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.035061
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 2/2	Loss 4.982383
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018885
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.054795
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 1/2	Loss 4.943385
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.036877
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 2/2	Loss 4.976550
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.019005
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.056758
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 1/2	Loss 4.934144
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.036663
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 2/2	Loss 4.968997
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018679
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.056330
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 1/2	Loss 4.932631
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.035726
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 2/2	Loss 4.959244
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.031497
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.068263
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 1/2	Loss 4.933332
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.040580
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 2/2	Loss 4.945296
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.020899
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.062436
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 1/2	Loss 4.919955
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.034954
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 2/2	Loss 4.950980
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.018217
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.053999
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 1/2	Loss 4.913960
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.036910
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 2/2	Loss 4.949102
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016480
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.054410
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 1/2	Loss 4.903963
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023520
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 2/2	Loss 4.954830
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015735
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040054
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 1/2	Loss 4.915574
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.022878
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 2/2	Loss 4.924565
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015535
+/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370120218/work/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() > 0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 1/50\tLoss 5.2769 \xb1 0.0010'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 2/50\tLoss 5.0849 \xb1 0.0147'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 3/50\tLoss 5.0312 \xb1 0.0039'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 4/50\tLoss 5.0001 \xb1 0.0112'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 5/50\tLoss 4.9785 \xb1 0.0056'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 6/50\tLoss 4.9668 \xb1 0.0156'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 7/50\tLoss 4.9600 \xb1 0.0166'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 8/50\tLoss 4.9516 \xb1 0.0174'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 9/50\tLoss 4.9459 \xb1 0.0133'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 10/50\tLoss 4.9393 \xb1 0.0060'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 11/50\tLoss 4.9355 \xb1 0.0155'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 12/50\tLoss 4.9315 \xb1 0.0176'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 13/50\tLoss 4.9294 \xb1 0.0254'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039277
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 1/2	Loss 4.911547
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023932
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 2/2	Loss 4.927464
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.017709
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.042708
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 1/2	Loss 4.906847
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023532
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 2/2	Loss 4.923686
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015817
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040215
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 1/2	Loss 4.908109
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023566
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 2/2	Loss 4.915759
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016653
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.041090
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 1/2	Loss 4.913511
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024184
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 2/2	Loss 4.897968
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015621
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040640
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 1/2	Loss 4.896101
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023488
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 2/2	Loss 4.919428
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016096
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040450
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 1/2	Loss 4.894527
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024436
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 2/2	Loss 4.914729
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016602
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.041862
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 1/2	Loss 4.892320
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024338
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 2/2	Loss 4.913555
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015907
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.041108
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 1/2	Loss 4.910301
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023291
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 2/2	Loss 4.875673
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015658
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039774
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 1/2	Loss 4.891572
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023668
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 2/2	Loss 4.902897
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015749
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040211
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 1/2	Loss 4.912234
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023052
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 2/2	Loss 4.864691
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015815
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039661
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 1/2	Loss 4.894202
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023086
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 2/2	Loss 4.891181
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016433
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040522
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 1/2	Loss 4.863459
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024190
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 2/2	Loss 4.939631
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016392
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.041530
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 1/2	Loss 4.863427
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023797
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 2/2	Loss 4.936152
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.017684
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.042476
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 1/2	Loss 4.868154
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024296
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 2/2	Loss 4.920678
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016416
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.041697
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 1/2	Loss 4.854665
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023804
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 2/2	Loss 4.939547
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015796
+Message: 'Epoch 14/50\tLoss 4.9201 \xb1 0.0045'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 15/50\tLoss 4.9195 \xb1 0.0080'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 16/50\tLoss 4.9153 \xb1 0.0084'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 17/50\tLoss 4.9119 \xb1 0.0038'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 18/50\tLoss 4.9057 \xb1 0.0078'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 19/50\tLoss 4.9078 \xb1 0.0117'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 20/50\tLoss 4.9046 \xb1 0.0101'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 21/50\tLoss 4.9029 \xb1 0.0106'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 22/50\tLoss 4.8930 \xb1 0.0173'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 23/50\tLoss 4.8972 \xb1 0.0057'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 24/50\tLoss 4.8885 \xb1 0.0238'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 25/50\tLoss 4.8927 \xb1 0.0015'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 26/50\tLoss 4.9015 \xb1 0.0381'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 27/50\tLoss 4.8998 \xb1 0.0364'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 28/50\tLoss 4.8944 \xb1 0.0263'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040610
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 1/2	Loss 4.885245
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.028081
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 2/2	Loss 4.884553
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016094
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.045209
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 1/2	Loss 4.883298
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023048
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 2/2	Loss 4.882113
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015890
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039802
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 1/2	Loss 4.868212
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023260
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 2/2	Loss 4.908847
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015334
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039447
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 1/2	Loss 4.863233
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 2/2	Loss 4.912538
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015435
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039563
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 1/2	Loss 4.865573
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023208
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 2/2	Loss 4.903502
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015658
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039762
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 1/2	Loss 4.873232
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024078
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 2/2	Loss 4.888972
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015545
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040473
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 1/2	Loss 4.879592
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023494
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 2/2	Loss 4.876677
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.021167
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.045773
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 1/2	Loss 4.870689
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.024390
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 2/2	Loss 4.888597
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015557
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040792
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 1/2	Loss 4.891600
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023891
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 2/2	Loss 4.845851
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015534
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040295
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 1/2	Loss 4.854453
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023132
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 2/2	Loss 4.907803
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015883
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040005
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 1/2	Loss 4.865659
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.025761
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 2/2	Loss 4.887779
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015678
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.042438
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 1/2	Loss 4.854448
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023289
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 2/2	Loss 4.902737
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015584
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039772
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 1/2	Loss 4.865698
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023174
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 2/2	Loss 4.882531
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016595
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040626
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 1/2	Loss 4.873593
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023230
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 2/2	Loss 4.868299
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015466
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 29/50\tLoss 4.8971 \xb1 0.0424'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 30/50\tLoss 4.8849 \xb1 0.0003'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 31/50\tLoss 4.8827 \xb1 0.0006'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 32/50\tLoss 4.8885 \xb1 0.0203'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 33/50\tLoss 4.8879 \xb1 0.0247'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 34/50\tLoss 4.8845 \xb1 0.0190'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 35/50\tLoss 4.8811 \xb1 0.0079'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 36/50\tLoss 4.8781 \xb1 0.0015'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 37/50\tLoss 4.8796 \xb1 0.0090'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 38/50\tLoss 4.8687 \xb1 0.0229'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 39/50\tLoss 4.8811 \xb1 0.0267'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 40/50\tLoss 4.8767 \xb1 0.0111'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 41/50\tLoss 4.8786 \xb1 0.0241'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 42/50\tLoss 4.8741 \xb1 0.0084'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 43/50\tLoss 4.8709 \xb1 0.0026'
+Arguments: ()
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039648
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 1/2	Loss 4.865536
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023360
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 2/2	Loss 4.874838
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015443
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039676
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 1/2	Loss 4.861905
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023478
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 2/2	Loss 4.880782
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015980
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.040362
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 1/2	Loss 4.868669
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023192
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 2/2	Loss 4.867029
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015517
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039585
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 1/2	Loss 4.861839
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023354
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 2/2	Loss 4.871171
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015578
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039871
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 1/2	Loss 4.873008
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023279
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 2/2	Loss 4.850140
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015483
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039634
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 1/2	Loss 4.828627
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023569
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 2/2	Loss 4.921737
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015443
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039902
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 1/2	Loss 4.868608
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.023289
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 2/2	Loss 4.852815
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015479
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.039637
+This print statement is from base.py, before for loop
+This batch took: 0:00:00.016326
+INFO:transe-cli.py:Final 	dev results	MRR 0.562853	H@1 0.306533	H@3 0.756281	H@5 0.886935	H@10 0.984925
+This print statement is from base.py, before for loop
+This batch took: 0:00:00.016026
+INFO:transe-cli.py:Final 	test results	MRR 0.539482	H@1 0.298507	H@3 0.713930	H@5 0.838308	H@10 0.975124
+INFO:transe-cli.py:Training finished
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 44/50\tLoss 4.8702 \xb1 0.0047'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 45/50\tLoss 4.8713 \xb1 0.0094'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 46/50\tLoss 4.8678 \xb1 0.0008'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 47/50\tLoss 4.8665 \xb1 0.0047'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 48/50\tLoss 4.8616 \xb1 0.0114'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 49/50\tLoss 4.8752 \xb1 0.0466'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 50/50\tLoss 4.8607 \xb1 0.0079'
+Arguments: ()

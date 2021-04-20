@@ -1,0 +1,3897 @@
+nohup: ignoring input
+./bin/transe-cli.py --train /home/baadalvm/ctp/data/nations/train.tsv --test /home/baadalvm/ctp/data/nations/test.tsv --dev /home/baadalvm/ctp/data/nations/dev.tsv -e 50 -b 100 --seed 1 --eval-batch-size 100 --save nations-transe-params-2.txt --model transe
+{'N2': None,
+ 'N3': None,
+ 'batch_size': 100,
+ 'dev': '/home/baadalvm/ctp/data/nations/dev.tsv',
+ 'embedding_size': 100,
+ 'epochs': 50,
+ 'eval_batch_size': 100,
+ 'gradient_accumulation_steps': 1,
+ 'input_type': 'standard',
+ 'learning_rate': 0.1,
+ 'load': None,
+ 'load_transe': None,
+ 'model': 'transe',
+ 'optimizer': 'adagrad',
+ 'quiet': False,
+ 'save': 'nations-transe-params-2.txt',
+ 'seed': 1,
+ 'test': '/home/baadalvm/ctp/data/nations/test.tsv',
+ 'test_i': None,
+ 'test_ii': None,
+ 'train': '/home/baadalvm/ctp/data/nations/train.tsv',
+ 'validate_every': None}
+INFO:transe-cli.py:Device: cpu
+triples reading and predicates.. Done!
+size of training triples is  1592
+reciprocals.. Done!
+Read all test, train, dev triples..!
+size of all triples is  1992
+entity indexes are set!
+for loop is done..!
+INFO:transe-cli.py:Model state:
+INFO:transe-cli.py:	entities.weight	torch.Size([14, 100])
+INFO:transe-cli.py:	predicates.weight	torch.Size([55, 100])
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 1/16	Loss 5.277971
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.055319
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 2/16	Loss 5.270666
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.008768
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 3/16	Loss 5.265980
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007552
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 4/16	Loss 5.122914
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007580
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 5/16	Loss 5.233927
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.008099
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 6/16	Loss 5.251188
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.009024
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 7/16	Loss 5.130676
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007008
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 8/16	Loss 5.162827
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006461
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 9/16	Loss 5.115458
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006942
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 10/16	Loss 5.145638
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006426
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 11/16	Loss 5.033351
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006296
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 12/16	Loss 5.233837
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006974
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 13/16	Loss 5.137980
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006440
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 14/16	Loss 5.050620
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006217
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 15/16	Loss 5.117827
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006958
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 1/50	Batch 16/16	Loss 5.130015
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006081
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.165331
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 1/16	Loss 4.980865
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006269
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 2/16	Loss 5.048040
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.015482
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 3/16	Loss 5.080222
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007408
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 4/16	Loss 4.976467
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006377
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 5/16	Loss 5.071056
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006720
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 6/16	Loss 5.083740
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007803
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 7/16	Loss 5.103821
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006230
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 8/16	Loss 4.991714
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006313
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 9/16	Loss 5.074287
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006799
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 10/16	Loss 4.997137
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006184
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 11/16	Loss 5.076807
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006245
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 12/16	Loss 5.043654
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006838
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 13/16	Loss 5.011396
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006217
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 14/16	Loss 4.942068
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006256
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 15/16	Loss 4.992977
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006788
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 2/50	Batch 16/16	Loss 4.978985
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006064
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.116417
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 1/16	Loss 4.979816
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006321
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 2/16	Loss 4.943796
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006276
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 3/16	Loss 5.017188
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006637
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 4/16	Loss 4.991755
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006304
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 5/16	Loss 4.990109
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006196
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 6/16	Loss 4.960126
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006811
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 7/16	Loss 4.946127
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006418
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 8/16	Loss 4.961496
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006438
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 9/16	Loss 5.037705
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006974
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 10/16	Loss 5.045763
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006265
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 11/16	Loss 4.966967
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006618
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 12/16	Loss 5.007398
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006945
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 13/16	Loss 5.074938
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006228
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 14/16	Loss 4.985062
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006247
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 15/16	Loss 4.891343
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006806
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 3/50	Batch 16/16	Loss 5.028062
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006096
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105879
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 1/16	Loss 4.900913
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006293
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 2/16	Loss 4.916942
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006303
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 3/16	Loss 4.977412
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006778
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 4/16	Loss 4.846562
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006216
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 5/16	Loss 4.988832
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006331
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 6/16	Loss 5.023241
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006789
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 7/16	Loss 4.967863
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006313
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 8/16	Loss 4.975989
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006220
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 9/16	Loss 5.083140
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006812
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 10/16	Loss 4.996096
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006189
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 11/16	Loss 4.949710
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006363
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 12/16	Loss 4.987131
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006815
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 13/16	Loss 4.981892
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 14/16	Loss 4.970859
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006287
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 15/16	Loss 4.983568
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006803
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 4/50	Batch 16/16	Loss 4.914245
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006014
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104953
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 1/16	Loss 4.916241
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006389
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 2/16	Loss 4.927690
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006239
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 3/16	Loss 4.943692
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006864
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 4/16	Loss 4.956715
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006284
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 5/16	Loss 4.892887
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006371
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 6/16	Loss 4.995800
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006665
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 7/16	Loss 5.020312
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 8/16	Loss 5.001232
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006252
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 9/16	Loss 5.022026
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006775
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 10/16	Loss 4.919660
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006297
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 11/16	Loss 4.912715
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006226
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 12/16	Loss 4.897766
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006854
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 13/16	Loss 4.887974
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006321
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 14/16	Loss 4.955798
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006285
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 15/16	Loss 5.062186
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006891
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 5/50	Batch 16/16	Loss 4.960011
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.005988
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105141
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 1/16	Loss 4.887283
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006287
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 2/16	Loss 4.789115
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006291
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 3/16	Loss 4.980022
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006791
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 4/16	Loss 4.936202
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006355
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 5/16	Loss 4.971949
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006424
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 6/16	Loss 4.953808
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006733
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 7/16	Loss 4.897363
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006250
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 8/16	Loss 4.967489
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006280
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 9/16	Loss 4.962065
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006774
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 10/16	Loss 4.965525
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006165
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 11/16	Loss 4.899713
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 12/16	Loss 4.880133
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006766
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 13/16	Loss 5.009515
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006566
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 14/16	Loss 5.032509
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006253
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 15/16	Loss 4.976784
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006762
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 6/50	Batch 16/16	Loss 4.969681
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006040
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105248
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 1/16	Loss 4.900090
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 2/16	Loss 4.889446
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006275
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 3/16	Loss 4.835222
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006873
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 4/16	Loss 4.888185
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006185
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 5/16	Loss 4.894419
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006228
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 6/16	Loss 4.925797
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006834
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 7/16	Loss 5.048993
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006234
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 8/16	Loss 4.949401
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006247
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 9/16	Loss 4.875949
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006810
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 10/16	Loss 5.009254
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006220
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 11/16	Loss 4.891275
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006294
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 12/16	Loss 4.969056
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006803
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 13/16	Loss 4.866415
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006420
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 14/16	Loss 4.986565
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006259
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 15/16	Loss 5.015553
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006755
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 7/50	Batch 16/16	Loss 5.045769
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006027
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104975
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 1/16	Loss 4.916169
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006304
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 2/16	Loss 4.922017
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006128
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 3/16	Loss 4.916292
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006839
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 4/16	Loss 4.982557
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006165
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 5/16	Loss 4.938723
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006194
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 6/16	Loss 4.970912
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006716
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 7/16	Loss 4.820748
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006343
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 8/16	Loss 4.939253
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006278
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 9/16	Loss 4.852167
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006724
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 10/16	Loss 4.903975
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006269
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 11/16	Loss 4.869247
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006277
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 12/16	Loss 4.991595
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006712
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 13/16	Loss 4.951891
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006206
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 14/16	Loss 4.997487
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 15/16	Loss 4.896097
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006787
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 8/50	Batch 16/16	Loss 4.980018
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006026
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104463
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 1/16	Loss 4.932238
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006221
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 2/16	Loss 4.981884
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006273
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 3/16	Loss 4.999706
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006732
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 4/16	Loss 4.874794
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006228
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 5/16	Loss 4.848793
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006213
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 6/16	Loss 4.875044
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006757
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 7/16	Loss 4.877574
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006283
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 8/16	Loss 4.926089
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006186
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 9/16	Loss 4.896322
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006719
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 10/16	Loss 4.946443
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006301
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 11/16	Loss 4.921661
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006187
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 12/16	Loss 4.941689
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006844
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 13/16	Loss 4.940696
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006306
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 14/16	Loss 4.936324
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006169
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 15/16	Loss 4.914137
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006837
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 9/50	Batch 16/16	Loss 4.932725
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.005965
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104528
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 1/16	Loss 4.889537
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006198
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 2/16	Loss 4.925627
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006224
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 3/16	Loss 4.914434
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006584
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 4/16	Loss 4.930332
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006257
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 5/16	Loss 4.924721
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006216
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 6/16	Loss 4.935397
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006748
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 7/16	Loss 4.971171
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 8/16	Loss 4.862970
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 9/16	Loss 4.936661
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006621
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 10/16	Loss 4.854651
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006300
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 11/16	Loss 4.995655
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006250
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 12/16	Loss 4.816584
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006707
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 13/16	Loss 4.889091
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006274
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 14/16	Loss 4.884647
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006260
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 15/16	Loss 4.972985
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006712
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 10/50	Batch 16/16	Loss 4.985729
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006052
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 1/16	Loss 4.925610
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006186
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 2/16	Loss 4.830777
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 3/16	Loss 4.864198
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006742
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 4/16	Loss 4.872289
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 5/16	Loss 4.910045
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006350
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 6/16	Loss 5.089194
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006693
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 7/16	Loss 4.890596
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006178
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 8/16	Loss 4.813486
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006365
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 9/16	Loss 4.927469
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006753
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 10/16	Loss 4.895900
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006171
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 11/16	Loss 4.895255
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006223
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 12/16	Loss 4.832906
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006736
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 13/16	Loss 4.895424
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006204
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 14/16	Loss 4.955786
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006276
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 15/16	Loss 5.023745
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006910
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 11/50	Batch 16/16	Loss 5.018114
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006146
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104742
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 1/16	Loss 4.887029
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006406
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 2/16	Loss 4.868032
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006180
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 3/16	Loss 4.832029
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006861
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 4/16	Loss 4.913810
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006161
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 5/16	Loss 4.984695
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 6/16	Loss 4.892484
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006771
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 7/16	Loss 4.943823
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006258
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 8/16	Loss 4.777002
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006282
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 9/16	Loss 4.972201
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006782
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 10/16	Loss 4.921064
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006237
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 11/16	Loss 4.930915
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006246
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 12/16	Loss 4.986362
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006627
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 13/16	Loss 4.905108
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006212
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 14/16	Loss 4.869232
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006309
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 15/16	Loss 4.885031
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006742
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 12/50	Batch 16/16	Loss 4.976485
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006066
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104628
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 1/16	Loss 4.860426
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006289
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 2/16	Loss 4.891092
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006290
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 3/16	Loss 4.858387
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007044
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 4/16	Loss 4.925206
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006307
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 5/16	Loss 4.939937
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006207
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 6/16	Loss 4.992893
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006891
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 7/16	Loss 4.812682
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006273
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 8/16	Loss 4.856067
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006290
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 9/16	Loss 4.852966
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006739
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 10/16	Loss 4.909851
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006225
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 11/16	Loss 4.910025
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006145
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 12/16	Loss 4.885699
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006831
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 13/16	Loss 5.004486
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006219
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 14/16	Loss 4.912705
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006210
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 15/16	Loss 4.997507
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006708
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 13/50	Batch 16/16	Loss 4.877019
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006052
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105041
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 1/16	Loss 4.901678
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006079
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 2/16	Loss 4.868206
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006149
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 3/16	Loss 4.880227
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006717
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 4/16	Loss 4.919770
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006249
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 5/16	Loss 4.895631
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 6/16	Loss 4.949586
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006668
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 7/16	Loss 4.912758
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006238
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 8/16	Loss 4.876572
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 9/16	Loss 4.934988
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006742
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 10/16	Loss 4.863348
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006238
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 11/16	Loss 4.920747
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006222
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 12/16	Loss 4.882337
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006715
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 13/16	Loss 4.852411
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006255
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 14/16	Loss 4.893512
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006211
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 15/16	Loss 4.971157
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006792
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 14/50	Batch 16/16	Loss 4.908705
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006041
+/home/baadalvm/anaconda3/envs/tf/lib/python3.6/site-packages/torch/cuda/__init__.py:52: UserWarning: CUDA initialization: Found no NVIDIA driver on your system. Please check that you have an NVIDIA GPU and installed a driver from http://www.nvidia.com/Download/index.aspx (Triggered internally at  /opt/conda/conda-bld/pytorch_1607370120218/work/c10/cuda/CUDAFunctions.cpp:100.)
+  return torch._C._cuda_getDeviceCount() > 0
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 1/50\tLoss 5.1676 \xb1 0.0755'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 2/50\tLoss 5.0283 \xb1 0.0481'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 3/50\tLoss 4.9892 \xb1 0.0442'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 4/50\tLoss 4.9665 \xb1 0.0522'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 5/50\tLoss 4.9545 \xb1 0.0507'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 6/50\tLoss 4.9424 \xb1 0.0575'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 7/50\tLoss 4.9370 \xb1 0.0654'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 8/50\tLoss 4.9281 \xb1 0.0499'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 42: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 9/50\tLoss 4.9216 \xb1 0.0386'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 10/50\tLoss 4.9181 \xb1 0.0484'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 11/50\tLoss 4.9150 \xb1 0.0729'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 12/50\tLoss 4.9091 \xb1 0.0559'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 13/50\tLoss 4.9054 \xb1 0.0542'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104109
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 1/16	Loss 4.839062
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006167
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 2/16	Loss 4.946613
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006250
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 3/16	Loss 4.877817
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006730
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 4/16	Loss 4.882423
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006171
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 5/16	Loss 4.886106
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006196
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 6/16	Loss 4.861601
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006674
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 7/16	Loss 4.827679
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006313
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 8/16	Loss 4.985828
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006230
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 9/16	Loss 4.942266
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006652
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 10/16	Loss 4.917719
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006254
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 11/16	Loss 4.928323
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006268
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 12/16	Loss 4.892932
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006718
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 13/16	Loss 4.982246
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006194
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 14/16	Loss 4.904523
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006202
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 15/16	Loss 4.909900
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006780
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 15/50	Batch 16/16	Loss 4.824506
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006094
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104191
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 1/16	Loss 4.837882
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006255
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 2/16	Loss 4.908920
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006223
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 3/16	Loss 4.867968
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006785
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 4/16	Loss 4.974904
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006087
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 5/16	Loss 4.882187
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006291
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 6/16	Loss 4.954472
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006700
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 7/16	Loss 4.852044
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006235
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 8/16	Loss 4.889956
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006252
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 9/16	Loss 4.766049
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006752
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 10/16	Loss 4.967520
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006200
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 11/16	Loss 4.821606
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006300
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 12/16	Loss 4.907592
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006677
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 13/16	Loss 4.947284
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006267
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 14/16	Loss 4.969369
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006117
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 15/16	Loss 4.924170
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006677
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 16/50	Batch 16/16	Loss 4.861573
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006061
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104163
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 1/16	Loss 4.799753
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006226
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 2/16	Loss 4.887445
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006208
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 3/16	Loss 4.883644
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006771
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 4/16	Loss 4.835991
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006233
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 5/16	Loss 4.900092
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 6/16	Loss 4.833081
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006859
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 7/16	Loss 5.045765
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006201
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 8/16	Loss 4.897094
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006217
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 9/16	Loss 4.910345
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006723
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 10/16	Loss 4.911307
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006170
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 11/16	Loss 4.896767
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006220
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 12/16	Loss 4.928306
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006735
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 13/16	Loss 4.823248
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006160
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 14/16	Loss 4.894009
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006190
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 15/16	Loss 4.967140
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006568
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 17/50	Batch 16/16	Loss 4.883214
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006088
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104099
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 1/16	Loss 4.838501
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 2/16	Loss 4.813272
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006156
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 3/16	Loss 4.881773
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006734
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 4/16	Loss 4.851933
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006226
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 5/16	Loss 4.943296
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006177
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 6/16	Loss 4.860528
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006803
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 7/16	Loss 5.003354
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 8/16	Loss 5.010736
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006149
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 9/16	Loss 4.838906
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006817
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 10/16	Loss 4.953058
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006298
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 11/16	Loss 4.956879
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006189
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 12/16	Loss 4.793511
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006750
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 13/16	Loss 4.946358
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006247
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 14/16	Loss 4.805241
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006217
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 15/16	Loss 4.831957
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006687
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 18/50	Batch 16/16	Loss 4.940368
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006052
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104157
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 1/16	Loss 4.843552
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006226
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 2/16	Loss 4.776904
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006161
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 3/16	Loss 5.044705
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006790
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 4/16	Loss 4.785681
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006424
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 5/16	Loss 4.963002
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006112
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 6/16	Loss 4.851918
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006802
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 7/16	Loss 4.795291
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006235
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 8/16	Loss 4.882464
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006304
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 9/16	Loss 4.942240
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006748
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 10/16	Loss 4.909754
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006197
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 11/16	Loss 4.882885
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006195
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 12/16	Loss 4.784237
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006718
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 13/16	Loss 4.928360
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006184
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 14/16	Loss 4.968309
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006239
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 15/16	Loss 4.919076
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006689
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 19/50	Batch 16/16	Loss 4.953515
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006049
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104329
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 1/16	Loss 4.838134
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006260
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 2/16	Loss 4.894769
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006162
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 3/16	Loss 4.918036
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006702
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 4/16	Loss 4.825883
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006282
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 5/16	Loss 4.901632
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006300
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 6/16	Loss 4.785188
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006774
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 7/16	Loss 4.882267
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006248
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 8/16	Loss 4.864526
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006202
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 9/16	Loss 4.924439
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006628
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 10/16	Loss 4.977369
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006191
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 11/16	Loss 4.896147
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 12/16	Loss 4.915606
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006748
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 13/16	Loss 4.964731
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006288
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 14/16	Loss 4.948350
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006200
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 15/16	Loss 4.860875
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006656
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 20/50	Batch 16/16	Loss 4.768729
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006099
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105654
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 1/16	Loss 4.874325
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006268
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 2/16	Loss 4.820081
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006274
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 3/16	Loss 4.887939
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.017052
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 4/16	Loss 4.901932
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006358
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 5/16	Loss 4.926847
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006236
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 6/16	Loss 4.751954
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006745
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 7/16	Loss 4.883837
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006255
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 8/16	Loss 4.990108
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006245
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 9/16	Loss 4.903704
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006853
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 10/16	Loss 4.843459
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006382
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 11/16	Loss 4.878747
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006280
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 12/16	Loss 4.906117
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006739
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 13/16	Loss 4.939645
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006111
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 14/16	Loss 4.838649
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006117
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 15/16	Loss 4.876729
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006851
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 21/50	Batch 16/16	Loss 4.938175
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.005996
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.115183
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 1/16	Loss 4.826710
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006208
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 2/16	Loss 4.870220
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006280
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 3/16	Loss 4.990759
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006727
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 4/16	Loss 4.779019
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006318
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 5/16	Loss 4.949361
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006252
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 6/16	Loss 4.906425
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006835
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 7/16	Loss 4.894176
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006257
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 8/16	Loss 4.916781
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006280
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 9/16	Loss 4.929673
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006735
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 10/16	Loss 4.914913
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006172
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 11/16	Loss 4.823368
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006347
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 12/16	Loss 4.919394
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006928
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 13/16	Loss 4.840412
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006288
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 14/16	Loss 4.881938
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006183
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 15/16	Loss 4.870375
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006734
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 22/50	Batch 16/16	Loss 4.811953
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006107
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104966
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 1/16	Loss 4.841827
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006172
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 2/16	Loss 4.877454
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006284
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 3/16	Loss 4.859888
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006706
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 4/16	Loss 4.926281
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 5/16	Loss 4.904738
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 6/16	Loss 4.910123
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006885
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 7/16	Loss 4.875343
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006253
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 8/16	Loss 4.848841
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 9/16	Loss 4.886280
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006767
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 10/16	Loss 4.835879
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006203
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 11/16	Loss 4.894532
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006216
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 12/16	Loss 4.944778
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006670
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 13/16	Loss 4.993829
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006170
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 14/16	Loss 4.864445
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006315
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 15/16	Loss 4.810873
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006751
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 23/50	Batch 16/16	Loss 4.813189
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006094
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104384
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 1/16	Loss 5.010541
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 2/16	Loss 4.690144
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006212
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 3/16	Loss 4.909600
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006741
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 4/16	Loss 4.883868
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006212
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 5/16	Loss 4.815322
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006190
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 6/16	Loss 4.929440
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006780
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 7/16	Loss 4.917654
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006211
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 8/16	Loss 4.947088
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006159
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 9/16	Loss 4.952406
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006791
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 10/16	Loss 4.941763
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006299
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 11/16	Loss 4.876635
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 12/16	Loss 4.874290
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006716
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 13/16	Loss 4.817478
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006210
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 14/16	Loss 4.835052
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006234
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 15/16	Loss 4.827767
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006695
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 24/50	Batch 16/16	Loss 4.852458
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006097
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104302
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 1/16	Loss 4.868041
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006313
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 2/16	Loss 4.937368
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 3/16	Loss 4.810045
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006855
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 4/16	Loss 4.922605
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006215
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 5/16	Loss 4.915753
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006210
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 6/16	Loss 4.820842
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006864
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 7/16	Loss 4.830638
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006207
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 8/16	Loss 4.884021
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006229
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 9/16	Loss 4.933654
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006805
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 10/16	Loss 4.878595
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006302
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 11/16	Loss 4.860534
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006114
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 12/16	Loss 4.925518
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006671
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 13/16	Loss 4.883570
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006325
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 14/16	Loss 4.943520
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006183
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 15/16	Loss 4.805925
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006852
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 25/50	Batch 16/16	Loss 4.821347
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006015
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104653
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 1/16	Loss 4.766309
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006230
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 2/16	Loss 4.830154
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006204
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 3/16	Loss 4.860092
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006765
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 4/16	Loss 4.929423
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 5/16	Loss 4.864614
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 6/16	Loss 4.870780
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006843
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 7/16	Loss 4.905117
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006252
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 8/16	Loss 4.794178
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 9/16	Loss 4.856276
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006735
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 10/16	Loss 4.808465
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 11/16	Loss 4.898720
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006265
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 12/16	Loss 4.969157
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006700
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 13/16	Loss 4.891715
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006263
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 14/16	Loss 4.910346
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006183
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 15/16	Loss 4.854527
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006802
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 26/50	Batch 16/16	Loss 5.014785
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006015
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104415
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 1/16	Loss 4.801945
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006215
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 2/16	Loss 4.904411
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006266
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 3/16	Loss 4.827505
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006685
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 4/16	Loss 4.935420
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006232
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 5/16	Loss 4.838470
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006292
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 6/16	Loss 4.823061
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006726
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 7/16	Loss 4.803476
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006230
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 8/16	Loss 4.861137
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006326
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 9/16	Loss 4.826333
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006726
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 10/16	Loss 4.854914
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006233
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 11/16	Loss 4.825490
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006200
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 12/16	Loss 4.936279
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006693
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 13/16	Loss 4.964453
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006166
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 14/16	Loss 4.929012
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006261
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 15/16	Loss 4.964968
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006731
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 27/50	Batch 16/16	Loss 4.903216
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006097
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104352
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 1/16	Loss 4.804032
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006266
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 2/16	Loss 4.760839
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006274
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 3/16	Loss 4.944728
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006756
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 4/16	Loss 4.883668
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006260
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 5/16	Loss 4.713670
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006221
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 6/16	Loss 4.939547
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006562
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 7/16	Loss 4.887286
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006170
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 8/16	Loss 4.781278
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006206
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 9/16	Loss 4.880794
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006703
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 10/16	Loss 4.935067
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006337
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 11/16	Loss 4.890615
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006296
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 12/16	Loss 4.845803
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006647
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 13/16	Loss 4.900776
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006295
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 14/16	Loss 5.081342
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006211
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 15/16	Loss 4.911315
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006744
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 28/50	Batch 16/16	Loss 4.812055
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006103
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104380
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 1/16	Loss 4.805543
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006242
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 2/16	Loss 4.813927
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006192
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 3/16	Loss 4.891934
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006715
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 4/16	Loss 4.896096
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 5/16	Loss 4.779224
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 6/16	Loss 4.916471
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006821
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 7/16	Loss 4.828618
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006207
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 8/16	Loss 4.890210
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006295
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 9/16	Loss 4.747162
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006808
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 10/16	Loss 4.864072
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006251
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 11/16	Loss 4.870839
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006276
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 12/16	Loss 4.946200
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006607
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 13/16	Loss 4.981010
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006251
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 14/16	Loss 4.892090
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006193
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 15/16	Loss 4.920326
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006689
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 29/50	Batch 16/16	Loss 4.926476
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006039
+Message: 'Epoch 14/50\tLoss 4.9020 \xb1 0.0313'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 15/50\tLoss 4.9006 \xb1 0.0477'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 16/50\tLoss 4.8958 \xb1 0.0580'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 17/50\tLoss 4.8936 \xb1 0.0567'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 18/50\tLoss 4.8919 \xb1 0.0697'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 19/50\tLoss 4.8895 \xb1 0.0760'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 20/50\tLoss 4.8854 \xb1 0.0576'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 21/50\tLoss 4.8851 \xb1 0.0535'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 22/50\tLoss 4.8828 \xb1 0.0542'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 23/50\tLoss 4.8805 \xb1 0.0470'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 24/50\tLoss 4.8801 \xb1 0.0729'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 25/50\tLoss 4.8776 \xb1 0.0472'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 26/50\tLoss 4.8765 \xb1 0.0614'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 27/50\tLoss 4.8750 \xb1 0.0560'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 28/50\tLoss 4.8733 \xb1 0.0849'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104419
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 1/16	Loss 4.932406
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006171
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 2/16	Loss 5.011067
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006188
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 3/16	Loss 4.891901
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006758
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 4/16	Loss 4.849998
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006220
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 5/16	Loss 4.785808
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006259
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 6/16	Loss 4.843211
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006750
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 7/16	Loss 4.843017
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 8/16	Loss 4.860190
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006250
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 9/16	Loss 4.850883
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006751
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 10/16	Loss 4.835899
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006273
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 11/16	Loss 4.911313
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006227
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 12/16	Loss 4.758423
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006840
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 13/16	Loss 4.915564
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006195
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 14/16	Loss 4.947927
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006243
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 15/16	Loss 4.894757
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006630
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 30/50	Batch 16/16	Loss 4.801434
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.005943
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104286
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 1/16	Loss 4.926133
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006206
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 2/16	Loss 4.889956
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006161
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 3/16	Loss 4.862717
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006772
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 4/16	Loss 4.876830
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 5/16	Loss 4.933324
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006363
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 6/16	Loss 4.795379
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006923
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 7/16	Loss 4.863379
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006356
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 8/16	Loss 4.880835
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006276
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 9/16	Loss 4.890950
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006865
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 10/16	Loss 4.818750
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006310
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 11/16	Loss 4.853837
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006207
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 12/16	Loss 4.825162
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006857
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 13/16	Loss 4.848466
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006272
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 14/16	Loss 4.815423
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006117
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 15/16	Loss 4.904275
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006767
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 31/50	Batch 16/16	Loss 4.924732
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006134
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105173
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 1/16	Loss 4.850124
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006133
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 2/16	Loss 4.824841
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 3/16	Loss 4.820814
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006772
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 4/16	Loss 4.892880
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006223
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 5/16	Loss 4.885608
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006249
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 6/16	Loss 4.819681
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007277
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 7/16	Loss 4.894201
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006376
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 8/16	Loss 4.894167
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006318
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 9/16	Loss 4.855889
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006681
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 10/16	Loss 4.790272
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006298
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 11/16	Loss 4.948757
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006184
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 12/16	Loss 4.856994
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006689
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 13/16	Loss 4.969054
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006271
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 14/16	Loss 4.895230
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006223
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 15/16	Loss 4.882239
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006858
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 32/50	Batch 16/16	Loss 4.798338
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006069
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105126
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 1/16	Loss 4.892818
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006186
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 2/16	Loss 4.788162
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006185
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 3/16	Loss 4.885791
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006765
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 4/16	Loss 4.818097
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006206
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 5/16	Loss 4.893836
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006239
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 6/16	Loss 4.878220
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006760
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 7/16	Loss 4.819595
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006178
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 8/16	Loss 4.872733
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006257
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 9/16	Loss 4.800761
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006677
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 10/16	Loss 4.831724
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006177
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 11/16	Loss 4.993188
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006112
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 12/16	Loss 4.968740
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006711
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 13/16	Loss 4.815199
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006285
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 14/16	Loss 4.778820
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006298
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 15/16	Loss 4.940644
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006664
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 33/50	Batch 16/16	Loss 4.875232
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006028
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104000
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 1/16	Loss 4.823996
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006213
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 2/16	Loss 4.792247
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006274
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 3/16	Loss 4.772026
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006856
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 4/16	Loss 4.884426
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006261
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 5/16	Loss 4.914845
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006156
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 6/16	Loss 4.883220
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006755
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 7/16	Loss 4.915388
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006276
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 8/16	Loss 4.818035
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006244
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 9/16	Loss 4.832544
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006939
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 10/16	Loss 4.881284
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006247
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 11/16	Loss 4.928189
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006303
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 12/16	Loss 4.819102
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006831
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 13/16	Loss 4.924324
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006146
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 14/16	Loss 4.884110
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006171
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 15/16	Loss 4.924576
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006648
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 34/50	Batch 16/16	Loss 4.849952
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006037
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104706
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 1/16	Loss 4.933861
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006147
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 2/16	Loss 4.812996
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006237
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 3/16	Loss 4.837915
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006706
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 4/16	Loss 4.862058
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006249
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 5/16	Loss 4.911138
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006180
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 6/16	Loss 4.926550
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006730
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 7/16	Loss 4.836615
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006224
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 8/16	Loss 4.753068
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006176
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 9/16	Loss 4.847887
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006713
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 10/16	Loss 4.883873
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006182
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 11/16	Loss 4.910931
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006226
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 12/16	Loss 4.838310
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006786
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 13/16	Loss 4.933083
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006222
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 14/16	Loss 4.871694
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006156
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 15/16	Loss 4.884061
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006712
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 35/50	Batch 16/16	Loss 4.775226
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006021
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.103964
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 1/16	Loss 4.791610
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006322
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 2/16	Loss 4.754272
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006246
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 3/16	Loss 4.823644
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006657
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 4/16	Loss 4.859933
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006240
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 5/16	Loss 4.913407
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006233
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 6/16	Loss 4.928359
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006814
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 7/16	Loss 4.966393
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006234
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 8/16	Loss 4.878844
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006262
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 9/16	Loss 4.871800
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006757
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 10/16	Loss 4.877508
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006228
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 11/16	Loss 4.857669
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006192
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 12/16	Loss 4.767179
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006836
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 13/16	Loss 4.842132
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006391
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 14/16	Loss 4.856030
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006173
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 15/16	Loss 4.887520
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006839
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 36/50	Batch 16/16	Loss 4.942692
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006066
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104805
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 1/16	Loss 4.778163
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006184
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 2/16	Loss 4.939137
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006327
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 3/16	Loss 4.842412
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006628
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 4/16	Loss 4.853855
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006298
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 5/16	Loss 4.865228
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 6/16	Loss 4.850834
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006750
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 7/16	Loss 4.837964
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006282
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 8/16	Loss 4.822712
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006119
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 9/16	Loss 4.881666
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006755
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 10/16	Loss 4.872389
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006198
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 11/16	Loss 4.805055
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006242
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 12/16	Loss 4.855927
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006865
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 13/16	Loss 4.884796
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006263
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 14/16	Loss 4.801764
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006190
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 15/16	Loss 5.025113
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006805
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 37/50	Batch 16/16	Loss 4.882829
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006054
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104526
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 1/16	Loss 4.769447
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006225
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 2/16	Loss 4.813842
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006154
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 3/16	Loss 4.818399
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006804
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 4/16	Loss 4.934331
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006175
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 5/16	Loss 4.874040
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006160
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 6/16	Loss 4.909695
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006821
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 7/16	Loss 4.879018
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006142
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 8/16	Loss 4.987021
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006197
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 9/16	Loss 4.854356
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006784
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 10/16	Loss 4.936155
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006261
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 11/16	Loss 4.881488
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006247
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 12/16	Loss 4.833308
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006655
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 13/16	Loss 4.854200
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006235
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 14/16	Loss 4.818924
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006220
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 15/16	Loss 4.803103
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006753
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 38/50	Batch 16/16	Loss 4.793063
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006083
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104200
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 1/16	Loss 4.788446
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006211
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 2/16	Loss 4.886223
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006212
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 3/16	Loss 4.888090
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006843
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 4/16	Loss 4.842392
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006262
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 5/16	Loss 4.832733
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006273
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 6/16	Loss 4.916335
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006696
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 7/16	Loss 4.789827
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006252
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 8/16	Loss 4.808203
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006242
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 9/16	Loss 4.765270
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006786
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 10/16	Loss 4.913641
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006100
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 11/16	Loss 4.901186
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006326
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 12/16	Loss 4.853374
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006673
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 13/16	Loss 4.896071
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006209
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 14/16	Loss 4.869664
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006308
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 15/16	Loss 4.924391
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006700
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 39/50	Batch 16/16	Loss 4.891346
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.005958
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.104381
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 1/16	Loss 4.806214
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006148
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 2/16	Loss 4.810449
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006177
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 3/16	Loss 4.874655
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006820
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 4/16	Loss 4.965155
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.016261
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 5/16	Loss 4.886044
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006478
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 6/16	Loss 4.924725
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006853
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 7/16	Loss 4.735777
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006293
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 8/16	Loss 4.848370
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006294
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 9/16	Loss 4.814927
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006860
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 10/16	Loss 4.846061
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006303
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 11/16	Loss 4.987312
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006208
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 12/16	Loss 4.872270
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006727
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 13/16	Loss 4.890755
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006218
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 14/16	Loss 4.846975
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006238
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 15/16	Loss 4.746047
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006942
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 40/50	Batch 16/16	Loss 4.896725
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006194
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.115455
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 1/16	Loss 4.778153
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006446
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 2/16	Loss 4.898952
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006133
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 3/16	Loss 4.821339
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006810
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 4/16	Loss 4.840660
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006162
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 5/16	Loss 4.782311
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007307
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 6/16	Loss 4.899837
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007135
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 7/16	Loss 4.892954
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006390
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 8/16	Loss 4.856333
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006309
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 9/16	Loss 4.746525
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006953
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 10/16	Loss 4.889208
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006395
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 11/16	Loss 4.912513
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006327
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 12/16	Loss 4.882210
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006966
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 13/16	Loss 4.884821
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006366
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 14/16	Loss 4.848287
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006279
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 15/16	Loss 4.961036
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007060
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 41/50	Batch 16/16	Loss 4.828465
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006374
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.107913
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 1/16	Loss 4.884316
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006376
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 2/16	Loss 4.834451
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006423
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 3/16	Loss 4.818752
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006902
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 4/16	Loss 4.788004
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006638
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 5/16	Loss 4.854860
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006684
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 6/16	Loss 4.900611
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007061
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 7/16	Loss 4.776014
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006440
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 8/16	Loss 4.953516
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006328
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 9/16	Loss 4.902027
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006950
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 10/16	Loss 4.821483
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006389
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 11/16	Loss 4.917000
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006297
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 12/16	Loss 4.788342
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006948
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 13/16	Loss 4.837908
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006278
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 14/16	Loss 4.779794
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006317
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 15/16	Loss 4.950053
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006775
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 42/50	Batch 16/16	Loss 4.912812
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006343
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.107797
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 1/16	Loss 4.748485
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006388
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 2/16	Loss 4.849684
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006269
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 3/16	Loss 4.885170
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006822
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 4/16	Loss 4.817613
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006329
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 5/16	Loss 4.999293
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006200
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 6/16	Loss 4.894112
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006855
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 7/16	Loss 4.854388
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006302
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 8/16	Loss 4.778220
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006239
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 9/16	Loss 4.875681
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006809
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 10/16	Loss 4.876526
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006393
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 11/16	Loss 4.876166
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006281
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 12/16	Loss 4.854005
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006815
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 13/16	Loss 4.836757
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006312
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 14/16	Loss 4.837320
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006292
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 15/16	Loss 4.926540
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006884
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 43/50	Batch 16/16	Loss 4.774627
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006264
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 29/50\tLoss 4.8731 \xb1 0.0614'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 30/50\tLoss 4.8709 \xb1 0.0625'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 31/50\tLoss 4.8694 \xb1 0.0406'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 32/50\tLoss 4.8674 \xb1 0.0487'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 33/50\tLoss 4.8658 \xb1 0.0615'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 34/50\tLoss 4.8655 \xb1 0.0491'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 35/50\tLoss 4.8637 \xb1 0.0524'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 36/50\tLoss 4.8637 \xb1 0.0576'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 37/50\tLoss 4.8625 \xb1 0.0563'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 38/50\tLoss 4.8600 \xb1 0.0577'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 39/50\tLoss 4.8604 \xb1 0.0491'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 40/50\tLoss 4.8595 \xb1 0.0667'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 41/50\tLoss 4.8577 \xb1 0.0546'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 42/50\tLoss 4.8575 \xb1 0.0586'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 43/50\tLoss 4.8553 \xb1 0.0589'
+Arguments: ()
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.105879
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 1/16	Loss 4.833922
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006743
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 2/16	Loss 4.851048
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007066
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 3/16	Loss 4.753636
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.008036
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 4/16	Loss 4.872885
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006603
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 5/16	Loss 4.915132
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006291
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 6/16	Loss 4.781033
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006882
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 7/16	Loss 4.921460
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006311
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 8/16	Loss 4.765386
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006269
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 9/16	Loss 4.931603
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006811
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 10/16	Loss 4.924064
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006270
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 11/16	Loss 4.922554
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006302
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 12/16	Loss 4.874016
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006849
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 13/16	Loss 4.897328
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006320
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 14/16	Loss 4.857952
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006319
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 15/16	Loss 4.792792
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006955
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 44/50	Batch 16/16	Loss 4.804302
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006272
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.108814
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 1/16	Loss 4.782206
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006386
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 2/16	Loss 4.914340
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006272
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 3/16	Loss 4.878644
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006826
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 4/16	Loss 4.789361
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006219
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 5/16	Loss 4.850557
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006228
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 6/16	Loss 4.983316
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006925
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 7/16	Loss 4.786467
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006344
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 8/16	Loss 4.835433
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006424
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 9/16	Loss 4.852168
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006877
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 10/16	Loss 4.831959
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006260
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 11/16	Loss 4.889962
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006307
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 12/16	Loss 4.818199
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006859
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 13/16	Loss 4.824494
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006283
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 14/16	Loss 4.859879
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006372
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 15/16	Loss 4.810065
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006940
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 45/50	Batch 16/16	Loss 4.996089
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006693
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.106818
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 1/16	Loss 4.865463
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006931
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 2/16	Loss 4.871396
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006443
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 3/16	Loss 4.853025
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006933
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 4/16	Loss 4.726288
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006415
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 5/16	Loss 4.853706
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006419
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 6/16	Loss 4.880534
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006956
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 7/16	Loss 4.798420
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006445
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 8/16	Loss 4.845709
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006318
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 9/16	Loss 4.929582
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006876
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 10/16	Loss 4.932436
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006378
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 11/16	Loss 4.890402
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006459
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 12/16	Loss 4.810039
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006881
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 13/16	Loss 4.787035
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006342
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 14/16	Loss 4.909865
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006394
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 15/16	Loss 4.841821
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006934
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 46/50	Batch 16/16	Loss 4.862795
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006121
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.107638
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 1/16	Loss 4.725711
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006414
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 2/16	Loss 4.868167
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006329
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 3/16	Loss 4.896108
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006884
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 4/16	Loss 4.870360
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006360
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 5/16	Loss 4.854735
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006389
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 6/16	Loss 4.906340
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006858
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 7/16	Loss 4.817883
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006400
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 8/16	Loss 4.903077
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006303
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 9/16	Loss 4.809328
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006941
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 10/16	Loss 4.860246
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006302
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 11/16	Loss 4.831333
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006367
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 12/16	Loss 4.966136
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007316
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 13/16	Loss 4.838760
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006329
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 14/16	Loss 4.861921
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006408
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 15/16	Loss 4.740031
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006909
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 47/50	Batch 16/16	Loss 4.888494
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006080
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.106889
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 1/16	Loss 4.814854
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006376
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 2/16	Loss 4.856175
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006279
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 3/16	Loss 4.845066
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.019496
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 4/16	Loss 4.871862
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.008521
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 5/16	Loss 4.826941
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007909
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 6/16	Loss 4.961090
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.008086
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 7/16	Loss 4.828218
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006804
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 8/16	Loss 4.891255
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006517
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 9/16	Loss 4.827172
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006964
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 10/16	Loss 4.888220
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006447
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 11/16	Loss 4.836240
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006306
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 12/16	Loss 4.872633
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.007006
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 13/16	Loss 4.829437
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006401
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 14/16	Loss 4.866223
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006295
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 15/16	Loss 4.870186
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006956
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 48/50	Batch 16/16	Loss 4.737660
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006271
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.125073
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 1/16	Loss 4.912614
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006321
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 2/16	Loss 4.780455
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006354
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 3/16	Loss 4.767624
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006997
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 4/16	Loss 4.860791
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006262
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 5/16	Loss 4.790952
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006318
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 6/16	Loss 4.761999
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006922
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 7/16	Loss 4.720349
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006384
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 8/16	Loss 4.889363
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006329
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 9/16	Loss 4.871401
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006910
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 10/16	Loss 4.822365
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006362
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 11/16	Loss 4.943292
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006300
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 12/16	Loss 4.897649
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006921
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 13/16	Loss 4.939802
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006376
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 14/16	Loss 4.864198
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006392
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 15/16	Loss 4.937105
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006996
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 49/50	Batch 16/16	Loss 4.871017
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006106
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.106551
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 1/16	Loss 4.869192
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006267
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 2/16	Loss 4.905305
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006344
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 3/16	Loss 4.915719
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006929
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 4/16	Loss 4.768525
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006295
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 5/16	Loss 4.915793
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006383
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 6/16	Loss 4.874970
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006860
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 7/16	Loss 4.903200
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006272
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 8/16	Loss 4.853391
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006327
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 9/16	Loss 4.813161
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006835
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 10/16	Loss 4.762545
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006360
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 11/16	Loss 4.749379
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006404
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 12/16	Loss 4.867488
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006904
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 13/16	Loss 4.869172
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006488
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 14/16	Loss 4.810083
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006356
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 15/16	Loss 4.945110
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006874
+starting forward step
+forward step finished
+INFO:transe-cli.py:Epoch 50/50	Batch 16/16	Loss 4.779731
+INFO:transe-cli.py:Time taken for this batch: 0:00:00.006129
+INFO:transe-cli.py:Time taken for this epoch: 0:00:00.106364
+This print statement is from base.py, before for loop
+This batch took: 0:00:00.008817
+This batch took: 0:00:00.008681
+INFO:transe-cli.py:Final 	dev results	MRR 0.560147	H@1 0.304020	H@3 0.761307	H@5 0.884422	H@10 0.984925
+This print statement is from base.py, before for loop
+This batch took: 0:00:00.008667
+This batch took: 0:00:00.008804
+This batch took: 0:00:00.000824
+INFO:transe-cli.py:Final 	test results	MRR 0.545285	H@1 0.303483	H@3 0.726368	H@5 0.843284	H@10 0.980100
+INFO:transe-cli.py:Training finished
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 44/50\tLoss 4.8562 \xb1 0.0594'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 45/50\tLoss 4.8564 \xb1 0.0619'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 46/50\tLoss 4.8537 \xb1 0.0522'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 47/50\tLoss 4.8524 \xb1 0.0585'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 48/50\tLoss 4.8515 \xb1 0.0455'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 49/50\tLoss 4.8519 \xb1 0.0679'
+Arguments: ()
+--- Logging error ---
+Traceback (most recent call last):
+  File "/home/baadalvm/anaconda3/envs/tf/lib/python3.6/logging/__init__.py", line 996, in emit
+    stream.write(msg)
+UnicodeEncodeError: 'ascii' codec can't encode character '\xb1' in position 43: ordinal not in range(128)
+Call stack:
+  File "./bin/transe-cli.py", line 278, in <module>
+    main(sys.argv[1:])
+  File "./bin/transe-cli.py", line 252, in main
+    logger.info(f'Epoch {epoch_no}/{nb_epochs}\tLoss {loss_mean:.4f} \xb1 {loss_std:.4f}')
+Message: 'Epoch 50/50\tLoss 4.8502 \xb1 0.0600'
+Arguments: ()
